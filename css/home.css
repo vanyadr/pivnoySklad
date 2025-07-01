@@ -1,0 +1,135 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  z-index: 2;
+}
+.header__holder {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+.header__logo {
+  height: 2.3rem;
+}
+.header__menu-element {
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 4.5rem;
+  padding: 0 1.6rem;
+  height: 2.8rem;
+  display: flex;
+  align-items: center;
+}
+.header__menu {
+  gap: 3rem;
+  overflow: hidden;
+}
+.header__menu-bar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header__menu-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__menu-item a {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+  color: #292522;
+  transition-delay: 0.1s;
+  transition: color 0.1s ease;
+}
+.header__menu-item a.active {
+  color: #fff;
+}
+.header__menu-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+}
+.header__menu-link {
+  height: 1.1rem;
+}
+.header__search {
+  padding-right: 2.8rem;
+  position: relative;
+}
+.header__search::after {
+  content: "";
+  width: 1.2rem;
+  height: 1.2rem;
+  position: absolute;
+  top: 50%;
+  right: 0.8rem;
+  transform: translateY(-50%);
+  background: url(../images/search-icon.svg) no-repeat center/contain;
+}
+.header__input {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+  color: #292522;
+  background: none;
+  border: none;
+}
+.header__btn {
+  height: 100%;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+  color: #292522;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__menu-drop-down {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1e5540;
+  border-radius: 1.2rem;
+  padding: 1.6rem 1.2rem;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+.header__menu-drop-down.active {
+  visibility: visible;
+  opacity: 1;
+}
+.header__drop-down-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.header__drop-down-item a {
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+  color: #fff;
+}
+
+.underline {
+  position: absolute;
+  background: #1e5540;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 1.1rem;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+/*# sourceMappingURL=home.css.map */
