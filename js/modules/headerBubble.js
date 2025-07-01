@@ -1,13 +1,15 @@
 function calcPositions (btnsBar, btns, barPaddingLeft) {
-    let btnsWidth = [];
-    let positions = [];
-    let underlineWidth = [];
     const gap = Number(getComputedStyle(btnsBar).gap.slice(0, -2));
+    let btnsWidth = [],
+        positions = [],
+        underlineWidth = [],
+        sumBtnsWidth = 0;
+
     if (btns) {
         btns.forEach((btn) => {
             btnsWidth.push(btn.clientWidth);
         });
-        let sumBtnsWidth = 0;
+
         btnsWidth.forEach((num) => {
             sumBtnsWidth += num;
             underlineWidth.push(num + gap);
@@ -32,6 +34,7 @@ function calcPositions (btnsBar, btns, barPaddingLeft) {
                 position: pos,
                 width: width
             };
+
             positions.push(res);
         };
     };
@@ -49,10 +52,9 @@ export const moveBubble = function () {
     const barHeight = Number(getComputedStyle(document.querySelector('.header__menu-bar')).height.slice(0, -2));
     const barPaddingLeft = Number(getComputedStyle(document.querySelector('.header__menu')).paddingLeft.slice(0, -2));
     const menuOffsetLeft = document.querySelector('.header__menu').offsetLeft + barPaddingLeft;
-    let counter = 1;
-    let currentTabIndex = 1
-
     const underlinePositions = calcPositions(btnsBar, btns, barPaddingLeft);
+    let counter = 1;
+    let currentTabIndex = 0;
 
     if (btns) {
         underline.style.left = `${underlinePositions[0]['position']}px`;
@@ -74,32 +76,48 @@ export const moveBubble = function () {
                 btn.addEventListener('mouseover', 
                     function () {
                         if (!btn.classList.contains('active')) {
-                            const newTabIndex = this.dataset.tabIndex;
+                            const clickedTabIndex = this.dataset.tabIndex;
+                            const clickedMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${clickedTabIndex}"]`);
+                            const currentMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${currentTabIndex}"]`);
+                            const currentBtn = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]`);
+                            const currentText = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]>a`);
+                            
                             this.classList.add('active');
                             this.querySelector('a').classList.add('active');
-                            const newMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${newTabIndex}"]`);
-                            const oldMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${currentTabIndex}"]`);
-                            newMenu.style.left = `${underlinePositions[newTabIndex]['position'] + menuOffsetLeft}px`;
-                            newMenu.classList.add('active');
-                            oldMenu.classList.remove('active');
-                            document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]`).classList.remove('active');
-                            document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]>a`).classList.remove('active');
+                            clickedMenu.classList.add('active');
+                            
+                            if (currentTabIndex !== 0) {
+                                currentBtn.classList.remove('active');
+                                currentText.classList.remove('active');
+                                currentMenu.classList.remove('active');
+                            };
+
                             if (!overlay.classList.contains('active')) overlay.classList.add('active');
-                            underline.style.left = `${underlinePositions[newTabIndex]['position']}px`;
-                            underline.style.width = `${underlinePositions[newTabIndex]['width']}px`;
-                            currentTabIndex = newTabIndex;
+
+                            clickedMenu.style.left = `${underlinePositions[clickedTabIndex]['position'] + menuOffsetLeft}px`;
+                            underline.style.left = `${underlinePositions[clickedTabIndex]['position']}px`;
+                            underline.style.width = `${underlinePositions[clickedTabIndex]['width']}px`;
+
+                            currentTabIndex = clickedTabIndex;
                         }
                     }
                 );
             }
         );
         overlay.addEventListener('mouseover', () => {
+            const currentMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${currentTabIndex}"]`);
+            const currentBtn = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]`);
+            const currentText = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]>a`);
+
             underline.style.left = `${underlinePositions[0]['position']}px`;
             underline.style.width = `${underlinePositions[0]['width']}px`;
-            document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]`).classList.remove('active');
-            document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]>a`).classList.remove('active');
-            document.querySelector(`.header__menu-drop-down[data-tab-index="${currentTabIndex}"]`).classList.remove('active');
+
+            currentBtn.classList.remove('active');
+            currentText.classList.remove('active');
+            currentMenu.classList.remove('active');
             overlay.classList.remove('active');
+
+            currentTabIndex = 0;
         });
     };
 };

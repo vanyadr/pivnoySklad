@@ -134,7 +134,7 @@
         padding: 1.6rem 1.2rem;
         visibility: hidden;
         opacity: 0;
-        transition: opacity .5s, visibility .5s;
+        transition: opacity .3s, visibility .3s;
     }
     &__menu-drop-down.active {
         visibility: visible;
