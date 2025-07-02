@@ -1,0 +1,149 @@
+<header class="header">
+    <div class="header__holder container">
+        <div class="header__logo">
+            <a href="#"><img src="images/logo.svg" alt="Логотип"></a>
+        </div>
+        <nav class="header__menu header__menu-element">
+            <div class="header__menu-bar header-pc">
+                <div class="underline"></div>
+                <ul class="header__menu-list"></ul> <!--В этом списке циклом вывести названия категорий и ссылки на них-->
+                    <li class="header__menu-item">
+                        <a href="#">пиво</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#">сидры и медовухи</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#">безалкогольные напитки</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#">о нас</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header__menu-links item-no-underline">
+                <a href="#" class="header__menu-link">
+                    <img src="images/cart-black-icon.svg" alt="Корзина"> <!--Ссылка в корзину-->
+                </a>
+                <a href="#" class="header__menu-link">
+                    <img src="images/star-icon.svg" alt="Избранное"><!--Ссылка в избранное-->
+                </a>
+            </div>
+        </nav>
+        <div class="header__search header__menu-element search"><!--Поиск-->
+            <input type="text" class="header__input search-input" placeholder="поиск">
+        </div>
+        <div class="header__check header__menu-element header-pc"><!--Ссылка на проверку заказа-->
+            <a href="" class="header__btn white-btn">проверить заказ</a>
+        </div>
+        <div class="header__menu-drop-down header-pc"><!--Блок с выпадающем меню на десктопе-->
+            <ul class="header__drop-down-list"><!--Блок подкатегорий. Указываются в порядке, в котором указаны категории выше-->
+                <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+            </ul>
+            <ul class="header__drop-down-list">
+                <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+            </ul>
+            <ul class="header__drop-down-list">
+                <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+            </ul>
+            <ul class="header__drop-down-list">
+                <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+            </ul>
+        </div>
+        <div class="header__burger header__menu-element header-mobile"><!--Кнопка открытия бургер меню-->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path id="header__burger-top-line" d="M3 15H21" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path id="header__burger-bottom-line" d="M3 9H21" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </div>
+        <div class="header__burger-menu"><!--Блок бургер меню-->
+            <ul class="accrodion-holder">
+                <li class="accrodion-item">
+                    <button class="accordion-header">
+                        <p class="accordion-title">пиво</p><!--Категория-->
+                        <div  class="accordion-bullet">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="header__mobile-list"><!--Подкатегории-->
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="accrodion-item">
+                    <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div  class="accordion-bullet">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="accrodion-item">
+                    <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div  class="accordion-bullet">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="accrodion-item">
+                    <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div  class="accordion-bullet">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="accordion-item--no-open">
+                    <a href="#">проверить заказ</a><!--Проверка заказа на мобилке-->
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>
+<div class="overlay"></div>
