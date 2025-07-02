@@ -1,5 +1,4 @@
-function calcPositions (btnsBar, btns, barPaddingLeft) {
-    const gap = Number(getComputedStyle(btnsBar).gap.slice(0, -2));
+function calcPositions (btnsBar, btns, barPaddingLeft, gap) {
     let btnsWidth = [],
         positions = [],
         underlineWidth = [],
@@ -51,8 +50,8 @@ export const moveBubble = function () {
     const remToPx = Number(getComputedStyle(document.querySelector('html')).fontSize.slice(0, -2));
     const barHeight = Number(getComputedStyle(document.querySelector('.header__menu-bar')).height.slice(0, -2));
     const barPaddingLeft = Number(getComputedStyle(document.querySelector('.header__menu')).paddingLeft.slice(0, -2));
-    const menuOffsetLeft = document.querySelector('.header__menu').offsetLeft + barPaddingLeft;
-    const underlinePositions = calcPositions(btnsBar, btns, barPaddingLeft);
+    const gap = Number(getComputedStyle(btnsBar).gap.slice(0, -2));
+    const underlinePositions = calcPositions(btnsBar, btns, barPaddingLeft, gap);
     let counter = 1;
     let currentTabIndex = 0;
 
@@ -64,6 +63,8 @@ export const moveBubble = function () {
         infos.forEach(
             function (info) {
                 info.dataset.tabIndex = counter;
+                info.style.top = `${Number(getComputedStyle(info).top.slice(0, -2)) + 0.75 * remToPx}px`;
+                info.style.left = `${-0.5 * gap}px`;
                 counter++;
             }
         );
@@ -84,17 +85,16 @@ export const moveBubble = function () {
                             
                             this.classList.add('active');
                             this.querySelector('a').classList.add('active');
-                            clickedMenu.classList.add('active');
+                            if (clickedMenu) clickedMenu.classList.add('active');
                             
                             if (currentTabIndex !== 0) {
                                 currentBtn.classList.remove('active');
                                 currentText.classList.remove('active');
-                                currentMenu.classList.remove('active');
+                                if (currentMenu) currentMenu.classList.remove('active');
                             };
 
                             if (!overlay.classList.contains('active')) overlay.classList.add('active');
 
-                            clickedMenu.style.left = `${underlinePositions[clickedTabIndex]['position'] + menuOffsetLeft}px`;
                             underline.style.left = `${underlinePositions[clickedTabIndex]['position']}px`;
                             underline.style.width = `${underlinePositions[clickedTabIndex]['width']}px`;
 
@@ -114,7 +114,7 @@ export const moveBubble = function () {
 
             currentBtn.classList.remove('active');
             currentText.classList.remove('active');
-            currentMenu.classList.remove('active');
+            if (currentMenu) currentMenu.classList.remove('active');
             overlay.classList.remove('active');
 
             currentTabIndex = 0;
