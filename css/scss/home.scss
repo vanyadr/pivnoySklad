@@ -30,6 +30,22 @@
 }
 
 // Header
+.header:has(.header__burger-menu.opened) {
+    max-height: 100vh;
+    background: #fff;
+    overflow-y: auto;
+
+    .header__menu {
+        display: none;
+        height: 0;
+        width: 0;
+    }
+    .header__search {
+        display: none;
+        height: 0;
+        width: 0;
+    }
+}
 .header {
     position: fixed;
     top: 0;
@@ -43,11 +59,24 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 100%;
         position: relative;
+
+        @include tablet {
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        @include mobile {
+        }
     }
     &__logo {
         height: 2.3rem;
+
+        @include laptop {
+            height: 1.6rem;
+        }
+        @include tablet {
+            height: 2.1rem;
+        }
     }
     &__menu-element {
         background: rgba(0, 0, 0, 0.04);
@@ -56,10 +85,25 @@
         height: 2.8rem;
         display: flex;
         align-items: center;
+        
+        @include laptop {
+            height: 2.4rem;
+            padding: 0 .8rem;
+        }
+        @include tablet {
+            padding: 0 1.2rem;
+        }
     }
     &__menu {
         gap: 3rem;
         overflow: hidden;
+
+        @include laptop {
+            gap: 1rem;
+        }
+        @include tablet {
+            order: 2;
+        }
     }
     &__menu-bar {
         position: relative;
@@ -73,6 +117,10 @@
         align-items: center;
         gap: 2.4rem;
         @include centerItem();
+
+        @include laptop {
+            gap: 1rem;
+        }
     }
     &__menu-item a {
         font-weight: 600;
@@ -81,6 +129,10 @@
         color: #292522;
         transition-delay: .1s;
         transition: color .1s ease;
+
+        @include laptop {
+            font-size: .7rem;
+        }
     }
     &__menu-item a.active {
         color: #fff;
@@ -97,6 +149,24 @@
     &__search {
         padding-right: 2.8rem;
         position: relative;
+        max-width: 22.5rem;
+        flex-shrink: 1;
+
+        @include pc {
+            max-width: 9.5rem;
+        }
+        @include laptop {
+            max-width: 7rem;
+        }
+        @include tablet {
+            max-width: none;
+            flex-grow: 1;
+            order: 1;
+        }
+        @include mobile {
+            flex-basis: 100%;
+            order: 4;
+        }
     }
     &__search::after {
         content: '';
@@ -115,6 +185,11 @@
         color: #292522;
         background: none;
         border: none;
+        width: 100%;
+
+        @include laptop {
+            font-size: .7rem;
+        }
     }
     &__check {}
     &__btn {
@@ -124,6 +199,10 @@
         letter-spacing: -0.03em;
         color: #292522;
         @include centerItem();
+
+        @include laptop {
+            font-size: .7rem;
+        }
     }
     &__menu-drop-down {
         position: absolute;
@@ -134,6 +213,7 @@
         padding: 0;
         overflow: hidden;
         transition: left .3s ease, padding .3s ease, height .3s ease;
+        box-sizing: content-box;
     }
     &__menu-drop-down.active {
         padding: 1.6rem 1.2rem;
@@ -158,6 +238,52 @@
         letter-spacing: -0.03em;
         color: #fff;
     }
+    &__burger {
+        padding: 0.6rem;
+        height: fit-content;
+        order: 3;
+
+        path {
+            transition: transform .3s ease;
+            transform: translate(0) rotateZ(0deg);
+        }
+    }
+    &__burger.opened {
+        path {
+            transform-origin: center;
+        }
+        #header__burger-top-line {
+            transform: translate(3px, -1px) rotateZ(45deg);
+        }
+        #header__burger-bottom-line {
+            transform: translate(3px, 3px) rotateZ(-45deg);
+        }
+    }
+    &__burger-menu {
+        display: none;
+        flex-basis: 100%;
+        min-height: 100%;
+        order: 5;
+    }
+    &__burger-menu.opened {
+        display: block;
+
+        .accrodion-holder {
+            padding-top: 3rem;
+            padding-right: 0.6rem;
+        }
+        .header__mobile-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .header__mobile-item a {
+            font-weight: 600;
+            font-size: .7rem;
+            letter-spacing: -0.03em;
+            color: #292522;
+        }
+    }
 }
 .underline {
     position: absolute;
@@ -166,6 +292,18 @@
     transform: translateY(-50%);
     border-radius: 1.1rem;
     transition: width .3s ease, left .3s ease;
+}
+.header-pc {
+    @include tablet {
+        display: none;
+    }
+}
+.header-mobile {
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
 }
 .item-no-underline {
 }
