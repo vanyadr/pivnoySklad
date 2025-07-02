@@ -45,7 +45,8 @@ function calcPositions (btnsBar, btns, barPaddingLeft) {
 export const moveBubble = function () {
     const btnsBar = document.querySelector('.header__menu-list');
     const btns = document.querySelectorAll('.header__menu-item');
-    const infos = document.querySelectorAll('.header__menu-drop-down');
+    const menuHolder = document.querySelector('.header__menu-drop-down');
+    const infos = document.querySelectorAll('.header__drop-down-list');
     const underline = document.querySelector('.underline');
     const overlay = document.querySelector('.overlay');
     const remToPx = Number(getComputedStyle(document.querySelector('html')).fontSize.slice(0, -2));
@@ -60,6 +61,7 @@ export const moveBubble = function () {
         underline.style.left = `${underlinePositions[0]['position']}px`;
         underline.style.width = `${underlinePositions[0]['width']}px`;
         underline.style.height = `${barHeight - 0.5 * remToPx}px`;
+        menuHolder.style.left = `${underlinePositions[0]['position'] + menuOffsetLeft}px`;
         
         infos.forEach(
             function (info) {
@@ -77,8 +79,8 @@ export const moveBubble = function () {
                     function () {
                         if (!btn.classList.contains('active')) {
                             const clickedTabIndex = this.dataset.tabIndex;
-                            const clickedMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${clickedTabIndex}"]`);
-                            const currentMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${currentTabIndex}"]`);
+                            const clickedMenu = document.querySelector(`.header__drop-down-list[data-tab-index="${clickedTabIndex}"]`);
+                            const currentMenu = document.querySelector(`.header__drop-down-list[data-tab-index="${currentTabIndex}"]`);
                             const currentBtn = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]`);
                             const currentText = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]>a`);
                             
@@ -93,8 +95,10 @@ export const moveBubble = function () {
                             };
 
                             if (!overlay.classList.contains('active')) overlay.classList.add('active');
+                            if (!menuHolder.classList.contains('active')) menuHolder.classList.add('active');
 
-                            clickedMenu.style.left = `${underlinePositions[clickedTabIndex]['position'] + menuOffsetLeft}px`;
+                            menuHolder.style.left = `${underlinePositions[clickedTabIndex]['position'] + menuOffsetLeft}px`;
+                            menuHolder.style.height = `${clickedMenu.scrollHeight}px`;
                             underline.style.left = `${underlinePositions[clickedTabIndex]['position']}px`;
                             underline.style.width = `${underlinePositions[clickedTabIndex]['width']}px`;
 
@@ -105,17 +109,20 @@ export const moveBubble = function () {
             }
         );
         overlay.addEventListener('mouseover', () => {
-            const currentMenu = document.querySelector(`.header__menu-drop-down[data-tab-index="${currentTabIndex}"]`);
+            const currentMenu = document.querySelector(`.header__drop-down-list[data-tab-index="${currentTabIndex}"]`);
             const currentBtn = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]`);
             const currentText = document.querySelector(`.header__menu-item[data-tab-index="${currentTabIndex}"]>a`);
-
+            
             underline.style.left = `${underlinePositions[0]['position']}px`;
             underline.style.width = `${underlinePositions[0]['width']}px`;
+            menuHolder.style.left = `${underlinePositions[0]['position'] + menuOffsetLeft}px`;
+            menuHolder.style.height = 0;
 
             currentBtn.classList.remove('active');
             currentText.classList.remove('active');
             currentMenu.classList.remove('active');
             overlay.classList.remove('active');
+            menuHolder.classList.remove('active');
 
             currentTabIndex = 0;
         });

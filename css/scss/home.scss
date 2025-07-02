@@ -131,19 +131,26 @@
         left: 0;
         background: #1e5540;
         border-radius: 1.2rem;
-        padding: 1.6rem 1.2rem;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity .3s, visibility .3s;
+        padding: 0;
+        overflow: hidden;
+        transition: left .3s ease, padding .3s ease, height .3s ease;
     }
     &__menu-drop-down.active {
-        visibility: visible;
-        opacity: 1;
+        padding: 1.6rem 1.2rem;
     }
     &__drop-down-list {
         display: flex;
         flex-direction: column;
         gap: 1.2rem;
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+        transition: opacity .1s ease, visibility .1s ease;
+    }
+    &__drop-down-list.active {
+        visibility: visible;
+        opacity: 1;
+        height: auto;
     }
     &__drop-down-item a {
         font-weight: 600;
