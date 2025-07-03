@@ -66,6 +66,7 @@
             flex-wrap: wrap;
         }
         @include mobile {
+            row-gap: 0.6rem;
         }
     }
     &__logo {
@@ -76,6 +77,9 @@
         }
         @include tablet {
             height: 2.1rem;
+        }
+        @include mobile {
+            height: 1.5rem;
         }
     }
     &__menu-element {
@@ -92,6 +96,10 @@
         }
         @include tablet {
             padding: 0 1.2rem;
+        }
+        @include mobile {
+            padding: 0 .5rem;
+            height: 1.8rem;
         }
     }
     &__menu {
@@ -142,9 +150,17 @@
         justify-content: space-between;
         align-items: center;
         gap: 0.8rem;
+
+        @include mobile {
+            gap: 1rem;
+        }
     }
     &__menu-link {
         height: 1.1rem;
+
+        @include mobile {
+            height: 0.8rem;
+        }
     }
     &__search {
         padding-right: 2.8rem;
@@ -166,6 +182,8 @@
         @include mobile {
             flex-basis: 100%;
             order: 4;
+            padding-right: 1.8rem;
+            padding-left: 0.8rem;
         }
     }
     &__search::after {
@@ -177,6 +195,12 @@
         right: 0.8rem;
         transform: translateY(-50%);
         background:url(../images/search-icon.svg) no-repeat center / contain;
+        
+        @include mobile {
+            width: 0.8rem;
+            height: 0.8rem;
+            right: 0.5rem;
+        }
     }
     &__input {
         font-weight: 600;
@@ -190,8 +214,10 @@
         @include laptop {
             font-size: .7rem;
         }
+        @include mobile {
+            font-size: .6rem;
+        }
     }
-    &__check {}
     &__btn {
         height: 100%;
         font-weight: 600;
@@ -242,6 +268,12 @@
         padding: 0.6rem;
         height: fit-content;
         order: 3;
+
+        @include mobile {
+            padding: 0 0.5rem;
+            height: 1.8rem;
+            @include centerItem();
+        }
 
         path {
             transition: transform .3s ease;
@@ -305,12 +337,12 @@
         display: block;
     }
 }
-.item-no-underline {
-}
-.search {
-}
-.search-input {
+.header-mobile.header__burger {
+    display: none;
+
+    @include tablet {
+        display: flex;
+    }
 }
 
-.white-btn {
-}
+//First screen
