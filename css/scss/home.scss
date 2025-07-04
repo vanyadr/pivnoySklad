@@ -31,7 +31,7 @@
 
 // Header
 .header:has(.header__burger-menu.opened) {
-    max-height: 100vh;
+    height: 100vh;
     background: #fff;
     overflow-y: auto;
 
@@ -359,15 +359,45 @@
     position: relative;
     padding-top: 1.4rem;
 
+    @include pc {
+        padding-top: 0.5rem;
+    }
+    @include laptop {
+        padding-top: 1.2rem;
+    }
+    @include tablet {
+        padding-top: 0.2rem;
+    }
+    @include mobile {
+        padding-top: 1rem;
+    }
+
     &__title {
         font-family: "Impact", serif;
         font-weight: 400;
-        font-size: 230px;
+        font-size: 11.5rem;
         text-transform: uppercase;
         color: #f23c20;
         text-align: center;
         letter-spacing: 0;
         margin-bottom: 6rem;
+        
+        @include pc {
+            font-size: 10rem;
+            margin-bottom: 8rem;
+        }
+        @include laptop {
+            font-size: 7rem;
+            margin-bottom: 4rem;
+        }
+        @include tablet {
+            font-size: 5rem;
+            margin-bottom: -3rem;
+        }
+        @include mobile {
+            font-size: 2.1rem;
+            margin-bottom: 1rem;
+        }
     }
     &__pic {
         position: absolute;
@@ -375,8 +405,16 @@
         left: 0;
         width: 100%;
         height: 100%;
+        padding: 5rem 0 9rem;
         pointer-events: none;
         @include centerItem();
+
+        @include laptop {
+            padding-top: 3rem;
+        }
+        @include tablet {
+            display: none;
+        }
     }
     model-viewer {
         width: 100%;
@@ -386,17 +424,79 @@
     &__info {
         align-items: center;
         row-gap: 6rem;
+        
+        @include laptop {
+            row-gap: 4rem;
+        }
+        @include tablet {
+            row-gap: 3rem;
+            align-items: end;
+            position: relative;
+            z-index: 1;
+        }
+        @include mobile {
+            position: static;
+            row-gap: 2rem;
+            align-items: center;
+        }
+    }
+    &__img-holder {
+        display: none;
+        
+        @include tablet {
+            display: block;
+            grid-column: 4 / 6;
+        }
+        @include mobile {
+            order: -1;
+            grid-column: 1 / 2;
+        }
     }
     &__text {
         grid-column: 1 / 3;
         font-size: 1.2rem;
         padding-right: 1.8rem;
+        
+        @include pc {
+            grid-column: 1 / 4;
+            padding-right: 5rem;
+            font-size: 1rem;
+        }
+        @include laptop {
+            grid-column: 1 / 3;
+            padding-right: 0;
+            font-size: .8rem;
+        }
+        @include tablet {
+            grid-column: 1 / 4;
+            padding-right: 2rem;
+            font-size: .7rem;
+        }
+        @include mobile {
+            grid-column: 2 / -1;
+            padding-left: 1.3rem;
+            padding-right: 0;
+            font-size: .6rem;
+        }
     }
     &__button {
         grid-column: 7 / -1;
         justify-self: end;
+        
+        @include laptop {
+            grid-column: 6 / -1;
+        }
+        @include mobile {
+            grid-column: 1 / -1;
+            width: 100%;
+            order: 1;
+        }
     }
     &__categories {
         grid-column: 1 / -1;
     }
+}
+
+// News
+.news {
 }

@@ -8,4 +8,15 @@ window.addEventListener('load', () => {
     toggleAccordion();
     toggleBurgerMenu();
     rotateModel();
+
+    $('.bg-slider__container').slick({
+        dots: true,
+        infinite: true,
+        speed: 800,
+        dots: false,
+        prevArrow: '.bg-slider__btn-left',
+        nextArrow: '.bg-slider__btn-right',
+        slidesToShow: 2,
+        slidesToScroll: 1
+    });
 });

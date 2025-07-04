@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" defer></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script type="module" src="js/script.js" defer></script>
     <title>Document</title>
 </head>
@@ -164,11 +168,11 @@
     <div class="wrapper">
         <main class="main container">
             <section class="f-screen section">
-                <h1 class="f-screen__title h1">пивной  склад</h1>
+                <h1 class="f-screen__title h1">пивной склад</h1>
                 <div class="f-screen__pic">
                     <model-viewer 
                         id="beer-3d-model"
-                        src="models/Fail.glb" 
+                        src="models/can.glb" 
                         alt="Банка пива" 
                         camera-controls="false"
                         disable-tap
@@ -178,6 +182,9 @@
                 </div>
                 <div class="f-screen__info grid">
                     <p class="f-screen__text p">Ботлшоп интересного крафта, сидра, мидов и безалкогольных напитков</p>
+                    <div class="f-screen__img-holder">
+                        <img src="images/beer-can.png" alt="Банка пива">
+                    </div>
                     <a href="#" class="f-screen__button border-btn">
                         <p>Перейти в каталог</p>
                         <div>
@@ -209,6 +216,65 @@
                             </div>
                             <h4 class="category-title">Безалкогольные напитки</h4>
                         </a>
+                    </div>
+                </div>
+            </section>
+            <section class="news bg-slider">
+                <div class="bg-slider__header">
+                    <h2 class="bg-slider__title h2">Новинки</h2>
+                    <div class="bg-slider__btns">
+                        <button class="bg-slider__btn-left bg-slider__btn">
+                            <img src="images/arrow-left-white.svg" alt="Назад">
+                        </button>
+                        <button class="bg-slider__btn-right bg-slider__btn">
+                            <img src="images/arrow-right-white.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-slider__container">
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#"><h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4></a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#"><h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4></a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#"><h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4></a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#"><h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4></a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
