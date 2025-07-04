@@ -8,15 +8,19 @@ window.addEventListener('load', () => {
     toggleAccordion();
     toggleBurgerMenu();
     rotateModel();
-
+    
+    let slidesToShow = 2;
+    if (document.documentElement.clientWidth <= 768) {
+        slidesToShow = 1;
+    }
     $('.bg-slider__container').slick({
         dots: true,
         infinite: true,
-        speed: 800,
+        speed: 500,
         dots: false,
         prevArrow: '.bg-slider__btn-left',
         nextArrow: '.bg-slider__btn-right',
-        slidesToShow: 2,
+        slidesToShow: slidesToShow,
         slidesToScroll: 1
     });
 });
