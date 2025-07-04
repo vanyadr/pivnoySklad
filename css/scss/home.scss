@@ -54,6 +54,7 @@
     padding-top: 1rem;
     padding-bottom: 1rem;
     z-index: 2;
+    background: #fff;
 
     &__holder {
         display: flex;
@@ -80,6 +81,14 @@
         }
         @include mobile {
             height: 1.5rem;
+        }
+        
+        a {
+            width: fit-content;
+        }
+        
+        img {
+            width: auto;
         }
     }
     &__menu-element {
@@ -346,3 +355,48 @@
 }
 
 //First screen
+.f-screen {
+    position: relative;
+    padding-top: 1.4rem;
+
+    &__title {
+        font-family: "Impact", serif;
+        font-weight: 400;
+        font-size: 230px;
+        text-transform: uppercase;
+        color: #f23c20;
+        text-align: center;
+        letter-spacing: 0;
+        margin-bottom: 6rem;
+    }
+    &__pic {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        @include centerItem();
+    }
+    model-viewer {
+        width: 100%;
+        height: 100%;
+        --progress-bar-color: transparent;
+    }
+    &__info {
+        align-items: center;
+        row-gap: 6rem;
+    }
+    &__text {
+        grid-column: 1 / 3;
+        font-size: 1.2rem;
+        padding-right: 1.8rem;
+    }
+    &__button {
+        grid-column: 7 / -1;
+        justify-self: end;
+    }
+    &__categories {
+        grid-column: 1 / -1;
+    }
+}

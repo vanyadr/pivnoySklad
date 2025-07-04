@@ -22,6 +22,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   z-index: 2;
+  background: #fff;
 }
 .header__holder {
   display: flex;
@@ -57,6 +58,12 @@
   .header__logo {
     height: 1.5rem;
   }
+}
+.header__logo a {
+  width: fit-content;
+}
+.header__logo img {
+  width: auto;
 }
 .header__menu-element {
   background: rgba(0, 0, 0, 0.04);
@@ -351,6 +358,53 @@
   .header-mobile.header__burger {
     display: flex;
   }
+}
+
+.f-screen {
+  position: relative;
+  padding-top: 1.4rem;
+}
+.f-screen__title {
+  font-family: "Impact", serif;
+  font-weight: 400;
+  font-size: 230px;
+  text-transform: uppercase;
+  color: #f23c20;
+  text-align: center;
+  letter-spacing: 0;
+  margin-bottom: 6rem;
+}
+.f-screen__pic {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.f-screen model-viewer {
+  width: 100%;
+  height: 100%;
+  --progress-bar-color: transparent;
+}
+.f-screen__info {
+  align-items: center;
+  row-gap: 6rem;
+}
+.f-screen__text {
+  grid-column: 1/3;
+  font-size: 1.2rem;
+  padding-right: 1.8rem;
+}
+.f-screen__button {
+  grid-column: 7/-1;
+  justify-self: end;
+}
+.f-screen__categories {
+  grid-column: 1/-1;
 }
 
 /*# sourceMappingURL=home.css.map */

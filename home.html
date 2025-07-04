@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/home.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" defer></script>
     <script type="module" src="js/script.js" defer></script>
     <title>Document</title>
 </head>
@@ -161,7 +162,57 @@
     </header>
     <div class="overlay"></div>
     <div class="wrapper">
-        <main class="main container"></main>
+        <main class="main container">
+            <section class="f-screen section">
+                <h1 class="f-screen__title h1">пивной  склад</h1>
+                <div class="f-screen__pic">
+                    <model-viewer 
+                        id="beer-3d-model"
+                        src="models/Fail.glb" 
+                        alt="Банка пива" 
+                        camera-controls="false"
+                        disable-tap
+                        ar-status="not-presenting"
+                        interaction-prompt="none">
+                    </model-viewer>
+                </div>
+                <div class="f-screen__info grid">
+                    <p class="f-screen__text p">Ботлшоп интересного крафта, сидра, мидов и безалкогольных напитков</p>
+                    <a href="#" class="f-screen__button border-btn">
+                        <p>Перейти в каталог</p>
+                        <div>
+                            <img src="images/arrow-right-white.svg" alt="Перейти">
+                        </div>
+                    </a>
+                    <div class="f-screen__categories categories">
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/beer-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Пиво</h4>
+                        </a>
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/mid-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Сидры и медовухи</h4>
+                        </a>
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/non-alco-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Безалкогольное пиво</h4>
+                        </a>
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/limonade-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Безалкогольные напитки</h4>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 </body>
 </html>
