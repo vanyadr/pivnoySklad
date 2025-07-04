@@ -9,10 +9,7 @@ window.addEventListener('load', () => {
     toggleBurgerMenu();
     rotateModel();
     
-    let slidesToShow = 2;
-    if (document.documentElement.clientWidth <= 768) {
-        slidesToShow = 1;
-    }
+    let slidesToShow = (document.documentElement.clientWidth <= 768) ? 1 : 2;
     $('.bg-slider__container').slick({
         dots: true,
         infinite: true,

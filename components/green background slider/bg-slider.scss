@@ -1,0 +1,117 @@
+// Slick-Slider
+.slick-list.draggable {
+    width: 100%;
+}
+.slick-track {
+    margin: 0;
+}
+.slick-initialized .slick-slide {
+    display: flex;
+}
+
+// Slider with background
+.bg-slider {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        
+        @include mobile {
+            margin-bottom: 1.6rem;
+            align-items: center;
+        }
+    }
+    &__btns {
+        display: flex;
+        gap: 0.8rem;
+        height: 2.2rem;
+    }
+    &__btn {
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        padding: 0.5rem;
+        background: #1e5540;
+        border: none;
+        border-radius: 50%;
+    }
+    &__container {
+        display: flex;
+    }
+    &__inner {
+        margin: 0 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 1.6rem;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        
+        @include tablet {
+            border-radius: .8rem;
+        }
+        @include mobile {
+            margin: 0 0.1rem;
+        }
+    }
+    &__slide {
+        flex: 1 1 50%;
+        height: 13rem;
+
+        @include tablet {
+            height: 8rem;
+        }
+        @include mobile {
+            height: 6rem;
+        }
+    }
+    &__slide-info {
+        background: #1e5540;
+        flex: 1 1 0;
+        padding: 2.4rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        @include pc {
+            padding: 2.9rem 1.2rem;
+        }
+        @include tablet {
+            padding: 1rem;
+        }
+        @include mobile {
+            padding: .8rem;
+            gap: 0;
+        }
+    }
+    &__slide-title {
+        color: #fff;
+    }
+    &__slide-img {
+        flex-shrink: 0;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+
+        img {
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+// Button with background
+.bg-btn {
+    width: fit-content;
+    border-radius: 4.5rem;
+    padding: .6rem 1.5rem;
+    background: #fff;
+    font-family: Manrope, serif;
+    font-weight: 500;
+    font-size: .6rem;
+    
+    @include mobile {
+        padding: 0.5rem 1.2rem;
+        font-size: .5rem;
+    }
+}

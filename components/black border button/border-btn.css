@@ -1,0 +1,33 @@
+.border-btn {
+  display: flex;
+  gap: 0.8rem;
+  border: 1px solid #000;
+  border-radius: 4.5rem;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 11rem;
+  height: 2.2rem;
+  background: #fff;
+}
+.border-btn p {
+  padding: 0.6rem 0 0.6rem 1.5rem;
+  font-weight: 400;
+  font-size: 0.7rem;
+}
+@media (max-width: 768px) {
+  .border-btn p {
+    font-size: 0.6rem;
+  }
+}
+.border-btn div {
+  height: 100%;
+  aspect-ratio: 1/1;
+  background: #000;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+@media (max-width: 768px) {
+  .border-btn div {
+    padding: 0.7rem;
+  }
+}
