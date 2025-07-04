@@ -218,6 +218,7 @@ div {
 .wrapper {
   min-height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .overlay {
@@ -310,7 +311,11 @@ img {
   padding-top: 1rem;
   padding-bottom: 1rem;
   z-index: 2;
-  background: #fff;
+}
+@media (max-width: 768px) {
+  .header {
+    background: #fff;
+  }
 }
 .header__holder {
   display: flex;
@@ -354,7 +359,7 @@ img {
   width: auto;
 }
 .header__menu-element {
-  background: rgba(0, 0, 0, 0.04);
+  background: #F5F5F5;
   border-radius: 4.5rem;
   padding: 0 1.6rem;
   height: 2.8rem;

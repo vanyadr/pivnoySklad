@@ -75,12 +75,11 @@
         }
     }
     &__pic {
-        position: absolute;
+        position: absolute; //fixed
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        padding: 5rem 0 9rem;
         pointer-events: none;
         @include centerItem();
 
@@ -93,7 +92,8 @@
     }
     model-viewer {
         width: 100%;
-        height: 100%;
+        height: 20rem;
+        overflow: visible;
         --progress-bar-color: transparent;
     }
     &__info {
@@ -169,5 +169,52 @@
     }
     &__categories {
         grid-column: 1 / -1;
+    }
+}
+
+// About
+.about {
+    align-items: center;
+    &__text {
+        grid-column: 1 / 4;
+        padding: 12rem 0;
+        line-height: 1.5;
+        
+        @include laptop {
+            padding: 7rem 0;
+        }
+        @include tablet {
+            grid-column: 1 / 5;
+            padding: 5rem 0;
+        }
+        @include mobile {
+            grid-column: 1 / 4;
+            padding: 0;
+        }
+    }
+    &__img-tablet {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+
+        @include tablet {
+            display: block;
+            grid-column: 5 / -1;
+            height: 17.5rem;
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    &__img-mobile {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+
+        @include mobile {
+            display: block;
+            grid-column: 4 / -1;
+            height: 7rem;
+        }
     }
 }

@@ -189,6 +189,7 @@ div {
 .wrapper {
     min-height: 100%;
     width: 100%;
+    overflow: hidden;
 }
 .overlay {
     display: none;
@@ -264,7 +265,10 @@ img {
     padding-top: 1rem;
     padding-bottom: 1rem;
     z-index: 2;
-    background: #fff;
+
+    @include mobile {
+        background: #fff;
+    }
 
     &__holder {
         display: flex;
@@ -302,7 +306,7 @@ img {
         }
     }
     &__menu-element {
-        background: rgba(0, 0, 0, 0.04);
+        background: #F5F5F5;
         border-radius: 4.5rem;
         padding: 0 1.6rem;
         height: 2.8rem;

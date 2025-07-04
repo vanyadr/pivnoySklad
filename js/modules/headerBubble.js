@@ -17,7 +17,7 @@ function calcPositions (btnsBar, btns, barPaddingLeft) {
 
         positions.push(
             {
-                position: -(underlineWidth[0] + barPaddingLeft),
+                position: -(underlineWidth[0] + barPaddingLeft + 2),
                 width: underlineWidth[0]
             }
         );
