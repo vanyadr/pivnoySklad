@@ -221,20 +221,29 @@
     padding: 0;
   }
 }
-.about__img-tablet {
-  display: none;
+.about__img {
   overflow: hidden;
   width: 100%;
+  grid-column: 5/-1;
+  height: 30rem;
+}
+@media (max-width: 1800px) {
+  .about__img {
+    height: 25rem;
+  }
+}
+@media (max-width: 1400px) {
+  .about__img {
+    height: 20rem;
+  }
 }
 @media (max-width: 1024px) {
-  .about__img-tablet {
-    display: block;
-    grid-column: 5/-1;
+  .about__img {
     height: 17.5rem;
   }
 }
 @media (max-width: 768px) {
-  .about__img-tablet {
+  .about__img {
     display: none;
   }
 }

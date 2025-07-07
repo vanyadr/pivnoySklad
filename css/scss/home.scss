@@ -222,14 +222,19 @@
             padding: 0;
         }
     }
-    &__img-tablet {
-        display: none;
+    &__img {
         overflow: hidden;
         width: 100%;
+        grid-column: 5 / -1;
+        height: 30rem;
 
+        @include pc {
+            height: 25rem;
+        }
+        @include laptop {
+            height: 20rem;
+        }
         @include tablet {
-            display: block;
-            grid-column: 5 / -1;
             height: 17.5rem;
         }
         @include mobile {

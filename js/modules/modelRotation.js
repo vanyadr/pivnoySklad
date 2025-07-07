@@ -28,7 +28,7 @@ export const controlModel = function () {
         const loader = new THREE.GLTFLoader();
         let model;
         loader.load(
-            '../../models/can.glb',
+            '/models/can.glb',
             (gltf) => {
                 model = gltf.scene;
                 model.rotation.z = 0.4;
