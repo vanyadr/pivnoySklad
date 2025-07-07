@@ -190,9 +190,7 @@
             <section class="f-screen section">
                 <h1 class="f-screen__title h1">пивной склад</h1>
                 <div class="f-screen__pic">
-                    <!-- <model-viewer id="beer-3d-model" src="models/can-2.glb" alt="Банка пива" camera-controls="false"
-                        disable-tap ar-status="not-presenting" interaction-prompt="none">
-                    </model-viewer> -->
+                    <!-- <model-viewer id="beer-3d-model" src="models/can-2.glb" alt="Банка пива" camera-controls="false" disable-tap ar-status="not-presenting" interaction-prompt="none"></model-viewer> -->
                 </div>
                 <div class="f-screen__info grid">
                     <p class="f-screen__text p">Ботлшоп интересного крафта, сидра, мидов и безалкогольных напитков</p>
@@ -310,6 +308,564 @@
                 </div>
                 <div class="about__img-mobile">
                     <img src="images/can-0deg.png" alt="Банка пива">
+                </div>
+            </section>
+            <section class="leaders border-slider section">
+                <div class="border-slider__header">
+                    <h2 class="border-slider__title h2">Лидеры продаж</h2>
+                    <div class="border-slider__btns">
+                        <button class="border-slider__btn-left border-slider__btn leaders">
+                            <img src="images/arrow-left-white.svg" alt="Назад">
+                        </button>
+                        <button class="border-slider__btn-right border-slider__btn leaders">
+                            <img src="images/arrow-right-white.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+                <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="clip-path">
+                        <path d="M24 0.25H276C289.117 0.25 299.75 10.8832 299.75 24V216C299.75 229.117 289.117 239.75 276 239.75H268.277C254.884 239.75 244.027 250.607 244.027 264V276C244.027 289.117 233.394 299.75 220.277 299.75H24C10.8832 299.75 0.25 289.117 0.25 276V24C0.25 10.8832 10.8832 0.25 24 0.25Z" stroke="#1E5540" stroke-width="1" />
+                    </clipPath>
+                </svg>
+                <svg viewBox="0 0 100% 100%" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="clip-path-mobile">
+                         <path d="M32 0.5H168C185.397 0.500003 199.5 14.603 199.5 32V89.9531C199.5 107.35 185.397 121.453 168 121.453H152.883C134.934 121.453 120.383 136.004 120.383 153.953V168C120.383 185.397 106.28 199.5 88.8828 199.5H32C14.603 199.5 0.5 185.397 0.5 168V32L0.510742 31.1865C0.94222 14.1655 14.875 0.500001 32 0.5Z" stroke="#1E5540" />
+                    </clipPath>
+                </svg>
+                <div class="border-slider__container leaders">
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sales border-slider section">
+                <div class="border-slider__header">
+                    <h2 class="border-slider__title h2">Товары со скидками</h2>
+                    <div class="border-slider__btns">
+                        <button class="border-slider__btn-left border-slider__btn sales">
+                            <img src="images/arrow-left-white.svg" alt="Назад">
+                        </button>
+                        <button class="border-slider__btn-right border-slider__btn sales">
+                            <img src="images/arrow-right-white.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+                <div class="border-slider__container sales">
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>

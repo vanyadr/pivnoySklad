@@ -260,4 +260,10 @@
   }
 }
 
+.leaders svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
 /*# sourceMappingURL=home.css.map */
