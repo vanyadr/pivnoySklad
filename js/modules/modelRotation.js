@@ -7,9 +7,9 @@ export const controlModel = function () {
     let animationId;
     let model;
 
-    function startScene() {
+    function startScene(cameraPos, rotationZ) {
 
-        camera.position.set(-0.7, 3, 5);
+        camera.position.set(cameraPos[0], cameraPos[1], cameraPos[2]);
         camera.lookAt(-0.7, 0, -8);
         renderer.setSize(container.clientWidth, container.clientHeight);
         container.appendChild(renderer.domElement);
@@ -46,7 +46,8 @@ export const controlModel = function () {
             'models/can-compressed.glb',
             (gltf) => {
                 model = gltf.scene;
-                model.rotation.z = 0.4;
+                model.rotation.set(0, 0, 0);
+                model.rotation.z = rotationZ;
                 pivot.add(model);
                 pivot.position.set(0, 0, 0);
             },
@@ -78,10 +79,27 @@ export const controlModel = function () {
         scene.clear();
     }
 
-    startScene();
+    scroll = window.scrollY;
+    console.log(scroll);
+    const windowHeight = window.innerHeight;
+
+    if (scroll < 300) {
+        startScene([-0.7, 3, 5], 0.4);
+    } else if (scroll >=300 && scroll < windowHeight) {
+        startScene([-0.7, 2, 4], -0.5);
+    } else if (scroll >= windowHeight) {
+        startScene([-0.7, 2, 4], -0.5);
+    }
 
     container.addEventListener('animationend', () => {
-        container.classList.add('position1');
+        if (scroll < 300) {
+            container.classList.add('position1');
+        } else if (scroll >=300 && scroll < windowHeight) {
+            container.classList.add('position2');
+        } else if (scroll >= windowHeight) {
+            container.classList.add('position3');
+            container.style.top = `${document.querySelector('.about').offsetTop}px`;
+        }
         container.style.opacity = 1;
     });
 
@@ -100,8 +118,9 @@ export const controlModel = function () {
     // });
 
     let isPos1 = true,
-        isPos2 = true,
-        isPos3 = true;
+        isPos2 = false,
+        isPos3 = false;
+        const disableScrollPosition = document.querySelector('.about').offsetTop + document.querySelector('.about').clientHeight + 500;
 
     window.addEventListener('scroll', () => {
 
@@ -134,25 +153,38 @@ export const controlModel = function () {
                     if (className.includes('position')) container.classList.remove(className);
                 });
                 container.classList.add('position2');
+                isPos2 = true;
             }
 
-        } else if (scroll >= windowHeight) {
+        } else if (scroll >= windowHeight && scroll < disableScrollPosition) {
 
             isPos1 = false;
             isPos2 = false;
-            if (!isPos3) {
-                classlist.forEach(className => {
-                    if (className.includes('position')) container.classList.remove(className);
-                });
-                container.style.top = `${document.querySelector('.about').offsetTop}px`;
-                container.classList.add('position3');
+            if (!sceneActive) {
+                sceneActive = true;
                 isPos3 = true;
-                model.rotation.set(0, 0, 0);
-                model.rotation.z = -0.5;
-                camera.position.set(-0.7, 2, 4);
-                camera.updateProjectionMatrix();
+                startScene([-0.7, 2, 4], -0.5);
+            } else {
+                if (!isPos3) {
+                    classlist.forEach(className => {
+                        if (className.includes('position')) container.classList.remove(className);
+                    });
+                    container.style.top = `${document.querySelector('.about').offsetTop}px`;
+                    container.classList.add('position3');
+                    isPos3 = true;
+                    model.rotation.set(0, 0, 0);
+                    model.rotation.z = -0.5;
+                    camera.position.set(-0.7, 2, 4);
+                    camera.updateProjectionMatrix();
+                };
             };
 
+        } else if (scroll >= disableScrollPosition && sceneActive) {
+            stopScene();
+            sceneActive = false;
+            isPos1 = false;
+            isPos2 = false;
+            isPos3 = false;
         }
     });
 };

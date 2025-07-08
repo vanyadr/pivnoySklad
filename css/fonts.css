@@ -50,6 +50,16 @@
 }
 @font-face {
   font-family: "Open Sans";
+  font-weight: 500;
+  font-style: normal;
+  src: local("Open Sans"),
+       url("../fonts/OpenSans-Medium.woff2") format('woff2'),
+       url("../fonts/OpenSans-Medium.woff") format('woff'),
+       url("../fonts/OpenSans-Medium.eot") format('eot');
+  font-display: swap;
+}
+@font-face {
+  font-family: "Open Sans";
   font-weight: 600;
   font-style: normal;
   src: local("Open Sans"),

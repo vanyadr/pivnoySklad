@@ -57,7 +57,7 @@ body {
 h1,
 .h1 {
     position: relative;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.8rem;
     letter-spacing: -0.03em;
     
@@ -71,7 +71,7 @@ h1,
 h2,
 .h2 {
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1.2rem;
     letter-spacing: -0.03em;
     
@@ -82,7 +82,7 @@ h2,
 h3,
 .h3 {
     position: relative;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.2rem;
     
     @include laptop {
@@ -95,7 +95,7 @@ h3,
 h4,
 .h4 {
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     font-size: .8rem;
     
     @include laptop {
@@ -111,7 +111,7 @@ h4,
 h5,
 .h5 {
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     font-size: .8rem;
     
     @include laptop {
@@ -127,7 +127,7 @@ h5,
 h6,
 .h6 {
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     font-size: .8rem;
 
     @include tablet {
@@ -139,7 +139,7 @@ h6,
 }
 p, li, a, span {
     position: relative;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 1rem;
     line-height: 1.5;
     letter-spacing: -.03em;
@@ -204,6 +204,7 @@ main.main {
     min-height: 100%;
     width: 100%;
     padding-top: 4.8rem;
+    overflow: hidden;
 
     @include laptop {
         padding-top: 4.4rem;
