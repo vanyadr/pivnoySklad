@@ -57,13 +57,14 @@ export const controlModel = function () {
         );
 
         function animate() {
-            if (!sceneActive) return;
-            animationId = requestAnimationFrame(animate);
-            if (model) model.rotateOnAxis(tiltAxis, 0.01)
-            renderer.render(scene, camera);
+            if (sceneActive) {
+                animationId = requestAnimationFrame(animate);
+                if (model) model.rotateOnAxis(tiltAxis, 0.01)
+                renderer.render(scene, camera);
+            };
         }
         animate();
-
+        
         window.addEventListener('resize', () => {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
@@ -84,6 +85,8 @@ export const controlModel = function () {
         container.style.opacity = 1;
     });
 
+    //На случай, если из-за анимаций будут лаги - закомментировать код ниже и откомментировать этот
+
     // const disableScrollPosition = window.innerHeight * 1.5;
     // window.addEventListener('scroll', () => {
     //     const currentScroll = window.scrollY || window.pageYOffset;
@@ -97,6 +100,7 @@ export const controlModel = function () {
     // });
 
     let isPos1 = true,
+        isPos2 = true,
         isPos3 = true;
 
     window.addEventListener('scroll', () => {
@@ -107,13 +111,14 @@ export const controlModel = function () {
         
         if (scroll < 300) {
 
-            classlist.forEach(className => {
-                if (className.includes('position')) container.classList.remove(className);
-            });
+            isPos2 = false;
             isPos3 = false;
-            container.style.top = '0px';
-            container.classList.add('position1');
             if (!isPos1) {
+                classlist.forEach(className => {
+                    if (className.includes('position')) container.classList.remove(className);
+                });
+                container.style.top = '0px';
+                container.classList.add('position1');
                 isPos1 = true;
                 model.rotation.set(0, 0, 0);
                 model.rotation.z = 0.4;
@@ -121,27 +126,33 @@ export const controlModel = function () {
                 camera.updateProjectionMatrix();
             };
         } else if (scroll >=300 && scroll < windowHeight) {
-
-            classlist.forEach(className => {
-                if (className.includes('position')) container.classList.remove(className);
-            });
-            container.classList.add('position2');
+            
+            isPos1 = false;
+            isPos3 = false;
+            if (!isPos2) {
+                classlist.forEach(className => {
+                    if (className.includes('position')) container.classList.remove(className);
+                });
+                container.classList.add('position2');
+            }
 
         } else if (scroll >= windowHeight) {
 
-            classlist.forEach(className => {
-                if (className.includes('position')) container.classList.remove(className);
-            });
             isPos1 = false;
-            container.style.top = `${document.querySelector('.about').offsetTop}px`;
-            container.classList.add('position3');
+            isPos2 = false;
             if (!isPos3) {
+                classlist.forEach(className => {
+                    if (className.includes('position')) container.classList.remove(className);
+                });
+                container.style.top = `${document.querySelector('.about').offsetTop}px`;
+                container.classList.add('position3');
                 isPos3 = true;
                 model.rotation.set(0, 0, 0);
                 model.rotation.z = -0.5;
                 camera.position.set(-0.7, 2, 4);
                 camera.updateProjectionMatrix();
             };
+
         }
     });
 };

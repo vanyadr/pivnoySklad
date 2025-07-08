@@ -85,7 +85,7 @@
         @include centerItem();
         padding-bottom: 15rem;
         opacity: 0;
-        transition: transform .5s cubic-bezier(.68,-0.01,.32,.99);
+        transition: transform 1s cubic-bezier(.68,-0.01,.32,.99);
         animation: canPreload 0.5s ease-out 2s;
         
         @include laptop {
