@@ -905,18 +905,39 @@ img {
             clip-path: url(#clip-path-mobile);
         }
     }
-    &__picture-block::after {
-        content: '';
-        background: url(../images/card-border.svg) no-repeat center / 100% 100%;
-        width: 100%;
-        height: 100%;
+    // &__picture-block::after {
+    //     content: '';
+    //     background: url(../images/card-border.svg) no-repeat center / 100% 100%;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     pointer-events: none;
+        
+    //     @include tablet {
+    //         background: url(../images/card-border-mobile.svg) no-repeat center / 100% 100%;
+    //     }
+    // }
+    &__border {
         position: absolute;
         top: 0;
         left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
         pointer-events: none;
-        
+    }
+    &__border--pc {
         @include tablet {
-            background: url(../images/card-border-mobile.svg) no-repeat center / 100% 100%;
+            display: none;
+        }
+    }
+    &__border--mobile {
+        display: none;
+
+        @include tablet {
+            display: block;
         }
     }
     &__like {
