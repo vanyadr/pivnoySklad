@@ -26,9 +26,13 @@ export const controlModel = function () {
         scene.add(pivot);
 
         const loader = new THREE.GLTFLoader();
+        const dracoLoader = new THREE.DRACOLoader();
+        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
+        loader.setDRACOLoader(dracoLoader);
+
         let model;
         loader.load(
-            'models/can.glb',
+            'models/can-compressed.glb',
             (gltf) => {
                 model = gltf.scene;
                 model.rotation.z = 0.4;

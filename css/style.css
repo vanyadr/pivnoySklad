@@ -1045,6 +1045,8 @@ img {
   .beer-card__like {
     height: 1.4rem;
     width: 1.4rem;
+    top: 0.6rem;
+    right: 0.6rem;
   }
 }
 .beer-card__to-cart {
