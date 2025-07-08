@@ -68,11 +68,12 @@
   align-items: center;
   padding-bottom: 15rem;
   opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.68, -0.01, 0.32, 0.99);
   animation: canPreload 0.5s ease-out 2s;
 }
 @media (max-width: 1400px) {
   .f-screen__pic {
-    padding-top: 3rem;
+    animation: canPreloadLaptop 0.5s ease-out 2s;
   }
 }
 @media (max-width: 1024px) {
@@ -90,10 +91,33 @@
     padding-bottom: 8rem;
   }
 }
+@keyframes canPreloadLaptop {
+  from {
+    opacity: 0;
+    padding-bottom: 16rem;
+  }
+  to {
+    opacity: 1;
+    padding-bottom: 9rem;
+  }
+}
 .f-screen__pic.hide {
   display: none;
 }
 .f-screen__pic.position1 {
+  transform: translate(0, 0);
+  padding-bottom: 8rem;
+}
+@media (max-width: 1400px) {
+  .f-screen__pic.position1 {
+    padding-bottom: 9rem;
+  }
+}
+.f-screen__pic.position2 {
+  transform: translate(80%, 0);
+  padding-bottom: 8rem;
+}
+.f-screen__pic.position3 {
   transform: translate(0, 0);
   padding-bottom: 8rem;
 }
@@ -222,23 +246,14 @@
   }
 }
 .about__img {
+  display: none;
   overflow: hidden;
   width: 100%;
   grid-column: 5/-1;
-  height: 30rem;
-}
-@media (max-width: 1800px) {
-  .about__img {
-    height: 25rem;
-  }
-}
-@media (max-width: 1400px) {
-  .about__img {
-    height: 20rem;
-  }
 }
 @media (max-width: 1024px) {
   .about__img {
+    display: block;
     height: 17.5rem;
   }
 }

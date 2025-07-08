@@ -5,6 +5,7 @@ export const controlModel = function () {
     const container = document.querySelector('.f-screen__pic');
     let sceneActive = true;
     let animationId;
+    let model;
 
     function startScene() {
 
@@ -20,11 +21,6 @@ export const controlModel = function () {
         sunLight1.position.set(0, 100, 100);
         sunLight1.target.position.set(0, -100, -100);
         scene.add(sunLight1);
-
-        // const sunLight2 = new THREE.DirectionalLight(0xffffff, 0.05);
-        // sunLight2.position.set(-15, -15, -15);
-        // sunLight2.target.position.set(-15, -15, -15);
-        // scene.add(sunLight2);
 
         THREE.RectAreaLightUniformsLib.init();
         const areaLight1 = new THREE.RectAreaLight(0xffffff, 1, 10, 15);
@@ -46,7 +42,6 @@ export const controlModel = function () {
         dracoLoader.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
         loader.setDRACOLoader(dracoLoader);
 
-        let model;
         loader.load(
             'models/can-compressed.glb',
             (gltf) => {
@@ -89,111 +84,64 @@ export const controlModel = function () {
         container.style.opacity = 1;
     });
 
-    const disableScrollPosition = window.innerHeight * 1.5;
+    // const disableScrollPosition = window.innerHeight * 1.5;
+    // window.addEventListener('scroll', () => {
+    //     const currentScroll = window.scrollY || window.pageYOffset;
+    //     if (currentScroll >= disableScrollPosition && sceneActive) {
+    //         stopScene();
+    //         sceneActive = false;
+    //     } else if (currentScroll < disableScrollPosition && !sceneActive) {
+    //         sceneActive = true;
+    //         startScene();
+    //     }
+    // });
+
+    let isPos1 = true,
+        isPos3 = true;
+
     window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY || window.pageYOffset;
-        if (currentScroll >= disableScrollPosition && sceneActive) {
-            stopScene();
-            sceneActive = false;
-        } else if (currentScroll < disableScrollPosition && !sceneActive) {
-            sceneActive = true;
-            startScene();
+
+        scroll = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const classlist = Array.from(container.classList);
+        
+        if (scroll < 300) {
+
+            classlist.forEach(className => {
+                if (className.includes('position')) container.classList.remove(className);
+            });
+            isPos3 = false;
+            container.style.top = '0px';
+            container.classList.add('position1');
+            if (!isPos1) {
+                isPos1 = true;
+                model.rotation.set(0, 0, 0);
+                model.rotation.z = 0.4;
+                camera.position.set(-0.7, 3, 5);
+                camera.updateProjectionMatrix();
+            };
+        } else if (scroll >=300 && scroll < windowHeight) {
+
+            classlist.forEach(className => {
+                if (className.includes('position')) container.classList.remove(className);
+            });
+            container.classList.add('position2');
+
+        } else if (scroll >= windowHeight) {
+
+            classlist.forEach(className => {
+                if (className.includes('position')) container.classList.remove(className);
+            });
+            isPos1 = false;
+            container.style.top = `${document.querySelector('.about').offsetTop}px`;
+            container.classList.add('position3');
+            if (!isPos3) {
+                isPos3 = true;
+                model.rotation.set(0, 0, 0);
+                model.rotation.z = -0.5;
+                camera.position.set(-0.7, 2, 4);
+                camera.updateProjectionMatrix();
+            };
         }
     });
-
-    // window.addEventListener('scroll', () => {
-    //     const rect = container.getBoundingClientRect();
-    //     if (rect.bottom >= 0 && container.classList.contains('hide')) {
-    //         container.classList.remove('hide');
-    //     } else {
-    //         if (rect.bottom < 0 && !container.classList.contains('hide')) container.classList.add('hide');
-    //     }
-    // });
-
-    // window.addEventListener('scroll', () => {
-    //     const rect = container.getBoundingClientRect();
-    //     if (rect.bottom >= 0 && container.classList.contains('hide')) {
-    //         container.classList.remove('hide');
-    //     } else if (rect.bottom < 0 && !container.classList.contains('hide')) {
-    //         container.classList.add('hide');
-    //     }
-
-        // scroll = window.scrollY;
-        // const windowHeight = window.innerHeight;
-        // const classlist = Array.from(container.classList);
-        
-        // if (scroll < 300) {
-
-        //     classlist.forEach(className => {
-        //         if (className.includes('position')) container.classList.remove(className);
-        //     });
-        //     container.style.top = '0px';
-        //     container.classList.add('position1');
-        //     // model.rotation.z = 0.4;
-        //     // camera.position.set(-0.7, 3, 5);
-        //     // renderer.render(scene, camera);
-
-        // } else if (scroll >=300 && scroll < windowHeight) {
-
-        //     classlist.forEach(className => {
-        //         if (className.includes('position')) container.classList.remove(className);
-        //     });
-        //     container.classList.add('position2');
-
-        // } else if (scroll >= windowHeight) {
-
-        //     classlist.forEach(className => {
-        //         if (className.includes('position')) container.classList.remove(className);
-        //     });
-        //     container.style.top = `${document.querySelector('.about').offsetTop}px`;
-        //     container.classList.add('position3');
-        //     // model.rotation.z = -0.5;
-        //     // camera.position.set(-0.7, 3, 4);
-        //     // renderer.render(scene, camera);
-
-        // }
-    // });
-
-
-    // const model = document.querySelector('#beer-3d-model');
-
-    
-    // let targetRotation = 0;
-    // let currentRotation = -90;
-    // model.orientation = `0deg 23.82deg ${currentRotation}deg`;
-    // model.cameraOrbit = `0 90deg 10m`;
-    
-
-    // let timerId = setInterval(() => {
-    //     rotation -= 180;
-    //     targetRotation = rotation;
-    // }, 2000);
-
-    // function animate(targetRotation) {
-    //     // while (currentRotation < targetRotation) {
-    //         // currentRotation += (targetRotation - currentRotation) * 0.1;
-    //         currentRotation = targetRotation;
-    //         model.orientation = `0deg 23.82deg ${currentRotation}deg`;
-    //     //     requestAnimationFrame(animate);
-    //     // };
-    // };
-    
-    // window.addEventListener('scroll', () => {
-    //     const scrollY = window.scrollY;
-    //     if (scrollY > 200) {
-    //         targetRotation = -270;
-    //     } else if (scrollY > 1000) {
-    //         targetRotation = -90;
-    //     };
-    //     animate(targetRotation);
-
-    //     // model.orientation = `0deg 23.82deg ${-90 - scrollY * 0.002}rad`;
-    //     // model.cameraOrbit = `0deg 90deg ${10 - scrollY * 0.003}m`;
-    // });
-
-    // window.addEventListener('scroll', () => {
-    //     const scrollY = window.scrollY;
-    //     model.orientation = `0deg 23.82deg ${-90 - scrollY * 0.002}rad`;
-    //     model.cameraOrbit = `0deg 90deg ${10 - scrollY * 0.003}m`;
-    // });
 };
