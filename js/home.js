@@ -8,7 +8,7 @@ window.addEventListener('load', () => {
     moveBubble();
     toggleAccordion();
     toggleBurgerMenu();
-    // controlModel();
+    controlModel();
     
     let slidesToShowNews = (document.documentElement.clientWidth <= 768) ? 1 : 2,
         slidesToShowLeaders = 5;
