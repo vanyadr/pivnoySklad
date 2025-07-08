@@ -16,10 +16,26 @@ export const controlModel = function () {
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
         scene.add(ambientLight);
 
-        const sunLight = new THREE.DirectionalLight(0xffffff, 15);
-        sunLight.position.set(0, 100, 100);
-        sunLight.target.position.set(0, -100, -100);
-        scene.add(sunLight);
+        const sunLight1 = new THREE.DirectionalLight(0xffffff, 10);
+        sunLight1.position.set(0, 100, 100);
+        sunLight1.target.position.set(0, -100, -100);
+        scene.add(sunLight1);
+
+        // const sunLight2 = new THREE.DirectionalLight(0xffffff, 0.05);
+        // sunLight2.position.set(-15, -15, -15);
+        // sunLight2.target.position.set(-15, -15, -15);
+        // scene.add(sunLight2);
+
+        THREE.RectAreaLightUniformsLib.init();
+        const areaLight1 = new THREE.RectAreaLight(0xffffff, 1, 10, 15);
+        areaLight1.position.set(15, 1, -7);
+        areaLight1.rotation.y = 90;
+        scene.add(areaLight1);
+
+        const areaLight2 = new THREE.RectAreaLight(0xffffff, 1, 10, 15);
+        areaLight2.position.set(-10, -10, 0);
+        areaLight2.rotation.y = -90;
+        scene.add(areaLight2);
 
         const pivot = new THREE.Group();
         const tiltAxis = new THREE.Vector3( 0, 4, 0 ).normalize();
@@ -73,7 +89,7 @@ export const controlModel = function () {
         container.style.opacity = 1;
     });
 
-    const disableScrollPosition = window.innerHeight;
+    const disableScrollPosition = window.innerHeight * 1.5;
     window.addEventListener('scroll', () => {
         const currentScroll = window.scrollY || window.pageYOffset;
         if (currentScroll >= disableScrollPosition && sceneActive) {
