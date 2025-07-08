@@ -86,10 +86,10 @@
         padding-bottom: 15rem;
         opacity: 0;
         transition: transform 1s cubic-bezier(.68,-0.01,.32,.99), padding 1s cubic-bezier(.68,-0.01,.32,.99);
-        animation: canPreload 0.5s ease-out 2s;
+        animation: canPreload 0.5s ease-out 3s;
         
         @include laptop {
-            animation: canPreloadLaptop 0.5s ease-out 2s;
+            animation: canPreloadLaptop 0.5s ease-out 3s;
         }
         @include tablet {
             display: none;
@@ -267,8 +267,104 @@
     }
 }
 
+//Leaders block
 .leaders>svg {
     position: absolute;
     width: 0;
     height: 0;
+}
+
+//FAQ
+.faq {
+
+    &__img {
+        grid-column: 1 / 4;
+        padding-right: 2rem;
+        
+        @include pc {
+            padding: 0 2rem;
+            padding-right: 4rem;
+        }
+
+        .faq__img-pc {
+            @include pc {
+                display: none;
+            }
+        }
+        .faq__img-laptop {
+            display: none;
+            
+            @include pc {
+                display: block;
+            }
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+    &__accordion {
+        grid-column: 4 / -1;
+        padding-left: 4rem;
+
+        @include tablet {
+            grid-column: 1 / -1;
+            padding-left: 0;
+        }
+    }
+    .accrodion-holder {
+        border-top: 1px solid #1E1E1E;
+    }
+    .accrodion-item {
+        padding: 1rem;
+        border-bottom: 1px solid #1E1E1E;
+        transition: background-color .3s ease;
+
+        @include mobile {
+            padding: 0.5rem;
+        }
+    }
+    .accrodion-item:has(.accordion-content.opened) {
+        background: #1e5540;
+        border-bottom: 1px solid #f9f9f9;
+
+        p {
+            color: #f9f9f9;
+        }
+        path {
+            stroke: #f9f9f9;
+        }
+    }
+    .accordion-header {
+    }
+    .accordion-title {
+        @include pc {
+            font-size: 1rem;
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
+    }
+    .accordion-bullet {
+    }
+    .accordion-content {
+        margin-bottom: 0;
+        padding: 0;
+        
+        p {
+            font-weight: 400;
+            font-size: .8rem;
+            line-height: 150%;
+
+            @include laptop {
+                font-size: .7rem;
+            }
+            @include mobile {
+                font-size: .5rem;
+            }
+        }
+    }
 }

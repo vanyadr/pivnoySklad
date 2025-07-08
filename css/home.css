@@ -69,11 +69,11 @@
   padding-bottom: 15rem;
   opacity: 0;
   transition: transform 1s cubic-bezier(0.68, -0.01, 0.32, 0.99), padding 1s cubic-bezier(0.68, -0.01, 0.32, 0.99);
-  animation: canPreload 0.5s ease-out 2s;
+  animation: canPreload 0.5s ease-out 3s;
 }
 @media (max-width: 1400px) {
   .f-screen__pic {
-    animation: canPreloadLaptop 0.5s ease-out 2s;
+    animation: canPreloadLaptop 0.5s ease-out 3s;
   }
 }
 @media (max-width: 1024px) {
@@ -284,6 +284,102 @@
   position: absolute;
   width: 0;
   height: 0;
+}
+
+.faq__img {
+  grid-column: 1/4;
+  padding-right: 2rem;
+}
+@media (max-width: 1800px) {
+  .faq__img {
+    padding: 0 2rem;
+    padding-right: 4rem;
+  }
+}
+@media (max-width: 1800px) {
+  .faq__img .faq__img-pc {
+    display: none;
+  }
+}
+.faq__img .faq__img-laptop {
+  display: none;
+}
+@media (max-width: 1800px) {
+  .faq__img .faq__img-laptop {
+    display: block;
+  }
+}
+@media (max-width: 1024px) {
+  .faq__img {
+    display: none;
+  }
+}
+.faq__accordion {
+  grid-column: 4/-1;
+  padding-left: 4rem;
+}
+@media (max-width: 1024px) {
+  .faq__accordion {
+    grid-column: 1/-1;
+    padding-left: 0;
+  }
+}
+.faq .accrodion-holder {
+  border-top: 1px solid #1E1E1E;
+}
+.faq .accrodion-item {
+  padding: 1rem;
+  border-bottom: 1px solid #1E1E1E;
+  transition: background-color 0.3s ease;
+}
+@media (max-width: 768px) {
+  .faq .accrodion-item {
+    padding: 0.5rem;
+  }
+}
+.faq .accrodion-item:has(.accordion-content.opened) {
+  background: #1e5540;
+  border-bottom: 1px solid #f9f9f9;
+}
+.faq .accrodion-item:has(.accordion-content.opened) p {
+  color: #f9f9f9;
+}
+.faq .accrodion-item:has(.accordion-content.opened) path {
+  stroke: #f9f9f9;
+}
+@media (max-width: 1800px) {
+  .faq .accordion-title {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1400px) {
+  .faq .accordion-title {
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .faq .accordion-title {
+    font-size: 0.6rem;
+  }
+}
+.faq .accordion-content {
+  margin-bottom: 0;
+  padding: 0;
+}
+.faq .accordion-content p {
+  font-weight: 400;
+  font-size: 0.8rem;
+  line-height: 150%;
+}
+@media (max-width: 1400px) {
+  .faq .accordion-content p {
+    font-size: 0.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .faq .accordion-content p {
+    font-size: 0.5rem;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */
