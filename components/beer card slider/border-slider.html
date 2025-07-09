@@ -1,0 +1,78 @@
+<!--Требуемые скрипты и стили-->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<section class="border-slider"><!--Если одинаковых слайдеров несколько, добавить класс секции, в которой слайдер лежит-->
+    <!--Начало шапки и элементов управления-->
+    <div class="border-slider__header">
+        <h2 class="border-slider__title h2">Лидеры продаж</h2><!--Заголовок слайдера-->
+        <div class="border-slider__btns">
+            <button class="border-slider__btn-left border-slider__btn"><!--Если одинаковых слайдеров несколько, добавить класс секции, в которой слайдер лежит-->
+                <img src="images/arrow-left-white.svg" alt="Назад">
+            </button>
+            <button class="border-slider__btn-right border-slider__btn"><!--Если одинаковых слайдеров несколько, добавить класс секции, в которой слайдер лежит-->
+                <img src="images/arrow-right-white.svg" alt="Вперед">
+            </button>
+        </div>
+    </div>
+    <!--Конец шапки и элементов управления-->
+    <!--SVG ClipPath для обрезки фото. У них заданы id, поэтому достаточно указать один раз на странице, даже если слайдеров несколько-->
+    <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="clip-path">
+            <path d="M24 0.25H276C289.117 0.25 299.75 10.8832 299.75 24V216C299.75 229.117 289.117 239.75 276 239.75H268.277C254.884 239.75 244.027 250.607 244.027 264V276C244.027 289.117 233.394 299.75 220.277 299.75H24C10.8832 299.75 0.25 289.117 0.25 276V24C0.25 10.8832 10.8832 0.25 24 0.25Z" stroke="#1E5540" stroke-width="1" />
+        </clipPath>
+    </svg>
+    <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <clipPath id="clip-path-mobile">
+                <path d="M32 0.5H168C185.397 0.500003 199.5 14.603 199.5 32V89.9531C199.5 107.35 185.397 121.453 168 121.453H152.883C134.934 121.453 120.383 136.004 120.383 153.953V168C120.383 185.397 106.28 199.5 88.8828 199.5H32C14.603 199.5 0.5 185.397 0.5 168V32L0.510742 31.1865C0.94222 14.1655 14.875 0.500001 32 0.5Z" stroke="#1E5540" />
+        </clipPath>
+    </svg>
+    <div class="border-slider__container leaders">
+        <!--Начало цикла слайдов. Чтобы листался, надо минимум 6 слайдов-->
+        <div class="border-slider__slide">
+            <div class="border-slider__inner">
+                <div class="beer-card"><!--Компонент карточки товара-->
+                    <div class="beer-card__picture-block">
+                        <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                            <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                        </svg>
+                        <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                            <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                        </svg>
+                        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                        <button type="button" class="beer-card__like">
+                            <img src="images/star-icon.svg" alt="В избранное">
+                        </button>
+                        <button type="button" class="beer-card__to-cart">
+                            <img src="images/cart-white-icon.svg" alt="В корзину">
+                        </button>
+                    </div>
+                    <ul class="beer-card__list">
+                        <li class="beer-card__item">
+                            <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                        </li>
+                        <li class="beer-card__item">
+                            <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                        </li>
+                        <li class="beer-card__item beer-card__params">
+                            <span class="beer-card__param">ABV: 12%</span>
+                            <span class="beer-card__param">OG: 24%</span>
+                            <span class="beer-card__param">IBU: 100</span>
+                        </li>
+                        <li class="beer-card__item beer-card__price-block">
+                            <span class="beer-card__price-item beer-card__price">
+                                215 р
+                                <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                            </span> 
+                            <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--Конец цикла-->
+    </div>
+</section>

@@ -1,0 +1,366 @@
+@mixin centerItem () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin pc {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mobileAlbum {
+    @media (orientation: landscape) and (max-height: 768px) {
+        @content;
+    }
+}
+
+//First screen
+.f-screen {
+    position: relative;
+    padding-top: 1.4rem;
+
+    @include pc {
+        padding-top: 0.5rem;
+    }
+    @include laptop {
+        padding-top: 1.2rem;
+    }
+    @include tablet {
+        padding-top: 0.2rem;
+    }
+    @include mobile {
+        padding-top: 1rem;
+    }
+
+    &__title {
+        font-family: "Impact", serif;
+        font-weight: 400;
+        font-size: 11.5rem;
+        text-transform: uppercase;
+        color: #f23c20;
+        text-align: center;
+        letter-spacing: 0;
+        margin-bottom: 6rem;
+        
+        @include pc {
+            font-size: 10rem;
+            margin-bottom: 8rem;
+        }
+        @include laptop {
+            font-size: 7rem;
+            margin-bottom: 4rem;
+        }
+        @include tablet {
+            font-size: 5rem;
+            margin-bottom: -3rem;
+        }
+        @include mobile {
+            font-size: 2.1rem;
+            margin-bottom: 1rem;
+        }
+    }
+    
+    &__pic {
+        position: absolute; //fixed
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        @include centerItem();
+        padding-bottom: 15rem;
+        opacity: 0;
+        transition: transform 1s cubic-bezier(.68,-0.01,.32,.99), padding 1s cubic-bezier(.68,-0.01,.32,.99);
+        animation: canPreload 0.5s ease-out 3s;
+        
+        @include laptop {
+            animation: canPreloadLaptop 0.5s ease-out 3s;
+        }
+        @include tablet {
+            display: none;
+        }
+    }
+    @keyframes canPreload {
+        from {
+            opacity: 0;
+            padding-bottom: 15rem;
+        }
+        to {
+            opacity: 1;
+            padding-bottom: 8rem;
+        }
+    }
+    @keyframes canPreloadLaptop {
+        from {
+            opacity: 0;
+            padding-bottom: 16rem;
+        }
+        to {
+            opacity: 1;
+            padding-bottom: 9rem;
+        }
+    }
+    &__pic.hide {
+        display: none;
+    }
+    &__pic.position1 {
+        transform: translate(0, 0);
+        padding-bottom: 8rem;
+
+        @include laptop {
+            padding-bottom: 9rem;
+        }
+    }
+    &__pic.position2 {
+        transform: translate(80%, 0);
+        padding-bottom: 8rem;
+    }
+    &__pic.position3 {
+        transform: translate(0, 0);
+        padding-bottom: 8rem;
+        
+        @include laptop {
+            transform: translate(-10%, 0);
+        }
+    }
+    model-viewer {
+        width: 100%;
+        height: 20rem;
+        overflow: visible;
+        --progress-bar-color: transparent;
+    }
+    &__info {
+        align-items: center;
+        row-gap: 6rem;
+        
+        @include laptop {
+            row-gap: 4rem;
+        }
+        @include tablet {
+            row-gap: 3rem;
+            align-items: end;
+            position: relative;
+            z-index: 1;
+        }
+        @include mobile {
+            position: static;
+            row-gap: 2rem;
+            align-items: center;
+        }
+    }
+    &__img-holder {
+        display: none;
+        
+        @include tablet {
+            display: block;
+            grid-column: 4 / 6;
+        }
+        @include mobile {
+            order: -1;
+            grid-column: 1 / 2;
+        }
+    }
+    &__text {
+        grid-column: 1 / 3;
+        font-size: 1.2rem;
+        padding-right: 1.8rem;
+        
+        @include pc {
+            grid-column: 1 / 4;
+            padding-right: 5rem;
+            font-size: 1rem;
+        }
+        @include laptop {
+            grid-column: 1 / 3;
+            padding-right: 0;
+            font-size: .8rem;
+        }
+        @include tablet {
+            grid-column: 1 / 4;
+            padding-right: 2rem;
+            font-size: .7rem;
+        }
+        @include mobile {
+            grid-column: 2 / -1;
+            padding-left: 1.3rem;
+            padding-right: 0;
+            font-size: .6rem;
+        }
+    }
+    &__button {
+        grid-column: 7 / -1;
+        justify-self: end;
+        
+        @include laptop {
+            grid-column: 6 / -1;
+        }
+        @include mobile {
+            grid-column: 1 / -1;
+            width: 100%;
+            order: 1;
+        }
+    }
+    &__categories {
+        grid-column: 1 / -1;
+    }
+}
+
+// About
+.about {
+    align-items: center;
+    &__text {
+        grid-column: 1 / 4;
+        padding: 12rem 0;
+        line-height: 1.5;
+        
+        @include laptop {
+            padding: 7rem 0;
+        }
+        @include tablet {
+            grid-column: 1 / 5;
+            padding: 5rem 0;
+        }
+        @include mobile {
+            grid-column: 1 / 4;
+            padding: 0;
+        }
+    }
+    &__img {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        grid-column: 5 / -1;
+
+        @include tablet {
+            display: block;
+            height: 17.5rem;
+        }
+        @include mobile {
+            display: none;
+        }
+    }
+    &__img-mobile {
+        display: none;
+        overflow: hidden;
+        width: 100%;
+
+        @include mobile {
+            display: block;
+            grid-column: 4 / -1;
+            height: 7rem;
+        }
+    }
+}
+
+//Leaders block
+.leaders>svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+//FAQ
+.faq {
+
+    &__img {
+        grid-column: 1 / 4;
+        padding-right: 2rem;
+        
+        @include pc {
+            padding: 0 2rem;
+            padding-right: 4rem;
+        }
+
+        .faq__img-pc {
+            @include pc {
+                display: none;
+            }
+        }
+        .faq__img-laptop {
+            display: none;
+            
+            @include pc {
+                display: block;
+            }
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+    &__accordion {
+        grid-column: 4 / -1;
+        padding-left: 4rem;
+
+        @include tablet {
+            grid-column: 1 / -1;
+            padding-left: 0;
+        }
+    }
+    .accrodion-holder {
+        border-top: 1px solid #1E1E1E;
+    }
+    .accrodion-item {
+        padding: 1rem;
+        border-bottom: 1px solid #1E1E1E;
+        transition: background-color .3s ease;
+
+        @include mobile {
+            padding: 0.5rem;
+        }
+    }
+    .accrodion-item:has(.accordion-content.opened) {
+        background: #1e5540;
+        border-bottom: 1px solid #f9f9f9;
+
+        p {
+            color: #f9f9f9;
+        }
+        path {
+            stroke: #f9f9f9;
+        }
+    }
+    .accordion-title {
+        @include pc {
+            font-size: 1rem;
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
+    }
+    .accordion-content {
+        margin-bottom: 0;
+        padding: 0;
+        
+        p {
+            font-weight: 400;
+            font-size: .8rem;
+            line-height: 150%;
+
+            @include laptop {
+                font-size: .7rem;
+            }
+            @include mobile {
+                font-size: .5rem;
+            }
+        }
+    }
+}

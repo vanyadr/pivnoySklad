@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js" defer></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/DRACOLoader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/lights/RectAreaLightUniformsLib.js"></script>
+
+    <script type="module" src="js/home.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header"><!--Компонент шапки-->
+        <div class="header__holder container">
+            <div class="header__logo">
+                <a href="#"><img src="images/logo.svg" alt="Логотип"></a>
+            </div>
+            <nav class="header__menu header__menu-element">
+                <div class="header__menu-bar header-pc">
+                    <div class="underline"></div>
+                    <ul class="header__menu-list">
+                        <li class="header__menu-item">
+                            <a href="#">пиво</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">сидры и медовухи</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">безалкогольные напитки</a>
+                        </li>
+                        <li class="header__menu-item">
+                            <a href="#">о нас</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header__menu-links item-no-underline">
+                    <a href="#" class="header__menu-link">
+                        <img src="images/cart-black-icon.svg" alt="Корзина">
+                    </a>
+                    <a href="#" class="header__menu-link">
+                        <img src="images/star-icon.svg" alt="Избранное">
+                    </a>
+                </div>
+            </nav>
+            <div class="header__search header__menu-element search">
+                <input type="text" class="header__input search-input" placeholder="поиск">
+            </div>
+            <div class="header__check header__menu-element header-pc">
+                <a href="" class="header__btn white-btn">проверить заказ</a>
+            </div>
+            <div class="header__menu-drop-down header-pc">
+                <ul class="header__drop-down-list">
+                    <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                </ul>
+                <ul class="header__drop-down-list">
+                    <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                </ul>
+                <ul class="header__drop-down-list">
+                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                </ul>
+                <ul class="header__drop-down-list">
+                    <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                    <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                </ul>
+            </div>
+            <div class="header__burger header__menu-element header-mobile">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="header__burger-top-line" d="M3 15H21" stroke="#292522" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    <path id="header__burger-bottom-line" d="M3 9H21" stroke="#292522" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </div>
+            <div class="header__burger-menu">
+                <ul class="accrodion-holder">
+                    <li class="accrodion-item">
+                        <button class="accordion-header">
+                            <p class="accordion-title">пиво</p>
+                            <div class="accordion-bullet">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="header__mobile-list">
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accrodion-item">
+                        <button class="accordion-header">
+                            <p class="accordion-title">пиво</p>
+                            <div class="accordion-bullet">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="header__mobile-list">
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accrodion-item">
+                        <button class="accordion-header">
+                            <p class="accordion-title">пиво</p>
+                            <div class="accordion-bullet">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="header__mobile-list">
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accrodion-item">
+                        <button class="accordion-header">
+                            <p class="accordion-title">пиво</p>
+                            <div class="accordion-bullet">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="header__mobile-list">
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="accordion-item--no-open">
+                        <a href="#">проверить заказ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <main class="main container">
+            <section class="f-screen section">
+                <h1 class="f-screen__title h1">пивной склад</h1>
+                <div class="f-screen__pic"></div>
+                <div class="f-screen__info grid">
+                    <p class="f-screen__text p">Ботлшоп интересного крафта, сидра, мидов и безалкогольных напитков</p>
+                    <div class="f-screen__img-holder">
+                        <img src="images/beer-can.png" alt="Банка пива">
+                    </div>
+                    <a href="#" class="f-screen__button border-btn">
+                        <p>Перейти в каталог</p>
+                        <div>
+                            <img src="images/arrow-right-white.svg" alt="Перейти">
+                        </div>
+                    </a>
+                    <div class="f-screen__categories categories"><!--Компонент категорий-->
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/beer-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Пиво</h4>
+                        </a>
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/mid-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Сидры и медовухи</h4>
+                        </a>
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/non-alco-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Безалкогольное пиво</h4>
+                        </a>
+                        <a href="#" class="category">
+                            <div class="category-img-holder">
+                                <img src="images/limonade-category.jpg" alt="">
+                            </div>
+                            <h4 class="category-title">Безалкогольные напитки</h4>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="news section bg-slider"><!--Компопнет слайдера с зеленым фоном-->
+                <div class="bg-slider__header">
+                    <h2 class="bg-slider__title h2">Новинки</h2>
+                    <div class="bg-slider__btns">
+                        <button class="bg-slider__btn-left bg-slider__btn">
+                            <img src="images/arrow-left-white.svg" alt="Назад">
+                        </button>
+                        <button class="bg-slider__btn-right bg-slider__btn">
+                            <img src="images/arrow-right-white.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+                <div class="bg-slider__container">
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#">
+                                    <h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4>
+                                </a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#">
+                                    <h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4>
+                                </a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#">
+                                    <h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4>
+                                </a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slider__slide">
+                        <div class="bg-slider__inner">
+                            <div class="bg-slider__slide-info">
+                                <a href="#">
+                                    <h4 class="bg-slider__slide-title h4">Классический Пшеничный Эль Essenbach</h4>
+                                </a>
+                                <a href="#" class="bg-slider__slide-btn bg-btn">Купить</a>
+                            </div>
+                            <div class="bg-slider__slide-img">
+                                <img src="images/new-1.jpg" alt="Классический Пшеничный Эль Essenbach">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="about section grid">
+                <p class="about__text p">В нашем ассортименте только проверенные бренды и редкие новинки, а удобная
+                    доставка и подробные описания помогут вам легко выбрать идеальное пиво для любого повода.
+                    Присоединяйтесь к миру крафта вместе с нами — здесь каждая бутылка расскажет свою историю!
+                </p>
+                <div class="about__img">
+                    <img src="images/can-30deg.png" alt="Банка пива">
+                </div>
+                <div class="about__img-mobile">
+                    <img src="images/can-0deg.png" alt="Банка пива">
+                </div>
+            </section>
+            <section class="leaders border-slider section"><!--Компонент слайдера с карточками товаров-->
+                <div class="border-slider__header">
+                    <h2 class="border-slider__title h2">Лидеры продаж</h2>
+                    <div class="border-slider__btns">
+                        <button class="border-slider__btn-left border-slider__btn leaders">
+                            <img src="images/arrow-left-white.svg" alt="Назад">
+                        </button>
+                        <button class="border-slider__btn-right border-slider__btn leaders">
+                            <img src="images/arrow-right-white.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+                <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="clip-path">
+                        <path d="M24 0.25H276C289.117 0.25 299.75 10.8832 299.75 24V216C299.75 229.117 289.117 239.75 276 239.75H268.277C254.884 239.75 244.027 250.607 244.027 264V276C244.027 289.117 233.394 299.75 220.277 299.75H24C10.8832 299.75 0.25 289.117 0.25 276V24C0.25 10.8832 10.8832 0.25 24 0.25Z" stroke="#1E5540" stroke-width="1" />
+                    </clipPath>
+                </svg>
+                <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="clip-path-mobile">
+                         <path d="M32 0.5H168C185.397 0.500003 199.5 14.603 199.5 32V89.9531C199.5 107.35 185.397 121.453 168 121.453H152.883C134.934 121.453 120.383 136.004 120.383 153.953V168C120.383 185.397 106.28 199.5 88.8828 199.5H32C14.603 199.5 0.5 185.397 0.5 168V32L0.510742 31.1865C0.94222 14.1655 14.875 0.500001 32 0.5Z" stroke="#1E5540" />
+                    </clipPath>
+                </svg>
+                <div class="border-slider__container leaders">
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sales border-slider section"><!--Компонент слайдера с карточками товаров-->
+                <div class="border-slider__header">
+                    <h2 class="border-slider__title h2">Товары со скидками</h2>
+                    <div class="border-slider__btns">
+                        <button class="border-slider__btn-left border-slider__btn sales">
+                            <img src="images/arrow-left-white.svg" alt="Назад">
+                        </button>
+                        <button class="border-slider__btn-right border-slider__btn sales">
+                            <img src="images/arrow-right-white.svg" alt="Вперед">
+                        </button>
+                    </div>
+                </div>
+                <div class="border-slider__container sales">
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-slider__slide">
+                        <div class="border-slider__inner">
+                            <div class="beer-card">
+                                <div class="beer-card__picture-block">
+                                    <svg class="beer-card__border beer-card__border--pc" width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <svg class="beer-card__border beer-card__border--mobile" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="" stroke="#1E5540" stroke-width="0.5" fill="none"/>
+                                    </svg>
+                                    <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach" class="beer-card__img">
+                                    <button type="button" class="beer-card__like">
+                                        <img src="images/star-icon.svg" alt="В избранное">
+                                    </button>
+                                    <button type="button" class="beer-card__to-cart">
+                                        <img src="images/cart-white-icon.svg" alt="В корзину">
+                                    </button>
+                                </div>
+                                <ul class="beer-card__list">
+                                    <li class="beer-card__item">
+                                        <a href="#"><h5 class="beer-card__title">Пшеничный Эль <span>Essenbach</span></h5></a>
+                                    </li>
+                                    <li class="beer-card__item">
+                                        <p class="beer-card__brewery">Пивоварня: <span>Plague Brew</span></p>
+                                    </li>
+                                    <li class="beer-card__item beer-card__params">
+                                        <span class="beer-card__param">ABV: 12%</span>
+                                        <span class="beer-card__param">OG: 24%</span>
+                                        <span class="beer-card__param">IBU: 100</span>
+                                    </li>
+                                    <li class="beer-card__item beer-card__price-block">
+                                        <span class="beer-card__price-item beer-card__price">
+                                            215 р
+                                            <span class="beer-card__price-item beer-card__price-old">260 р</span>
+                                        </span> 
+                                        <span class="beer-card__price-item beer-card__volume">450 мл</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="faq grid section">
+                <div class="faq__img">
+                    <img class="faq__img-pc" src="images/five-glass-bottles.png" alt="Бутылки сидра">
+                    <img class="faq__img-laptop" src="images/three-glass-bottles.png" alt="Бутылки сидра">
+                </div>
+                <div class="faq__accordion"><!--Компонент аккордиона-->
+                    <ul class="accrodion-holder">
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                        <li class="accrodion-item">
+                            <button class="accordion-header">
+                                <p class="accordion-title">Можно ли вернуть пиво, если оно не понравилось?</p>
+                                <div class="accordion-bullet">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                        <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <div class="accordion-content">
+                                <p>По закону алкогольная продукция не подлежит возврату, если товар надлежащего качества. Но если с пивом что-то не так (например, брак или повреждение при доставке), мы обязательно решим вопрос!</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer"><!--Компонент футера-->
+        <div class="footer__holder container grid">
+            <div class="footer__col-1">
+                <div class="footer__logo">
+                    <a href="#"><img src="images/logo-white.svg" alt="Логотип"></a>
+                </div>
+                <p class="footer__descriptor">Ботлшоп крафтового пива, сидра, мидов и безалкогольных напитков</p>
+            </div>
+            <ul class="footer__col-2 footer__menu-list">
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+            </ul>
+            <ul class="footer__col-3 footer__menu-list">
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+                <li class="footer__menu-item"><a href="#">Главная</a></li>
+            </ul>
+            <div class="footer__form-holder">
+                <p class="footer__form-title">Заполните форму и мы ответим на все ваши вопросы!</p>
+                <form action="" class="footer__form">
+                    <input type="text" placeholder="Имя">
+                    <input type="phone" placeholder="Номер телефона">
+                    <button type="submit" class="bg-btn">Оставить заявку</button>
+                </form>
+            </div>
+            <p class="footer__title">пивной  склад</p>
+            <ul class="footer__underline">
+                <li class="footer__underline-item"><a href="#">Политика конфиденциальности</a></li>
+                <li class="footer__underline-item"><a href="#">Публичная оферта</a></li>
+                <li class="footer__underline-item">ИНН: 6437265976450</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

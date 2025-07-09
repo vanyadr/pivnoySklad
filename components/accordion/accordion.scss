@@ -1,0 +1,143 @@
+// Основные стили для работы аккордиона (нельзя менять, одни на все аккордионы на странице)
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  color: #292522;
+  background: none;
+  border: none;
+  transition: margin .5s ease;
+}
+.accordion-header.opened {
+    margin-bottom: 1.5rem;
+}
+.accordion-item--no-open {
+    width: 100%;
+}
+.accordion-item--no-open a {
+    text-align: left;
+    color: #292522;
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: -0.03em;
+}
+.accordion-title {
+    flex-basis: 95%;
+    font-weight: 600;
+    font-size: .8rem;
+    letter-spacing: -0.03em;
+}
+@media (max-width: 768px) {
+  .accordion-title {
+    flex-basis: 88%;
+  }
+}
+.accordion-bullet {
+  flex-basis: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .accordion-bullet {
+    flex-basis: 12%;
+  }
+}
+.accordion-bullet path {
+    transform-origin: center;
+    transform: rotateZ(0deg);
+    opacity: 1;
+    transition: transform .3s ease, opacity .3s ease;
+}
+.accordion-bullet.opened {
+    #accordion-bullet-hor {
+        transform: rotateZ(90deg);
+    }
+    #accordion-bullet-vert {
+        transform: rotateZ(90deg);
+        opacity: 0;
+    }
+}
+.accordion-content {
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  height: 0;
+  transition: all 0.5s ease;
+  color: #292522;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+  column-gap: 0.5rem;
+  padding: 0 0.6rem;
+}
+@media (max-width: 768px) {
+  .accordion-content {
+    row-gap: 1rem;
+  }
+}
+
+//Индивидуальные стили для аккордиона FAQ (можно менять)
+.faq {
+    &__accordion {
+        grid-column: 4 / -1;
+        padding-left: 4rem;
+
+        @include tablet {
+            grid-column: 1 / -1;
+            padding-left: 0;
+        }
+    }
+    .accrodion-holder {
+        border-top: 1px solid #1E1E1E;
+    }
+    .accrodion-item {
+        padding: 1rem;
+        border-bottom: 1px solid #1E1E1E;
+        transition: background-color .3s ease;
+
+        @include mobile {
+            padding: 0.5rem;
+        }
+    }
+    .accrodion-item:has(.accordion-content.opened) {
+        background: #1e5540;
+        border-bottom: 1px solid #f9f9f9;
+
+        p {
+            color: #f9f9f9;
+        }
+        path {
+            stroke: #f9f9f9;
+        }
+    }
+    .accordion-title {
+        @include pc {
+            font-size: 1rem;
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
+    }
+    .accordion-content {
+        margin-bottom: 0;
+        padding: 0;
+        
+        p {
+            font-weight: 400;
+            font-size: .8rem;
+            line-height: 150%;
+
+            @include laptop {
+                font-size: .7rem;
+            }
+            @include mobile {
+                font-size: .5rem;
+            }
+        }
+    }
+}
