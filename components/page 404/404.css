@@ -32,6 +32,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .not-found__num {
   font-weight: 800;
