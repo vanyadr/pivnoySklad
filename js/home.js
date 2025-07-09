@@ -1,13 +1,7 @@
-import {moveBubble} from './modules/headerBubble.js';
-import {toggleAccordion} from './modules/toggleAccordion.js';
-import {toggleBurgerMenu} from './modules/toggleBurger.js';
 import {controlModel} from './modules/modelRotation.js';
 import { createBorderSvg } from './modules/cardBorder.js';
 
 window.addEventListener('load', () => {
-    moveBubble();
-    toggleAccordion();
-    toggleBurgerMenu();
     controlModel();
     
     let slidesToShowNews = (document.documentElement.clientWidth <= 768) ? 1 : 2,
