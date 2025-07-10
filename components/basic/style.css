@@ -305,7 +305,7 @@ img {
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  z-index: 2;
+  z-index: 3;
 }
 @media (max-width: 768px) {
   .header {
@@ -355,7 +355,7 @@ img {
 }
 .header__menu-element {
   background: #F5F5F5;
-  border-radius: 4.5rem;
+  border-radius: 90px;
   padding: 0 1.6rem;
   height: 2.8rem;
   display: flex;
@@ -534,7 +534,7 @@ img {
   top: 100%;
   left: 0;
   background: #1e5540;
-  border-radius: 1.2rem;
+  border-radius: 24px;
   padding: 0;
   overflow: hidden;
   transition: left 0.3s ease, padding 0.3s ease, height 0.3s ease;
@@ -620,7 +620,7 @@ img {
   background: #1e5540;
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 1.1rem;
+  border-radius: 22px;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -737,7 +737,7 @@ img {
   display: flex;
   gap: 0.8rem;
   border: 1px solid #000;
-  border-radius: 4.5rem;
+  border-radius: 90px;
   align-items: center;
   justify-content: space-between;
   min-width: 11rem;
@@ -792,7 +792,7 @@ img {
   align-items: flex-end;
   gap: 1.2rem;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  border-radius: 1.2rem;
+  border-radius: 24px;
   padding: 1rem;
   background: #fff;
 }
@@ -881,14 +881,14 @@ img {
   margin: 0 0.6rem;
   display: flex;
   justify-content: space-between;
-  border-radius: 1.6rem;
+  border-radius: 32px;
   overflow: hidden;
   height: 100%;
   width: 100%;
 }
 @media (max-width: 1024px) {
   .bg-slider__inner {
-    border-radius: 0.8rem;
+    border-radius: 16px;
   }
 }
 @media (max-width: 768px) {
@@ -1009,7 +1009,7 @@ img {
 .beer-card__img {
   clip-path: url(#clip-path);
   position: relative;
-  border-radius: 1.2rem;
+  border-radius: 24px;
 }
 @media (max-width: 1400px) {
   .beer-card__img {
@@ -1062,7 +1062,7 @@ img {
   padding: 0.5rem;
   height: 2.4rem;
   width: 2.4rem;
-  border-radius: 0.6rem;
+  border-radius: 12px;
   background: #292522;
 }
 @media (max-width: 768px) {
@@ -1188,7 +1188,7 @@ img {
 
 .bg-btn {
   width: fit-content;
-  border-radius: 4.5rem;
+  border-radius: 90px;
   padding: 0.6rem 1.5rem;
   background: #fff;
   font-family: Manrope, serif;
@@ -1331,7 +1331,7 @@ img {
   padding: 1rem;
   background: none;
   border: 1px solid #f9f9f9;
-  border-radius: 0.5rem;
+  border-radius: 10px;
   font-weight: 400;
   font-size: 0.8rem;
   line-height: 120%;

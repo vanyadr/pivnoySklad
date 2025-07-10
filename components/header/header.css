@@ -21,7 +21,7 @@
   width: 100%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  z-index: 2;
+  z-index: 3;
 }
 .header__holder {
   display: flex;
@@ -50,7 +50,7 @@
 }
 .header__menu-element {
   background: rgba(0, 0, 0, 0.04);
-  border-radius: 4.5rem;
+  border-radius: 90px;
   padding: 0 1.6rem;
   height: 2.8rem;
   display: flex;
@@ -199,7 +199,7 @@
   top: 100%;
   left: 0;
   background: #1e5540;
-  border-radius: 1.2rem;
+  border-radius: 24px;
   padding: 0;
   overflow: hidden;
   transition: left 0.3s ease, padding 0.3s ease, height 0.3s ease;
@@ -276,7 +276,7 @@
   background: #1e5540;
   top: 50%;
   transform: translateY(-50%);
-  border-radius: 1.1rem;
+  border-radius: 22px;
   transition: width 0.3s ease, left 0.3s ease;
 }
 

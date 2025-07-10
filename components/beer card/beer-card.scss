@@ -13,7 +13,7 @@
     &__img {
         clip-path: url(#clip-path);
         position: relative;
-        border-radius: 1.2rem;
+        border-radius: 24px;
         
         @include laptop {
             clip-path: url(#clip-path-mobile);
@@ -63,7 +63,7 @@
         padding: 0.5rem;
         height: 2.4rem;
         width: 2.4rem;
-        border-radius: .6rem;
+        border-radius: 12px;
         background: #292522;
 
         @include mobile {
