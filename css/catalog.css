@@ -58,6 +58,9 @@
   transform: translateY(-50%);
   background: url(../images/search-icon-black.svg) no-repeat center/contain;
 }
+.filters__search > input:focus::placeholder {
+  opacity: 0.4;
+}
 .filters__search > input::placeholder {
   color: #292522;
   opacity: 1;

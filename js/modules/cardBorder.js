@@ -54,5 +54,9 @@ export const createBorderSvg = function () {
         }
         
         updateSVG();
+        
+        window.addEventListener('resize', () => {
+            updateSVG();
+        });
     };
 };

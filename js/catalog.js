@@ -1,3 +1,5 @@
+"use strict";
+
 import { createBorderSvg } from './modules/cardBorder.js';
 import { toggleFiltersItem, tickMenuItem } from './modules/openFilters.js';
 

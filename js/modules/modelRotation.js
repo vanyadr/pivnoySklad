@@ -80,7 +80,6 @@ export const controlModel = function () {
     }
 
     scroll = window.scrollY;
-    console.log(scroll);
     const windowHeight = window.innerHeight;
 
     if (scroll < 300) {

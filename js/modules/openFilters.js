@@ -26,22 +26,21 @@ export const toggleFiltersItem = function () {
         overlay.classList.remove('active');
     });
 };
-export const untickMenuItem = function () {
 
-};
 export const tickMenuItem = function () {
     const items = document.querySelectorAll('.filters__menu-item');
     let selectedItems = [];
 
-    
     function findParentByClassName(element, className) {
         let elem = element;
+
         while(!elem.classList.contains(className)) {
             if(elem.tagName.toLowerCase() == 'html') return false;
             elem = elem.parentNode;
         }
+
         return elem;
-    }
+    };
 
     function createBubble(clickedItem) {
         const bubble = document.createElement('span');
@@ -66,8 +65,7 @@ export const tickMenuItem = function () {
 
     let counter = 1;
     items.forEach(item => {
-        item.dataset.menuId = counter;
-        counter++;
+        item.dataset.menuId = counter++;
         item.addEventListener('click', function() {
             const clickedItem = this;
             const clickedItemHolder = findParentByClassName(clickedItem, 'filters__item-holder');

@@ -1,11 +1,14 @@
+"use strict";
+
 import {controlModel} from './modules/modelRotation.js';
 import { createBorderSvg } from './modules/cardBorder.js';
 
-window.addEventListener('load', () => {
-    controlModel();
-    
-    let slidesToShowNews = (document.documentElement.clientWidth <= 768) ? 1 : 2,
-        slidesToShowLeaders = 5;
+let slidesToShowNews,
+    slidesToShowLeaders;
+
+function calcSlidersNum() {
+    slidesToShowNews = (document.documentElement.clientWidth <= 768) ? 1 : 2;
+    slidesToShowLeaders = 5;
         
     if (document.documentElement.clientWidth <= 1800) {
         slidesToShowLeaders = 4;
@@ -16,7 +19,9 @@ window.addEventListener('load', () => {
     if (document.documentElement.clientWidth <= 768) {
         slidesToShowLeaders = 2;
     };
+}
 
+function addSliders () {
     $('.bg-slider__container').slick({
         dots: true,
         infinite: true,
@@ -45,6 +50,23 @@ window.addEventListener('load', () => {
         slidesToShow: slidesToShowLeaders,
         slidesToScroll: 1
     });
+}
 
+function removeSliders() {
+    $('.bg-slider__container').slick('unslick');
+    $('.border-slider__container.leaders').slick('unslick');
+    $('.border-slider__container.sales').slick('unslick');
+}
+
+window.addEventListener('load', () => {
+    controlModel();
+    calcSlidersNum();
+    addSliders();
     createBorderSvg();
+});
+
+window.addEventListener('resize', () => {
+    removeSliders();
+    calcSlidersNum();
+    addSliders();
 });
