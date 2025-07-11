@@ -84,14 +84,16 @@
 }
 .filters__item {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin: 0 1.2rem;
   padding: 0.8rem 0.4rem;
   border-bottom: 0.2px solid rgba(30, 85, 64, 0.5);
+  transition: background-color 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+}
+.filters__item-title {
   cursor: pointer;
-  transition: background-color 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .filters__item-name {
   color: #292522;
@@ -106,6 +108,38 @@
 }
 .filters__item-bullet > img {
   transition: transform 0.3s ease;
+}
+.filters__item-select-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 0.4rem;
+}
+.filters__item-select {
+  font-weight: 500;
+  font-size: 0.5rem;
+  line-height: 156%;
+  color: #fff;
+  padding: 0.3rem 1rem 0.3rem 0.4rem;
+  border-radius: 90px;
+  background: #1e5540;
+  margin-top: 0.5rem;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .filters__item-select {
+    font-size: 0.4rem;
+  }
+}
+.filters__item-select::after {
+  content: "";
+  position: absolute;
+  background: url(../images/closer-icon-white.svg) no-repeat center/contain;
+  width: 1.2rem;
+  height: 1.2rem;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 .filters__item.selected {
   background: #d2ddd9;
@@ -161,7 +195,7 @@
   font-size: 0.7rem;
   letter-spacing: -0.03em;
   cursor: pointer;
-  transition: background-color 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+  transition: background-color 0.2s ease, padding 0.2s ease, margin 0.2s ease;
 }
 .filters__menu-item:last-child {
   border: none;
