@@ -4,26 +4,30 @@ export const toggleFiltersItem = function () {
     
     items.forEach(item => {
         item.addEventListener('click', function() {
+            if (document.documentElement.clientWidth > 1024) {
+                items.forEach(item => {
+                    if (item.parentNode.classList.contains('selected') && item != this) {
+                        item.parentNode.classList.remove('selected');
+                        item.parentNode.parentNode.querySelector('.filters__menu').classList.remove('opened');
+                    };
+                });
+                if (!overlay.classList.contains('active')) overlay.classList.add('active');
+                this.parentNode.classList.toggle('selected');
+                this.parentNode.parentNode.querySelector('.filters__menu').classList.toggle('opened');
+            }
+        });
+    });
+    
+    overlay.addEventListener('click', () => {
+        if (document.documentElement.clientWidth > 1024) {
             items.forEach(item => {
                 if (item.parentNode.classList.contains('selected') && item != this) {
                     item.parentNode.classList.remove('selected');
                     item.parentNode.parentNode.querySelector('.filters__menu').classList.remove('opened');
                 };
             });
-            if (!overlay.classList.contains('active')) overlay.classList.add('active');
-            this.parentNode.classList.toggle('selected');
-            this.parentNode.parentNode.querySelector('.filters__menu').classList.toggle('opened');
-        });
-    });
-    
-    overlay.addEventListener('click', () => {
-        items.forEach(item => {
-            if (item.parentNode.classList.contains('selected') && item != this) {
-                item.parentNode.classList.remove('selected');
-                item.parentNode.parentNode.querySelector('.filters__menu').classList.remove('opened');
-            };
-        });
-        overlay.classList.remove('active');
+            overlay.classList.remove('active');
+        }
     });
 };
 
@@ -107,4 +111,63 @@ export const tickMenuItem = function () {
         });
     });
 };
-export const toggleFiltersBlock = function () {};
+
+export const toggleFiltersBlock = function () {
+    const btn = document.querySelector('.filters__open-btn');
+    const menu = document.querySelector('.filters__holder');
+    const closer = document.querySelector('.filters__closer');
+
+    if (btn) {
+        btn.addEventListener('click', () => {
+            if (document.documentElement.clientWidth <= 1024) {
+                menu.classList.add('opened');
+                btn.classList.add('hide');
+                document.querySelector('body').classList.add('filters-opened');
+            }
+        });
+        closer.addEventListener('click', () => {
+            if (document.documentElement.clientWidth <= 1024) {
+                menu.classList.remove('opened');
+                btn.classList.remove('hide');
+                document.querySelector('body').classList.remove('filters-opened');
+            }
+        });
+    }
+};
+
+export const toggleFiltersAccordion = function () {
+    const items = document.querySelectorAll('.filters__item-holder');
+    let counter = 1;
+    
+    if (items) {
+        items.forEach(
+            function (item) {
+                const btn = item.querySelector('.filters__item');
+                
+                item.dataset.accordionFilters = counter;
+                btn.dataset.accordionFilters = counter;
+                btn.addEventListener('click', 
+                    function () {
+                            if (document.documentElement.clientWidth <= 1024) {
+                                const correctItem = document.querySelector(`.filters__item-holder[data-accordion-filters="${this.dataset.accordionFilters}"]`);
+                                const correctContent = correctItem.querySelector('.filters__menu');
+                                const correctHeader = correctItem.querySelector('.filters__item');
+                                const contentHeight = correctContent.scrollHeight;
+                                
+                                correctContent.classList.toggle('selected');
+        
+                                if (correctContent.classList.contains('selected')) {
+                                    correctContent.style.height = `${contentHeight}px`;
+                                } else {
+                                    correctContent.style.height = 0;
+                                }
+        
+                                correctHeader.classList.toggle('selected');
+                            }
+                        }
+                    );
+                    counter++;
+                }
+            );
+        }
+};

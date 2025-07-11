@@ -33,6 +33,10 @@ body {
   scrollbar-gutter: stable;
 }
 
+body.filters-opened {
+  overflow: hidden;
+}
+
 h1,
 .h1 {
   position: relative;
