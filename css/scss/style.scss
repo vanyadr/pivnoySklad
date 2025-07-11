@@ -1166,12 +1166,14 @@ img {
     }
     &__form-holder {
         grid-column: 1 / 4;
+        margin-top: 6rem;
         
         @include pc {
             grid-column: 1 / 5;
         }
         @include laptop {
             grid-column: 1 / 6;
+            margin-top: 0;
         }
         @include tablet {
             grid-column: 1 / -1;
@@ -1218,6 +1220,48 @@ img {
                 padding: 0.6rem 1.5rem;
             }
         }
+    }
+    &__partners {
+        grid-column: 5 / -1;
+        margin-top: 6rem;
+        
+        @include pc {
+            grid-column: 5 / -1;
+        }
+        @include laptop {
+            margin-top: 0;
+            grid-column: 1 / -1;
+        }
+    }
+    &__parthers-title {
+        font-weight: 400;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        line-height: 120%;
+    }
+    &__partners-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2.4rem;
+        align-items: center;
+        
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__partners-item>a {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+    &__partners-img>img {
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+    &__partners-descriptor {
+        font-weight: 400;
+        font-size: .6rem;
+        text-align: center;
     }
     &__title {
         grid-column: 1 / -1;
