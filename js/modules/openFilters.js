@@ -132,6 +132,14 @@ export const toggleFiltersBlock = function () {
                 document.querySelector('body').classList.remove('filters-opened');
             }
         });
+
+        window.addEventListener('resize', () => {
+            if (document.documentElement.clientWidth > 1024) {
+                if(menu.classList.contains('opened')) menu.classList.remove('opened');
+                if (btn.classList.contains('hide')) btn.classList.remove('hide');
+                if (document.querySelector('body').classList.contains('filters-opened')) document.querySelector('body').classList.remove('filters-opened');
+            }
+        });
     }
 };
 
@@ -140,34 +148,43 @@ export const toggleFiltersAccordion = function () {
     let counter = 1;
     
     if (items) {
-        items.forEach(
-            function (item) {
-                const btn = item.querySelector('.filters__item');
-                
-                item.dataset.accordionFilters = counter;
-                btn.dataset.accordionFilters = counter;
-                btn.addEventListener('click', 
-                    function () {
-                            if (document.documentElement.clientWidth <= 1024) {
-                                const correctItem = document.querySelector(`.filters__item-holder[data-accordion-filters="${this.dataset.accordionFilters}"]`);
-                                const correctContent = correctItem.querySelector('.filters__menu');
-                                const correctHeader = correctItem.querySelector('.filters__item');
-                                const contentHeight = correctContent.scrollHeight;
-                                
-                                correctContent.classList.toggle('selected');
-        
-                                if (correctContent.classList.contains('selected')) {
-                                    correctContent.style.height = `${contentHeight}px`;
-                                } else {
-                                    correctContent.style.height = 0;
-                                }
-        
-                                correctHeader.classList.toggle('selected');
-                            }
-                        }
-                    );
-                    counter++;
+        items.forEach(function (item) {
+            const btn = item.querySelector('.filters__item');
+            
+            item.dataset.accordionFilters = counter;
+            btn.dataset.accordionFilters = counter;
+            btn.addEventListener('click', function () {
+                if (document.documentElement.clientWidth <= 1024) {
+                    const correctItem = document.querySelector(`.filters__item-holder[data-accordion-filters="${this.dataset.accordionFilters}"]`);
+                    const correctContent = correctItem.querySelector('.filters__menu');
+                    const correctHeader = correctItem.querySelector('.filters__item');
+                    const contentHeight = correctContent.scrollHeight;
+                    
+                    correctContent.classList.toggle('selected');
+
+                    if (correctContent.classList.contains('selected')) {
+                        correctContent.style.height = `${contentHeight}px`;
+                    } else {
+                        correctContent.style.height = 0;
+                    }
+
+                    correctHeader.classList.toggle('selected');
                 }
-            );
-        }
+            });
+            counter++;
+        });
+
+        window.addEventListener('resize', () => {
+            if (document.documentElement.clientWidth > 1024) {
+                items.forEach(item => {
+                    const content = item.querySelector('.filters__menu');
+                    if (content.classList.contains('selected')) {
+                        content.classList.remove('selected');
+                        content.style = '';
+                    };
+                    if (item.querySelector('.filters__item').classList.contains('selected')) item.querySelector('.filters__item').classList.remove('selected');
+                });
+            }
+        });
+    }
 };

@@ -20,4 +20,23 @@ export const toggleBurgerMenu = function () {
             );
         }
     });
+
+    // window.addEventListener('resize', () => {
+    //     if (document.documentElement.clientWidth > 1024) {
+    //         if (btn.classList.contains('opened')) btn.classList.remove('opened');
+    //         if (menu.classList.contains('opened')) {
+    //             menu.classList.remove('opened');
+    //             items.forEach(
+    //                 (item) => {
+    //                     if (item.querySelector('.accordion-content').classList.contains('opened')) {
+    //                         item.querySelector('.accordion-content').classList.remove('opened');
+    //                         item.querySelector('.accordion-content').style.height = 0;
+    //                         item.querySelector('.accordion-bullet').classList.remove('opened');
+    //                         item.querySelector('.accordion-header').classList.remove('opened');
+    //                     };
+    //                 }
+    //             );
+    //         }
+    //     }
+    // });
 };
