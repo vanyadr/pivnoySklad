@@ -21,6 +21,7 @@
   z-index: 3;
   background: #fff;
   overflow: auto;
+  padding-top: 3.4rem;
 }
 
 .filters {
@@ -81,8 +82,8 @@
   }
 }
 .filters__closer {
-  width: 2.4rem;
-  height: 2.4rem;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 .filters__holder {
   padding: 1.2rem 0;
@@ -102,12 +103,19 @@
 }
 .filters__holder.opened {
   display: block;
+  min-height: 100%;
 }
 .filters__search {
   margin: 0 1.2rem;
   padding: 0 0.4rem;
   border-bottom: 0.2px solid rgba(30, 85, 64, 0.5);
   position: relative;
+}
+@media (max-width: 1024px) {
+  .filters__search {
+    margin: 0;
+    padding: 0 1.2rem 0 0;
+  }
 }
 .filters__search::after {
   content: "";
@@ -133,6 +141,12 @@
   letter-spacing: -0.03em;
   background: none;
 }
+@media (max-width: 1024px) {
+  .filters__search > input {
+    padding: 0.4rem 0;
+    width: 100%;
+  }
+}
 .filters__list {
   display: flex;
   flex-direction: column;
@@ -143,6 +157,13 @@
   margin: 0;
   padding: 0.8rem 1.6rem;
 }
+@media (max-width: 1024px) {
+  .filters__item-holder:hover .filters__item {
+    background: transparent;
+    margin: 0;
+    padding: 0.4rem 0;
+  }
+}
 .filters__item-holder {
   position: relative;
 }
@@ -152,6 +173,12 @@
   padding: 0.8rem 0.4rem;
   border-bottom: 0.2px solid rgba(30, 85, 64, 0.5);
   transition: background-color 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+}
+@media (max-width: 1024px) {
+  .filters__item {
+    margin: 0;
+    padding: 0.4rem 0;
+  }
 }
 .filters__item-title {
   cursor: pointer;
@@ -225,6 +252,11 @@
   border-radius: 24px;
   overflow: hidden;
 }
+@media (max-width: 1024px) {
+  .filters__menu {
+    border-radius: 0;
+  }
+}
 .filters__menu.opened {
   display: block;
 }
@@ -259,6 +291,12 @@
   margin: 0;
   padding: 0.8rem 1.6rem;
 }
+@media (max-width: 1024px) {
+  .filters__menu-item:hover {
+    background: transparent;
+    padding: 0.4rem 1.2rem;
+  }
+}
 .filters__menu-item {
   position: relative;
   margin: 0 1.2rem;
@@ -270,6 +308,11 @@
   letter-spacing: -0.03em;
   cursor: pointer;
   transition: background-color 0.2s ease, padding 0.2s ease, margin 0.2s ease;
+}
+@media (max-width: 1024px) {
+  .filters__menu-item {
+    padding: 0.4rem 0;
+  }
 }
 .filters__menu-item:last-child {
   border: none;
@@ -293,6 +336,11 @@
   color: #fff;
   margin: 0;
   padding: 0.8rem 1.6rem;
+}
+@media (max-width: 1024px) {
+  .filters__menu-item.selected {
+    padding: 0.4rem 1.2rem;
+  }
 }
 .filters__menu-item.selected::after {
   display: block;

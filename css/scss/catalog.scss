@@ -48,6 +48,7 @@
     z-index: 3;
     background: #fff;
     overflow: auto;
+    padding-top: 3.4rem;
 }
 .filters {
     grid-column: 1 / 3;
@@ -100,8 +101,8 @@
         }
     }
     &__closer {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 1.2rem;
+        height: 1.2rem;
     }
     &__holder {
         padding: 1.2rem 0;
@@ -118,12 +119,18 @@
     }
     &__holder.opened {
         display: block;
+        min-height: 100%;
     }
     &__search {
         margin: 0 1.2rem;
         padding: 0 0.4rem;
         border-bottom: 0.20px solid rgba(30, 85, 64, 0.5);
         position: relative;
+
+        @include tablet {
+            margin: 0;
+            padding: 0 1.2rem 0 0;
+        }
     }
     &__search::after {
         content: "";
@@ -148,6 +155,11 @@
         font-size: .7rem;
         letter-spacing: -0.03em;
         background: none;
+        
+        @include tablet {
+            padding: 0.4rem 0;
+            width: 100%;
+        }
     }
     &__list {
         display: flex;
@@ -158,6 +170,12 @@
         background: #d2ddd9;
         margin: 0;
         padding: 0.8rem 1.6rem;
+        
+        @include tablet {
+            background: transparent;
+            margin: 0;
+            padding: 0.4rem 0;
+        }
     }
     &__item-holder {
         position: relative;
@@ -168,6 +186,11 @@
         padding: 0.8rem .4rem;
         border-bottom: 0.20px solid rgba(30, 85, 64, 0.5);
         transition: background-color .2s ease, padding .2s ease, margin .2s ease;
+        
+        @include tablet {
+            margin: 0;
+            padding: 0.4rem 0;
+        }
     }
     &__item-title {
         cursor: pointer;
@@ -239,6 +262,10 @@
         min-width: 14rem;
         border-radius: 24px;
         overflow: hidden;
+
+        @include tablet {
+            border-radius: 0;
+        }
     }
     &__menu.opened {
         display: block;
@@ -272,6 +299,11 @@
         background: rgba(41, 37, 34, 0.1);
         margin: 0;
         padding: 0.8rem 1.6rem;
+
+        @include tablet {
+            background: transparent;
+            padding: .4rem 1.2rem;
+        }
     }
     &__menu-item {
         position: relative;
@@ -284,6 +316,10 @@
         letter-spacing: -0.03em;
         cursor: pointer;
         transition: background-color .2s ease, padding .2s ease, margin .2s ease;
+
+        @include tablet {
+            padding: 0.4rem 0;
+        }
     }
     &__menu-item:last-child {
         border: none;
@@ -307,6 +343,10 @@
         color: #fff;
         margin: 0;
         padding: 0.8rem 1.6rem;
+
+        @include tablet {
+            padding: 0.4rem 1.2rem;
+        }
     }
     &__menu-item.selected::after {
         display: block;

@@ -180,7 +180,7 @@ export const toggleFiltersAccordion = function () {
                     const content = item.querySelector('.filters__menu');
                     if (content.classList.contains('selected')) {
                         content.classList.remove('selected');
-                        content.style = '';
+                        content.style.height = 'auto';
                     };
                     if (item.querySelector('.filters__item').classList.contains('selected')) item.querySelector('.filters__item').classList.remove('selected');
                 });
