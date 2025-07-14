@@ -747,6 +747,7 @@ img {
   min-width: 11rem;
   height: 2.2rem;
   background: #fff;
+  color: #000;
 }
 .border-btn p {
   padding: 0.6rem 0 0.6rem 1.5rem;
@@ -1200,6 +1201,7 @@ img {
   font-family: Manrope, serif;
   font-weight: 500;
   font-size: 0.6rem;
+  color: #000;
 }
 @media (max-width: 768px) {
   .bg-btn {

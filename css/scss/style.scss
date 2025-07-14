@@ -660,6 +660,8 @@ img {
     min-width: 11rem;
     height: 2.2rem;
     background: #fff;
+    color: #000;
+
     p {
         padding: 0.6rem 0 0.6rem 1.5rem;
         font-weight: 400;
@@ -1081,6 +1083,7 @@ img {
     font-family: Manrope, serif;
     font-weight: 500;
     font-size: .6rem;
+    color: #000;
     
     @include mobile {
         padding: 0.5rem 1.2rem;
