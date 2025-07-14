@@ -1,0 +1,147 @@
+.catalog {
+    grid-column: 3 / -1;
+    margin-left: -1.5rem;
+    
+    @include pc {
+        margin-left: 0;
+    }
+    @include laptop {
+        padding-left: 0.6rem;
+    }
+    @include tablet {
+        grid-column: 1 / -1;
+        padding-left: 0;
+    }
+
+    &>svg {
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4rem 1.2rem;
+        margin-bottom: 6rem;
+        
+        @include pc {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2.4rem 1.2rem;
+        }
+        @include laptop {
+            grid-template-columns: repeat(3, 1fr);
+            margin-bottom: 5rem;
+        }
+        @include tablet {
+            margin-bottom: 4rem;
+        }
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.4rem .6rem;
+        }
+    }
+    .beer-card__picture-block {
+        margin-bottom: 0.5rem;
+
+        @include mobile {
+            margin-bottom: 0.4rem;
+        }
+    }
+    .beer-card__list {
+        gap: 0.5rem;
+
+        @include mobile {
+            gap: 0.4rem;
+        }
+    }
+    .beer-card__title {
+        font-size: .7rem;
+        
+        @include mobile {
+            font-size: .5rem;
+        }
+    }
+    .beer-card__item {
+        font-size: .7rem;
+
+        @include mobile {
+            font-size: .5rem;
+        }
+    }
+    .beer-card__params .beer-card__param {
+        padding: 0 0.3rem;
+        
+        @include mobile {
+            padding: 0 0.2rem;
+        }
+    }
+    .beer-card__param:first-child {
+        padding-left: 0;
+    }
+    .beer-card__param:last-child {
+        padding-right: 0;
+    }
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+    &__more {
+        min-width: 9.2rem;
+    }
+    &__pagination {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+
+        @include mobile {
+            gap: 0.8rem;
+        }
+    }
+    &__pagination-item a {
+        width: 100%;
+        height: 100%;
+        @include centerItem();
+    }
+    &__pagination-item img {
+        object-position: center;
+    }
+    .num {
+        font-weight: 600;
+        font-size: .9rem;
+        letter-spacing: -0.03em;
+        color: #000;
+        opacity: 0.4;
+        
+        @include mobile {
+            font-size: .7rem;
+        }
+    }
+    .prev {
+        width: 1rem;
+        margin-right: 0.5rem;
+
+        @include mobile {
+            width: .8rem;
+            margin: 0;
+        }
+    }
+    .current {
+        opacity: 1;
+    }
+    .next {
+        width: 1rem;
+        margin-left: 0.5rem;
+        
+        @include mobile {
+            width: .8rem;
+            margin: 0;
+        }
+    }
+    .inactive {
+        opacity: 0.6;
+        cursor: default;
+        pointer-events: none;
+    }
+}

@@ -1,0 +1,44 @@
+            <div class="filters-overlay"></div>Б=<!--Обязателен для закрытия меню фильтров-->
+            <aside class="filters">
+                <div class="filters__open-btn"><!--Кнопка открытия фильтров на мобилке-->
+                    <div class="filters__icon">
+                        <img src="images/filters-icon.svg" alt="Фильтры">
+                    </div>
+                    <span class="filters__open-text">Фильтры</span>
+                </div>
+                <div class="filters__holder">
+                    <div class="filters__closer-holder"><!--Кнопка закрытия фильтров на мобилке-->
+                        <div class="filters__closer">
+                            <img src="images/closer-icon-green.svg" alt="Закрыть">
+                        </div>
+                    </div>
+                    <div class="filters__search"><!--Строка поиска-->
+                        <input type="text" name="search_b" id="search_b" placeholder="Название">
+                    </div>
+                    <ul class="filters__list">
+                        <!--Начало цикла вывода фильтров-->
+                        <li class="filters__item-holder">
+                            <div class="filters__item"><!--Шапка фильтра-->
+                                <div class="filters__item-title">
+                                    <p class="filters__item-name">Пивоварня</p><!--Признак для фильтрации-->
+                                    <div class="filters__item-bullet">
+                                        <img src="images/arrow-down-black.svg" alt="Открыть">
+                                    </div>
+                                </div>
+                                <div class="filters__item-select-block"></div><!--Блок, в котором будут отображаться выбранные разделы-->
+                            </div>
+                            <div class="filters__menu">
+                                <ul class="filters__menu-list"><!--Список разделов-->
+                                    <li class="filters__menu-item">Plague Brew1</li>
+                                    <li class="filters__menu-item">Plague Brew2</li>
+                                    <li class="filters__menu-item">Plague Brew3</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!--Конец цикла вывода фильтров-->
+                    </ul>
+                    <div class="filters__button"><!--Кнопка применения фильтров-->
+                        <button class="bg-btn">Найти</button>
+                    </div>
+                </div>
+            </aside>
