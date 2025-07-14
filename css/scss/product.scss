@@ -41,12 +41,26 @@
 
 //Product block
 .product {
+    @include mobile {
+        row-gap: 1.2rem;
+    }
+    
     &__img {
         grid-column: 1 / 4;
         position: relative;
         aspect-ratio: 1 / 1;
         overflow: hidden;
         border-radius: 32px;
+        
+        @include pc {
+        }
+        @include laptop {
+        }
+        @include tablet {
+        }
+        @include mobile {
+            grid-column: 1 / -1;
+        }
     }
     &__like {
         position: absolute;
@@ -56,12 +70,41 @@
         width: 2.4rem;
         background: none;
         border: none;
+        
+        @include pc {
+        }
+        @include laptop {
+            top: 1rem;
+            right: 1rem;
+            height: 1.8rem;
+            width: 1.8rem;
+        }
+        @include tablet {
+            height: 1.2rem;
+            width: 1.2rem;
+        }
+        @include mobile {
+            top: 1.2rem;
+            right: 1.2rem;
+        }
     }
     &__info {
         grid-column: 5 / -1;
         display: flex;
         flex-direction: column;
         gap: 1.2rem;
+        
+        @include pc {
+        }
+        @include laptop {
+            gap: 1rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            gap: .8rem;
+            grid-column: 1 / -1;
+        }
     }
     &__name {
         margin-bottom: 0.4rem;
@@ -79,6 +122,10 @@
             font-weight: 600;
             font-size: .7rem;
             color: #1e5540;
+
+            @include mobile {
+                font-size: .6rem;
+            }
         }
         img {
             height: 1rem;
@@ -88,20 +135,54 @@
     &__type {
         font-weight: 600;
         font-size: .8rem;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: .7rem;
+        }
+        @include tablet {
+            font-size: .6rem;
+        }
+        @include mobile {
+            font-size: .5rem;
+        }
     }
     &__parameter {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         gap: 0.6rem;
     }
     &__parameter-key {
         font-weight: 600;
         font-size: 1rem;
         color: #f78455;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
     }
     &__parameter-value {
         font-weight: 600;
         font-size: 1rem;
+
+        @include pc {
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
     }
     &__specs {
         display: flex;
@@ -114,6 +195,20 @@
         color: #f78455;
         padding: 0 0.5rem;
         border-right: 4px solid #f78455;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: 1rem;
+            border-right: 3px solid #f78455;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: .6rem;
+            padding: 0 0.3rem;
+            border-right: 2px solid #f78455;
+        }
     }
     &__specs span:first-child {
         padding-left: 0;
@@ -133,6 +228,17 @@
         letter-spacing: -0.04em;
         position: relative;
         color: #292522;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: 1.6rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: 1.2rem;
+        }
     }
     &__price-actual:has(.product__price-old) {
         color: #f23c20;
@@ -149,26 +255,74 @@
         right: 0;
         transform: translate(100%, -20%);
         color: #292522;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: 1rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: .8rem;
+        }
     }
     &__volume {
         font-weight: 600;
         font-size: 1rem;
         color: #292522;
         padding: 0 0 .2rem 0;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
     }
     &__btns {
         display: flex;
         align-items: center;
         gap: 1.2rem;
 
+        @include pc {
+        }
+        @include laptop {
+        }
+        @include tablet {
+            flex-direction: column;
+            row-gap: 0.6rem;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+        @include mobile {
+        }
+
         button {
             min-width: 11.2rem;
             font-weight: 600;
             font-size: .7rem;
             letter-spacing: -0.03em;
+            
+            @include pc {
+            }
+            @include laptop {
+                min-width: 10rem;
+            }
+            @include tablet {
+                min-width: 11.2rem;
+            }
+            @include mobile {
+                width: 100%;
+            }
         }
     }
     &__add-to-cart {
+        height: 100%;
         background: #1e5540;
         color: #fff;
     }
@@ -186,6 +340,17 @@
     .accordion-title {
         font-weight: 700;
         font-size: 1.2rem;
+        
+        @include pc {
+        }
+        @include laptop {
+            font-size: .8rem;
+        }
+        @include tablet {
+        }
+        @include mobile {
+            font-size: .6rem;
+        }
     }
     .accordion-content {
         padding: 0;
@@ -196,6 +361,16 @@
             font-size: .8rem;
             line-height: 140%;
             opacity: 0.6;
+            
+            @include pc {
+            }
+            @include laptop {
+                font-size: .6rem;
+            }
+            @include tablet {
+            }
+            @include mobile {
+            }
         }
     }
 }
