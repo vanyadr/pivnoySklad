@@ -1258,11 +1258,12 @@ img {
     &__partners-item>a {
         display: flex;
         flex-direction: column;
-        gap: 0.4rem;
+        gap: 0.8rem;
     }
     &__partners-img>img {
         height: auto;
         aspect-ratio: 1 / 1;
+        object-position: bottom;
     }
     &__partners-descriptor {
         font-weight: 400;
