@@ -445,10 +445,31 @@ img {
 }
 .header__menu-link {
   height: 1.1rem;
+  position: relative;
 }
 @media (max-width: 768px) {
   .header__menu-link {
     height: 0.8rem;
+  }
+}
+.header__menu-cart-quantity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(70%, -65%);
+  font-size: 0.5rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  background: #f23c20;
+  border-radius: 12px;
+}
+@media (max-width: 1024px) {
+  .header__menu-cart-quantity {
+    transform: translate(70%, -55%);
+    font-size: 0.4rem;
+    padding: 0.1rem 0.2rem;
   }
 }
 .header__search {
@@ -1491,12 +1512,12 @@ img {
 .floating-cart__info {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 1.3rem 0.8rem;
+  gap: 0.8rem;
   align-items: center;
 }
 @media (max-width: 1400px) {
   .floating-cart__info {
-    gap: 0.5rem 0.5rem;
+    gap: 0.5rem;
   }
 }
 .floating-cart__info span {

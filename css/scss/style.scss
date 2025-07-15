@@ -381,9 +381,29 @@ img {
     }
     &__menu-link {
         height: 1.1rem;
+        position: relative;
 
         @include mobile {
             height: 0.8rem;
+        }
+    }
+    &__menu-cart-quantity {
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(70%, -65%);
+        font-size: .5rem;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1;
+        padding: 0.2rem .4rem;
+        background: #f23c20;
+        border-radius: 12px;
+        
+        @include tablet {
+            transform: translate(70%, -55%);
+            font-size: .4rem;
+            padding: 0.1rem .2rem;
         }
     }
     &__search {
@@ -1344,11 +1364,11 @@ img {
     &__info {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        gap: 1.3rem .8rem;
+        gap: .8rem;
         align-items: center;
 
         @include laptop {
-            gap: 0.5rem .5rem; 
+            gap: .5rem; 
         }
 
         span {
