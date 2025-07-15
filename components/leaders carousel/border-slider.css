@@ -1,3 +1,14 @@
+.slick-list.draggable {
+  width: 100%;
+}
+
+.slick-track {
+  margin: 0;
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+}
 .border-slider__header {
   display: flex;
   justify-content: space-between;

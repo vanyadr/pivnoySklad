@@ -1,3 +1,18 @@
+body.filters-opened {
+    overflow: hidden;
+}
+.overlay, .filters-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.overlay.active, .filters-overlay.active {
+    display: block;
+}
 .filters:has(.filters__holder.opened) {
     top: 0;
     left: 0;

@@ -4,177 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/404.css">
-
+    
     <script type="module" src="js/script.js" defer></script>
-    <title>Document</title>
+
+    <title>404</title>
+    <meta 
+        name="description"
+        content="Страница не найдена"
+    >
+    <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
     <header class="header"><!--Компонент шапки-->
-        <div class="header__holder container">
-            <div class="header__logo">
-                <a href="#"><img src="images/logo.svg" alt="Логотип"></a>
-            </div>
-            <nav class="header__menu header__menu-element">
-                <div class="header__menu-bar header-pc">
-                    <div class="underline"></div>
-                    <ul class="header__menu-list">
-                        <li class="header__menu-item">
-                            <a href="#">пиво</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#">сидры и медовухи</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#">безалкогольные напитки</a>
-                        </li>
-                        <li class="header__menu-item">
-                            <a href="#">о нас</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="header__menu-links item-no-underline">
-                    <a href="#" class="header__menu-link">
-                        <img src="images/cart-black-icon.svg" alt="Корзина">
-                    </a>
-                    <a href="#" class="header__menu-link">
-                        <img src="images/star-icon.svg" alt="Избранное">
-                    </a>
-                </div>
-            </nav>
-            <div class="header__search header__menu-element search">
-                <input type="text" class="header__input search-input" placeholder="поиск">
-            </div>
-            <div class="header__check header__menu-element header-pc">
-                <a href="" class="header__btn white-btn">проверить заказ</a>
-            </div>
-            <div class="header__menu-drop-down header-pc">
-                <ul class="header__drop-down-list">
-                    <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
-                </ul>
-                <ul class="header__drop-down-list">
-                    <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
-                </ul>
-                <ul class="header__drop-down-list">
-                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
-                </ul>
-                <ul class="header__drop-down-list">
-                    <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
-                    <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
-                </ul>
-            </div>
-            <div class="header__burger header__menu-element header-mobile">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path id="header__burger-top-line" d="M3 15H21" stroke="#292522" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                    <path id="header__burger-bottom-line" d="M3 9H21" stroke="#292522" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="header__burger-menu">
-                <ul class="accrodion-holder">
-                    <li class="accrodion-item">
-                        <button class="accordion-header">
-                            <p class="accordion-title">пиво</p>
-                            <div class="accordion-bullet">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="accordion-content">
-                            <ul class="header__mobile-list">
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="accrodion-item">
-                        <button class="accordion-header">
-                            <p class="accordion-title">пиво</p>
-                            <div class="accordion-bullet">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="accordion-content">
-                            <ul class="header__mobile-list">
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="accrodion-item">
-                        <button class="accordion-header">
-                            <p class="accordion-title">пиво</p>
-                            <div class="accordion-bullet">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="accordion-content">
-                            <ul class="header__mobile-list">
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="accrodion-item">
-                        <button class="accordion-header">
-                            <p class="accordion-title">пиво</p>
-                            <div class="accordion-bullet">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
-                                        stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-                            </div>
-                        </button>
-                        <div class="accordion-content">
-                            <ul class="header__mobile-list">
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                                <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="accordion-item--no-open">
-                        <a href="#">проверить заказ</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </header>
     <div class="overlay"></div>
     <div class="wrapper">
@@ -188,7 +35,7 @@
                     <span class="not-found__num last-num">4</span>
                     <span class="not-found__descriptor">произошла какая-то ошибка</span>
                 </div>
-                <div class="not-found__btn-block"><!--Компонент кнопки black border button-->
+                <div class="not-found__btn-block">
                     <a href="#" class="not-found__btn border-btn">
                         <p>Перейти в каталог</p>
                         <div>
@@ -200,40 +47,6 @@
         </main>
     </div>
     <footer class="footer"><!--Компонент футера-->
-        <div class="footer__holder container grid">
-            <div class="footer__col-1">
-                <div class="footer__logo">
-                    <a href="#"><img src="images/logo-white.svg" alt="Логотип"></a>
-                </div>
-                <p class="footer__descriptor">Ботлшоп крафтового пива, сидра, мидов и безалкогольных напитков</p>
-            </div>
-            <ul class="footer__col-2 footer__menu-list">
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-            </ul>
-            <ul class="footer__col-3 footer__menu-list">
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-                <li class="footer__menu-item"><a href="#">Главная</a></li>
-            </ul>
-            <div class="footer__form-holder">
-                <p class="footer__form-title">Заполните форму и мы ответим на все ваши вопросы!</p>
-                <form action="" class="footer__form">
-                    <input type="text" placeholder="Имя">
-                    <input type="phone" placeholder="Номер телефона">
-                    <button type="submit" class="bg-btn">Оставить заявку</button>
-                </form>
-            </div>
-            <p class="footer__title">пивной  склад</p>
-            <ul class="footer__underline">
-                <li class="footer__underline-item"><a href="#">Политика конфиденциальности</a></li>
-                <li class="footer__underline-item"><a href="#">Публичная оферта</a></li>
-                <li class="footer__underline-item">ИНН: 6437265976450</li>
-            </ul>
-        </div>
     </footer>
 </body>
 

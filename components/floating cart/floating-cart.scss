@@ -1,4 +1,3 @@
-//Floating cart
 .floating-cart {
     position: fixed;
     bottom: 1rem;
@@ -25,11 +24,11 @@
     &__info {
         display: grid;
         grid-template-columns: repeat(2, auto);
-        gap: 1.3rem .8rem;
+        gap: .8rem;
         align-items: center;
 
         @include laptop {
-            gap: 0.5rem .5rem; 
+            gap: .5rem; 
         }
 
         span {

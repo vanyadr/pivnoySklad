@@ -12,12 +12,12 @@ window.addEventListener('load', () => {
     if (document.documentElement.clientWidth <= 768) {
         cardsToShow = 2;
     };
-    $('.border-slider__container.your-section-class').slick({ //Если одинаковых слайдеров несколько, заменить your-section-class на класс секции, в которой слайдер лежит
+    $('.border-slider__container.leaders').slick({ 
         infinite: true,
         speed: 500,
         dots: false,
-        prevArrow: '.border-slider__btn-left.your-section-class',
-        nextArrow: '.border-slider__btn-right.your-section-class',
+        prevArrow: '.border-slider__btn-left.leaders',
+        nextArrow: '.border-slider__btn-right.leaders',
         slidesToShow: cardsToShow,
         slidesToScroll: 1
     });

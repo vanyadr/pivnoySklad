@@ -1,0 +1,53 @@
+// Slick-Slider
+.slick-list.draggable {
+    width: 100%;
+}
+.slick-track {
+    margin: 0;
+}
+.slick-initialized .slick-slide {
+    display: flex;
+}
+.border-slider {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        
+        @include mobile {
+            margin-bottom: 1.6rem;
+            align-items: center;
+        }
+    }
+    &__btns {
+        display: flex;
+        gap: 0.8rem;
+        height: 2.2rem;
+    }
+    &__btn {
+        aspect-ratio: 1 / 1;
+        height: 100%;
+        padding: 0.5rem;
+        background: #1e5540;
+        border: none;
+        border-radius: 50%;
+    }
+    &__container {
+        display: flex;
+    }
+    &__inner {
+        margin: 0 0.6rem;
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        
+        @include mobile {
+            margin: 0 0.1rem;
+        }
+    }
+    &__slide {
+        flex: 1 1 50%;
+    }
+}

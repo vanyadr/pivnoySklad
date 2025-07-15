@@ -65,8 +65,9 @@
         width: 2.4rem;
         border-radius: 12px;
         background: #292522;
-
+        
         @include mobile {
+            padding: 0.7rem;
             height: 2.2rem;
             width: 2.2rem;
         }
@@ -169,6 +170,7 @@
         font-weight: 400;
         font-size: .8rem;
         color: #292522;
+        padding: 0 .5rem .2rem 0;
         
         @include tablet {
             font-size: .7rem;

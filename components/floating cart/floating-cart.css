@@ -27,12 +27,12 @@
 .floating-cart__info {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  gap: 1.3rem 0.8rem;
+  gap: 0.8rem;
   align-items: center;
 }
 @media (max-width: 1400px) {
   .floating-cart__info {
-    gap: 0.5rem 0.5rem;
+    gap: 0.5rem;
   }
 }
 .floating-cart__info span {

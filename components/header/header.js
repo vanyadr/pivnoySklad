@@ -1,6 +1,8 @@
-import {moveBubble} from './modules/headerBubble.js';
-import {toggleAccordion} from './modules/toggleAccordion.js';
-import {toggleBurgerMenu} from './modules/toggleBurger.js';
+"use strict";
+
+import {moveBubble} from '../../js/modules/headerBubble.js';
+import {toggleAccordion} from '../../js/modules/toggleAccordion.js';
+import {toggleBurgerMenu} from '../../js/modules/toggleBurger.js';
 
 window.addEventListener('load', () => {
     moveBubble();

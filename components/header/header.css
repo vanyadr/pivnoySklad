@@ -1,5 +1,5 @@
 .header:has(.header__burger-menu.opened) {
-  max-height: 100vh;
+  height: 100vh;
   background: #fff;
   overflow-y: auto;
 }
@@ -23,6 +23,11 @@
   padding-bottom: 1rem;
   z-index: 3;
 }
+@media (max-width: 768px) {
+  .header {
+    background: #fff;
+  }
+}
 .header__holder {
   display: flex;
   justify-content: space-between;
@@ -33,6 +38,11 @@
   .header__holder {
     gap: 0.8rem;
     flex-wrap: wrap;
+  }
+}
+@media (max-width: 768px) {
+  .header__holder {
+    row-gap: 0.6rem;
   }
 }
 .header__logo {
@@ -48,8 +58,19 @@
     height: 2.1rem;
   }
 }
+@media (max-width: 768px) {
+  .header__logo {
+    height: 1.5rem;
+  }
+}
+.header__logo a {
+  width: fit-content;
+}
+.header__logo img {
+  width: auto;
+}
 .header__menu-element {
-  background: rgba(0, 0, 0, 0.04);
+  background: #F5F5F5;
   border-radius: 90px;
   padding: 0 1.6rem;
   height: 2.8rem;
@@ -65,6 +86,12 @@
 @media (max-width: 1024px) {
   .header__menu-element {
     padding: 0 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .header__menu-element {
+    padding: 0 0.5rem;
+    height: 1.8rem;
   }
 }
 .header__menu {
@@ -123,8 +150,39 @@
   align-items: center;
   gap: 0.8rem;
 }
+@media (max-width: 768px) {
+  .header__menu-links {
+    gap: 1rem;
+  }
+}
 .header__menu-link {
   height: 1.1rem;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .header__menu-link {
+    height: 0.8rem;
+  }
+}
+.header__menu-cart-quantity {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(70%, -65%);
+  font-size: 0.5rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  padding: 0.2rem 0.4rem;
+  background: #f23c20;
+  border-radius: 12px;
+}
+@media (max-width: 1024px) {
+  .header__menu-cart-quantity {
+    transform: translate(70%, -55%);
+    font-size: 0.4rem;
+    padding: 0.1rem 0.2rem;
+  }
 }
 .header__search {
   padding-right: 2.8rem;
@@ -153,6 +211,8 @@
   .header__search {
     flex-basis: 100%;
     order: 4;
+    padding-right: 1.8rem;
+    padding-left: 0.8rem;
   }
 }
 .header__search::after {
@@ -164,6 +224,13 @@
   right: 0.8rem;
   transform: translateY(-50%);
   background: url(../images/search-icon.svg) no-repeat center/contain;
+}
+@media (max-width: 768px) {
+  .header__search::after {
+    width: 0.8rem;
+    height: 0.8rem;
+    right: 0.5rem;
+  }
 }
 .header__input {
   font-weight: 600;
@@ -177,6 +244,11 @@
 @media (max-width: 1400px) {
   .header__input {
     font-size: 0.7rem;
+  }
+}
+@media (max-width: 768px) {
+  .header__input {
+    font-size: 0.6rem;
   }
 }
 .header__btn {
@@ -232,6 +304,15 @@
   padding: 0.6rem;
   height: fit-content;
   order: 3;
+}
+@media (max-width: 768px) {
+  .header__burger {
+    padding: 0 0.5rem;
+    height: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .header__burger path {
   transition: transform 0.3s ease;
@@ -292,5 +373,100 @@
 @media (max-width: 1024px) {
   .header-mobile {
     display: block;
+  }
+}
+
+.header-mobile.header__burger {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .header-mobile.header__burger {
+    display: flex;
+  }
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  color: #292522;
+  background: none;
+  border: none;
+  transition: margin 0.5s ease;
+}
+
+.accordion-header.opened {
+  margin-bottom: 1.5rem;
+}
+
+.accordion-item--no-open {
+  width: 100%;
+}
+
+.accordion-item--no-open a {
+  text-align: left;
+  color: #292522;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+}
+
+.accordion-title {
+  flex-basis: 95%;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: -0.03em;
+}
+
+@media (max-width: 768px) {
+  .accordion-title {
+    flex-basis: 88%;
+  }
+}
+.accordion-bullet {
+  flex-basis: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .accordion-bullet {
+    flex-basis: 12%;
+  }
+}
+.accordion-bullet path {
+  transform-origin: center;
+  transform: rotateZ(0deg);
+  opacity: 1;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-bullet.opened #accordion-bullet-hor {
+  transform: rotateZ(90deg);
+}
+.accordion-bullet.opened #accordion-bullet-vert {
+  transform: rotateZ(90deg);
+  opacity: 0;
+}
+
+.accordion-content {
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+  height: 0;
+  transition: all 0.5s ease;
+  color: #292522;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+  column-gap: 0.5rem;
+  padding: 0 0.6rem;
+}
+
+@media (max-width: 768px) {
+  .accordion-content {
+    row-gap: 1rem;
   }
 }
