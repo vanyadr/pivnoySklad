@@ -133,11 +133,11 @@
         display: flex;
         justify-content: space-between;
 
-        @include mobile {
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 0.5rem;
-        }
+        // @include mobile {
+        //     flex-direction: column;
+        //     align-items: flex-end;
+        //     gap: 0.5rem;
+        // }
 
         button {
             font-weight: 400;
@@ -147,6 +147,7 @@
             opacity: 0.8;
             border: none;
             background: none;
+            color: #000;
             
             @include mobile {
                 font-size: .5rem;
@@ -303,11 +304,11 @@
 }
 
 
-//Same block
-.same {
+//additional block
+.border-slider.additional {
     grid-column:  1 / -1;
 }
-.same>svg {
+.border-slider.additional>svg {
     position: absolute;
     width: 0;
     height: 0;
