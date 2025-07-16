@@ -423,13 +423,14 @@ main.main {
 }
 .totals .result__to-order {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 5rem 1fr;
   gap: 3rem;
   justify-content: space-between;
   align-items: center;
 }
 @media (max-width: 1400px) {
   .totals .result__to-order {
+    grid-template-columns: 4.5rem 1fr;
     gap: 1rem;
   }
 }
@@ -446,6 +447,7 @@ main.main {
 .totals .result__qr div {
   width: 100%;
   aspect-ratio: 1/1;
+  margin-bottom: 0.4rem;
 }
 .totals .result__qr p {
   font-weight: 600;
