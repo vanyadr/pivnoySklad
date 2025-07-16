@@ -28,8 +28,12 @@
         @content;
     }
 }
-.main {
+div.wrapper {
+    overflow: visible;
+}
+main.main {
     padding-top: 2rem;
+    overflow: visible;
     
     @include laptop {
         padding-top: 1.4rem;
@@ -303,6 +307,265 @@
     }
 }
 
+//Totals
+.totals-sticky-wrapper {
+    grid-column: 6 / -1;
+    padding-left: 1rem;
+    height: 100%;
+    
+    @include pc {
+        padding-left: 0;
+    }
+    @include laptop {
+        grid-column: 5 / -1;
+        padding-left: 3rem;
+    }
+    @include tablet {
+        padding-left: 0;
+        grid-column: 1 / -1;
+    }
+    @include mobile {
+    }
+}
+.totals {
+    position: sticky;
+    top: 4.8rem;
+    background: #f6f8f7;
+    border-radius: 24px;
+    padding: 2rem;
+    height: fit-content;
+    
+    @include pc {
+    }
+    @include laptop {
+        top: 4.4rem;
+        padding: 2rem 1.2rem;
+    }
+    @include tablet {
+        position: static;
+        padding: 2rem;
+    }
+    @include mobile {
+        padding: 1.6rem 1.2rem;
+    }
+
+    .result {
+        display: none;
+        flex-direction: column;
+        gap: 2rem;
+        height: 100%;
+        
+        @include pc {
+        }
+        @include laptop {
+            gap: 1.2rem;
+        }
+        @include tablet {
+            gap: 1.6rem;
+        }
+        @include mobile {
+            gap: 1.5rem;
+        }
+
+        &__title {}
+        &__promo {
+            position: relative;
+        }
+        &__inp::placeholder {
+            color: #1E5540;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+        &__inp {
+            border: 0.50px solid #1E5540;
+            border-radius: 10px;
+            padding: .8rem 2.4rem .8rem .5rem;
+            background: none;
+            width: 100%;
+            font-weight: 600;
+            font-size: .6rem;
+            line-height: 120%;
+            color: #1E5540;
+            text-transform: uppercase;
+
+            @include mobile {
+                font-size: .5rem;
+            }
+        }
+        &__promo-btn {
+            width: 1.4rem;
+            height: 1.4rem;
+            padding: 0.2rem;
+            background: #1e5540;
+            border: none;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            right: 0.5rem;
+            transform: translateY(-50%);
+        }
+        &__total {
+            display: flex;
+            flex-direction: column;
+        }
+        &__total-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        &__summ {
+            margin-bottom: 1.6rem;
+            
+            @include pc {
+            }
+            @include laptop {
+                margin-bottom: 1.2rem;
+            }
+            @include tablet {
+            }
+            @include mobile {
+            }
+        }
+        &__product-count {}
+        &__total-left-col {
+            font-weight: 400;
+        }
+        &__product-summ {}
+        &__total-right-col {
+            font-weight: 600;
+        }
+        &__sale {
+            padding-bottom: 1.3rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #000;
+            
+            @include pc {
+            }
+            @include laptop {
+                padding-bottom: 1.2rem;
+            }
+            @include tablet {
+            }
+            @include mobile {
+            }
+        }
+        &__sale-title {}
+        &__sale-summ {}
+        &__price {}
+        &__price-title {
+            font-weight: 600;
+        }
+        &__price-summ {}
+        &__to-order {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            justify-content: space-between;
+            align-items: center;
+            
+            @include pc {
+            }
+            @include laptop {
+                gap: 1rem;
+            }
+            @include tablet {
+            }
+            @include mobile {
+                grid-template-columns: 1fr;
+            }
+        }
+        &__qr {
+            @include mobile {
+                display: none;;
+            }
+            div {
+                width: 100%;
+                aspect-ratio: 1 / 1;
+            }
+            p {
+                font-weight: 600;
+                font-size: .6rem;
+                text-align: center;
+                opacity: 0.6;
+                
+                @include laptop {
+                    font-size: .5rem;
+                }
+            }
+        }
+        &__buttons {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            @include laptop {
+                gap: 0.6rem;
+            }
+            @include mobile {
+                gap: 0.6rem;
+            }
+        }
+        &__by-tg {
+            width: 100%;
+            border-radius: 90px;
+            background: #1e5540;
+            font-size: .7rem;
+            letter-spacing: -0.03em;
+            color: #fff;
+            line-height: auto;
+            padding: .8rem 1.2rem;
+            text-align: center;
+            font-weight: 600;
+            
+            @include pc {
+            }
+            @include laptop {
+                font-size: .6rem;
+            }
+            @include tablet {
+                padding: .6rem .4rem;
+            }
+            @include mobile {
+                font-size: .5rem;
+                width: 100%;
+                min-width: 0;
+            }
+        }
+        &__by-site {
+            width: 100%;
+            border-radius: 90px;
+            background: none;
+            border: 1px solid #000;
+            font-size: .7rem;
+            letter-spacing: -0.03em;
+            color: #000;
+            line-height: auto;
+            padding: .8rem 1.2rem;
+            text-align: center;
+            font-weight: 600;
+            
+            @include laptop {
+                font-size: .6rem;
+            }
+            @include tablet {
+                padding: .6rem .4rem;
+            }
+            @include mobile {
+                font-size: .5rem;
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    }
+    .order {
+        display: none;
+    }
+    .result.active,
+    .order.active {
+        display: flex;
+    }
+}
 
 //additional block
 .border-slider.additional {

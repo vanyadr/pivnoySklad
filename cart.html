@@ -286,7 +286,46 @@
                     </li>
                 </ul>
             </section>
-            <section class="totals"></section>
+            <div class="totals-sticky-wrapper">
+                <section class="totals section">
+                    <div class="totals__result result active">
+                        <h2 class="result__title h2">Сумма заказа</h2>
+                        <form action="" class="result__promo">
+                            <input type="text" name="cart-promocode" id="cart-promocoded" class="result__inp" placeholder="ВВЕДИТЕ ПРОМОКОД">
+                            <button type="submit" class="result__promo-btn">
+                                <img src="images/arrow-right-white.svg" alt="Применить">
+                            </button>
+                        </form>
+                        <div class="result__total">
+                            <div class="result__summ result__total-item">
+                                <span class="result__product-count result__total-left-col">3 товара</span>
+                                <span class="result__product-summ result__total-right-col">675 рублей</span>
+                            </div>
+                            <div class="result__sale result__total-item">
+                                <span class="result__sale-title result__total-left-col">Скидка</span>
+                                <span class="result__sale-summ result__total-right-col">137 рублей</span>
+                            </div>
+                            <div class="result__price result__total-item">
+                                <span class="result__price-title result__total-left-col">Итого</span>
+                                <span class="result__price-summ result__total-right-col">67846 рублей</span>
+                            </div>
+                        </div>
+                        <div class="result__to-order">
+                            <div class="result__qr">
+                                <div>
+                                    <img src="images/test-qr.jpg" alt="">
+                                </div>
+                                <p>QR-код Телеграм</p>
+                            </div>
+                            <div class="result__buttons">
+                                <a href="#" class="result__by-tg">Заказать через Телеграм</a>
+                                <button type="button" class="result__by-site">Заказать на сайте</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="totals__order order"></div>
+                </section>
+            </div>
             <section class="additional border-slider section">
                 <div class="border-slider__header">
                     <h2 class="border-slider__title h2">Похожие сорта</h2>
@@ -560,17 +599,6 @@
             </section>
         </main>
     </div>
-    <a href="#" class="floating-cart">
-        <div class="floating-cart__img">
-            <img src="images/cart-white-icon.svg" alt="Корзина">
-        </div>
-        <div class="floating-cart__info">
-            <span class="floating-cart__text">Итого:</span>
-            <span class="floating-cart__num">0 шт.</span>
-            <span class="floating-cart__text">Сумма:</span>
-            <span class="floating-cart__summ">0 р</span>
-        </div>
-    </a>
     <footer class="footer">
         <div class="footer__holder container grid">
             <div class="footer__col-1">
