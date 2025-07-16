@@ -1,0 +1,63 @@
+.slick-list.draggable {
+  width: 100%;
+}
+
+.slick-track {
+  margin: 0;
+}
+
+.slick-initialized .slick-slide {
+  display: flex;
+}
+.border-slider__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .border-slider__header {
+    margin-bottom: 1.6rem;
+    align-items: center;
+  }
+}
+.border-slider__btns {
+  display: flex;
+  gap: 0.8rem;
+  height: 2.2rem;
+}
+.border-slider__btn {
+  aspect-ratio: 1/1;
+  height: 100%;
+  padding: 0.5rem;
+  background: #1e5540;
+  border: none;
+  border-radius: 50%;
+}
+.border-slider__container {
+  display: flex;
+}
+.border-slider__inner {
+  margin: 0 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .border-slider__inner {
+    margin: 0 0.1rem;
+  }
+}
+.border-slider__slide {
+  flex: 1 1 50%;
+}
+.border-slider.additional {
+  grid-column: 1/-1;
+}
+
+.border-slider.additional > svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}

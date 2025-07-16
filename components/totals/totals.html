@@ -1,0 +1,74 @@
+<div class="totals-sticky-wrapper"><!--Обертка, чтобы контейнер приклеивался + надо задать overflow:visible (см. page cart)-->
+    <section class="totals section">
+        <div class="totals__result result active"><!--Блок итогов заказа. Изначально активен-->
+            <h2 class="result__title h2">Сумма заказа</h2>
+            <form action="" class="result__promo"><!--Форма ввода промокода-->
+                <input type="text" name="cart-promocode" id="cart-promocoded" class="result__inp" placeholder="ВВЕДИТЕ ПРОМОКОД">
+                <button type="submit" class="result__promo-btn">
+                    <img src="images/arrow-right-white.svg" alt="Применить">
+                </button>
+            </form>
+            <div class="result__total">
+                <div class="result__summ result__total-item">
+                    <span class="result__product-count result__total-left-col">3 товара</span><!--Число товаров. Могу прислать функцию, ставящую правильное окончание слову "товар" в зависимости от числа-->
+                    <span class="result__product-summ result__total-right-col">675 рублей</span><!--Сумма до скидок-->
+                </div>
+                <div class="result__sale result__total-item">
+                    <span class="result__sale-title result__total-left-col">Скидка</span>
+                    <span class="result__sale-summ result__total-right-col">137 рублей</span><!--Сумма скидки-->
+                </div>
+                <div class="result__price result__total-item">
+                    <span class="result__price-title result__total-left-col">Итого</span>
+                    <span class="result__price-summ result__total-right-col">67846 рублей</span><!--Итоговая сумма (до скидки - скидка)-->
+                </div>
+            </div>
+            <div class="result__to-order">
+                <div class="result__qr">
+                    <div>
+                        <img src="images/test-qr.jpg" alt=""><!--QR на ТГ-->
+                    </div>
+                    <p>QR-код Телеграм</p>
+                </div>
+                <div class="result__buttons">
+                    <a href="#" class="result__by-tg">Заказать через Телеграм</a><!--Ссылка на ТГ-->
+                    <button type="button" class="result__by-site">Заказать на сайте</button><!--Переключает на блок оформления заказа-->
+                </div>
+            </div>
+        </div>
+        <div class="totals__order order"><!--Блок оформления заказа, изначально скрыт-->
+            <h2 class="order__title h2">Оформить заказ</h2>
+            <form action="#" method="post" class="order__checkout checkout"><!--Форма оформления заказа-->
+                <div class="checkout__field">
+                    <label for="name">Имя*</label>
+                    <input type="text" name="name" id="name" autocomplete="on" required>
+                    <p class="checkout__error"></p>
+                </div>
+                <div class="checkout__field">
+                    <label for="phone">Номер телефона*</label>
+                    <input type="tel" name="phone" id="phone" autocomplete="on" required>
+                    <p class="checkout__error"></p>
+                </div>
+                <div class="checkout__field error"><!--При неправильном вводе (если поле не прошло валидацию) добавляем класс error-->
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" autocomplete="on">
+                    <p class="checkout__error">Неверно введен e-mail</p><!--Элемент, в который можно вставить сообщение об ошибке-->
+                </div>
+                <div class="checkout__field">
+                    <label for="comment">Комментарий</label>
+                    <textarea type="text" name="comment" id="comment" rows="5" autocomplete="on"></textarea>
+                    <p class="checkout__error"></p>
+                </div>
+            </form>
+            <p class="order__summ">Сумма заказа:  38429 рублей</p><!--Итоговая сумма-->
+            <div class="order__btns">
+                <button type="button" class="order__back-btn border-btn"><!--Переключает на блок итогов заказа-->
+                    <div>
+                        <img src="images/arrow-left-white.svg" alt="Назад">
+                    </div>
+                    <p>Назад</p>
+                </button>
+                <button type="button" class="order__confirm-btn bg-btn">Заказать</button><!--Кнопка оформления заказа, по идее на ней должна висеть функция confirmBasketSkladNew();-->
+            </div> 
+        </div>
+    </section>
+</div>

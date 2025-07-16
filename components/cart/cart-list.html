@@ -1,0 +1,38 @@
+<section class="cart section">
+    <ul class="cart__list"><!--Список вывода товаров в корзине-->
+        <!--Начало цикла-->
+        <li class="cart__item">
+            <a href="#" class="cart__img"><!--Ссылка на страницу товара-->
+                <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach"><!--Изображение товара + название + стиль-->
+            </a>
+            <div class="cart__info">
+                <div class="cart__actions">
+                    <button type="button" class="cart__to-favourites">Добавить в Избранное</button><!--Кнопка в избранное-->
+                    <button type="button" class="cart__to-trash">Удалить</button><!--Кнопка удаления-->
+                </div>
+                <div class="cart__header">
+                    <a href="#"><h3 class="cart__title">Mittelatel</h3></a><!--Название со ссылкой на страницу товара-->
+                    <p class="cart__style">Немецкий неосветленный лагер</p><!--Стиль-->
+                    <span class="cart__stock">В наличии 56 шт.</span><!--Число остатков-->
+                </div>
+                <div class="cart__price">
+                    <span class="cart__price-actual"><!--Текущая цена-->
+                        215 р
+                        <span class="cart__price-old">260 р</span><!--Можно не указывать. Цена со скидкой-->
+                    </span> 
+                    <span class="cart__volume">450 мл</span><!--Объем-->
+                </div>
+                <div class="cart__quantity quantity"><!--Кнопки увеличения числа позиций в корзине. Функция пока просто увеличивает значение инпута-->
+                    <button type="button" class="quantity__minus change-quantity-minus">
+                        <img src="images/quantity-minus.svg" alt="Меньше" class="change-quantity-minus">
+                    </button>
+                    <input type="number" class="quantity__num" value="2"><!--Поле ввода числа товаров. Надо сделать проверку, не больше ли число, чем остатки по позиции-->
+                    <button type="button" class="quantity__plus change-quantity-plus">
+                        <img src="images/quantity-plus.svg" alt="Больше" class="change-quantity-plus">
+                    </button>
+                </div>
+            </div>
+        </li>
+        <!--Конец цикла-->
+    </ul>
+</section>

@@ -12,6 +12,13 @@
     - page catalog
     - catalog list
     - filters
+    - page cart
+    - cart
+    - totals
+    - additional carousel
+    - same carousel
+    - page product
+    - product
 
 Покомпонентный состав страниц:
 *Каждая страница включает в себя компонент basic, в котором содержатся ссылки на стили и скрипты, использующиеся на каждой странице. Некоторые стили могут дублировать стили компонентов, поэтому стили компонентов лучше подключать после. Как только весь сайт будет готов, в style.css останутся только такие стили, чтобы не было дублирования со стилями компонентов
@@ -26,4 +33,11 @@
 
 3. Каталог
     basic -> header -> page catalog -> catalog list* -> filters -> footer
+    *включает в себя компонент карточки товара, в котором даны комментарии
+
+4. Страница товара
+    basic -> header -> page product -> product -> same carousel -> footer
+
+5. Корзина
+    basic -> header -> page cart -> cart -> totals -> additional carousel* -> footer
     *включает в себя компонент карточки товара, в котором даны комментарии

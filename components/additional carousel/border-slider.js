@@ -12,12 +12,12 @@ window.addEventListener('load', () => {
     if (document.documentElement.clientWidth <= 768) {
         cardsToShow = 2;
     };
-    $('.border-slider__container.sales').slick({ 
+    $('.border-slider__container.additional').slick({ 
         infinite: true,
         speed: 500,
         dots: false,
-        prevArrow: '.border-slider__btn-left.sales',
-        nextArrow: '.border-slider__btn-right.sales',
+        prevArrow: '.border-slider__btn-left.additional',
+        nextArrow: '.border-slider__btn-right.additional',
         slidesToShow: cardsToShow,
         slidesToScroll: 1
     });

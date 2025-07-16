@@ -1,0 +1,72 @@
+<section class="product grid section">
+    <div class="product__img"><!--Изображение товара-->
+        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach"><!--В альт - стиль и название-->
+        <button type="button" class="product__like"><!--Кнопка в избранное. Если добавлен, то изображение star-fill-->
+            <img src="images/star-icon.svg" alt="В избранное">
+        </button>
+    </div>
+    <div class="product__info">
+        <div class="product__header">
+            <div class="product__name">
+                <h1 class="product__title h1">Mittelatel</h1><!--Название-->
+                <div class="product__stock">
+                    <span>В наличии</span><!--Если есть в наличии, то изображение показываем, если нет - скрываем-->
+                    <img src="images/tick-green.svg" alt="В наличии">
+                </div>
+            </div>
+            <p class="product__type">Немецкий неосветленный лагер</p>
+        </div>
+        <div class="product__parameter taste">
+            <span class="product__parameter-key">Вкус:</span>
+            <span class="product__parameter-value">Солодовый</span>
+        </div>
+        <div class="product__parameter brewery">
+            <span class="product__parameter-key">Пивоварня:</span>
+            <span class="product__parameter-value">Plague Brew</span>
+        </div>
+        <div class="product__parameter style">
+            <span class="product__parameter-key">Стиль:</span>
+            <span class="product__parameter-value">Киллербир / Цвикельбир (Kellerbier / Zwickelbier)</span>
+        </div>
+        <div class="product__specs">
+            <span>ABV: 12%</span>
+            <span>OG: 24%</span>
+            <span>IBU: 100</span>
+        </div>
+        <div class="product__description accrodion-holder"><!--Описание в виде аккордеона-->
+            <div class="accrodion-item">
+                <button class="accordion-header">
+                    <h3 class="accordion-title h3">Описание</h3>
+                    <div class="accordion-bullet">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </button>
+                <div class="accordion-content"><!--Текст описания-->
+                    <p>Наш сорт Freiwald сварен в стиле баварского светлого лагера - хеллеса. Хеллес — это солодово-акцентированное пиво, не слишком сладкое, а скорее с акцентом на солодовом вкусе, с лежащей под ним хмелевой горечью, которая играет роль второго плана. Сам сорт посвящён дворянскому баварскому роду Фрайвальд, представители которого в середине 19 века мигрировали в Россию и поступили на службу к русским князьям, а так же являются предками главного технолога нашей пивоварни.</p>
+                </div>
+            </div>
+        </div>
+        <div class="product__price">
+            <span class="product__price-actual"><!--Цена, если со скидкой - указываем старую-->
+                215 р
+                <span class="product__price-old">260 р</span>
+            </span> 
+            <span class="product__volume">450 мл</span><!--Объем-->
+        </div>
+        <div class="product__btns">
+            <button class="product__add-to-cart bg-btn">В корзину</button><!--Кнопка с добавлением в корзину-->
+            <button class="product__buy-now border-btn"><!--Тоже добавляет в корзину, но еще тут же редиректит на корзину-->
+                <p>Купить сейчас</p>
+                <div>
+                    <img src="images/arrow-right-white.svg" alt="Купить">
+                </div>
+            </button>
+        </div>
+    </div>
+</section>
