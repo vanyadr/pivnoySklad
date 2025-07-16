@@ -31,3 +31,22 @@ export const changeQuantity = function () {
         }
     });
 };
+
+export const toggleCheckout = function () {
+    const sections = [
+        document.querySelector('.totals__result'),
+        document.querySelector('.totals__order')
+    ];
+    const btns = [
+        document.querySelector('.result__by-site'),
+        document.querySelector('.order__back-btn')
+    ];
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            sections.forEach(section => {
+                section.classList.toggle('active');
+            });
+        });
+    });
+};

@@ -288,7 +288,7 @@
             </section>
             <div class="totals-sticky-wrapper">
                 <section class="totals section">
-                    <div class="totals__result result">
+                    <div class="totals__result result active">
                         <h2 class="result__title h2">Сумма заказа</h2>
                         <form action="" class="result__promo">
                             <input type="text" name="cart-promocode" id="cart-promocoded" class="result__inp" placeholder="ВВЕДИТЕ ПРОМОКОД">
@@ -323,7 +323,41 @@
                             </div>
                         </div>
                     </div>
-                    <div class="totals__order order active"></div>
+                    <div class="totals__order order">
+                        <h2 class="order__title h2">Оформить заказ</h2>
+                        <form action="#" method="post" class="order__checkout checkout">
+                            <div class="checkout__field">
+                                <label for="name">Имя*</label>
+                                <input type="text" name="name" id="name" autocomplete="on" required>
+                                <p class="checkout__error"></p>
+                            </div>
+                            <div class="checkout__field">
+                                <label for="phone">Номер телефона*</label>
+                                <input type="tel" name="phone" id="phone" autocomplete="on" required>
+                                <p class="checkout__error"></p>
+                            </div>
+                            <div class="checkout__field error">
+                                <label for="email">E-mail</label>
+                                <input type="email" name="email" id="email" autocomplete="on">
+                                <p class="checkout__error">Неверно введен e-mail</p>
+                            </div>
+                            <div class="checkout__field">
+                                <label for="comment">Комментарий</label>
+                                <textarea type="text" name="comment" id="comment" rows="5" autocomplete="on"></textarea>
+                                <p class="checkout__error"></p>
+                            </div>
+                        </form>
+                        <p class="order__summ">Сумма заказа:  38429 рублей</p>
+                        <div class="order__btns">
+                            <button type="button" class="order__back-btn border-btn">
+                                <div>
+                                    <img src="images/arrow-left-white.svg" alt="Назад">
+                                </div>
+                                <p>Назад</p>
+                            </button>
+                            <button type="button" class="order__confirm-btn bg-btn">Заказать</button>
+                        </div> 
+                    </div>
                 </section>
             </div>
             <section class="additional border-slider section">

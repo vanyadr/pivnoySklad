@@ -515,7 +515,7 @@ main.main {
             font-size: .7rem;
             letter-spacing: -0.03em;
             color: #fff;
-            line-height: auto;
+            line-height: 1;
             padding: .8rem 1.2rem;
             text-align: center;
             font-weight: 600;
@@ -542,7 +542,7 @@ main.main {
             font-size: .7rem;
             letter-spacing: -0.03em;
             color: #000;
-            line-height: auto;
+            line-height: 1;
             padding: .8rem 1.2rem;
             text-align: center;
             font-weight: 600;
@@ -562,6 +562,173 @@ main.main {
     }
     .order {
         display: none;
+        flex-direction: column;
+
+        &__title {
+            margin-bottom: 2rem;
+
+            @include laptop {
+                margin-bottom: 1.6rem;
+            }
+            @include tablet {
+                margin-bottom: 2rem;
+            }
+            @include mobile {
+                margin-bottom: 1.6rem;
+            }
+        }
+        .checkout {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            margin-bottom: 1.6rem;
+            
+            @include laptop {
+                gap: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+            @include tablet {
+                gap: 1.6rem;
+                margin-bottom: 1.6rem;
+            }
+            @include mobile {
+                gap: 1.2rem;
+                margin-bottom: 1.2rem;
+            }
+
+            &__field {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                gap: 0.4rem;
+
+                input, textarea {
+                    border: 1px solid #1e5540;
+                    border-radius: 60px;
+                    width: 100%;
+                    padding: 0.7rem 1.5rem;
+                    font-weight: 600;
+                    font-size: .7rem;
+                    letter-spacing: -0.03em;
+                    color: #000;
+                    background: none;
+                    
+                    @include laptop {
+                        padding: 0.5rem 1.5rem;
+                        font-size: .6rem;
+                    }
+                    @include tablet {
+                        padding: 0.7rem 1.5rem;
+                        font-size: .7rem;
+                    }
+                    @include mobile {
+                        padding: 0.5rem 1.5rem;
+                        font-size: .6rem;
+                    }
+                }
+                textarea {
+                    resize: none;
+                    border-radius: 24px;
+                    scrollbar-width: none;
+                }
+                label {
+                    background: #f6f8f7;
+                    font-weight: 600;
+                    font-size: .6rem;
+                    letter-spacing: -0.03em;
+                    color: #1e5540;
+                    position: absolute;
+                    top: 0;
+                    left: 1.5rem;
+                    transform: translateY(-50%);
+                    padding: 0 0.2rem;
+                    line-height: 1;
+                }
+            }
+            &__field.error {
+                input, textarea {
+                    background: #fff5f5;
+                    border-color: #f23c20;
+                }
+                label {
+                    color: #f23c20;
+                }
+            }
+            &__error {
+                font-weight: 600;
+                font-size: .6rem;
+                letter-spacing: -0.03em;
+                color: #f23c20;
+            }
+        }
+        &__summ {
+            font-weight: 600;
+            color: #1e5540;
+            margin-bottom: 1.6rem;
+            
+            @include laptop {
+                margin-bottom: 1.2rem;
+            }
+            @include tablet {
+                margin-bottom: 1.6rem;
+                font-size: 1rem;
+            }
+            @include mobile {
+                font-size: .7rem;
+                margin-bottom: 1.2rem;
+            }
+        }
+        &__btns {
+            display: flex;
+            gap: 1.6rem;
+            justify-content: space-between;
+            
+            @include laptop {
+                gap: 1.2rem;
+            }
+            @include tablet {
+                gap: 1.6rem;
+            }
+            @include mobile {
+                gap: 1.2rem;
+            }
+        }
+        &__back-btn {
+            width: 7.5rem;
+            min-width: 0;
+            gap: 0;
+            flex-shrink: 0;
+            background: none;
+
+            @include mobile {
+                width: auto;
+            }
+            
+            p {
+                font-size: 0.7rem;
+                padding-left: 0;
+                padding-right: 0.8rem;
+                font-weight: 500;
+                width: 100%;
+                text-align: center;
+
+                @include mobile {
+                    display: none;
+                }
+            }
+            div {
+                @include mobile {
+                    padding: 0.5rem;
+                }
+            }
+        }
+        &__confirm-btn {
+            background: #1e5540;
+            color: #fff;
+            font-size: 0.7rem;
+            width: 100%;
+            flex-shrink: 1;
+        }
     }
     .result.active,
     .order.active {
