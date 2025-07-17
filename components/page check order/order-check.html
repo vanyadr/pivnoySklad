@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="libraries/slick-1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order-check.css">
+    
+    <script src="libraries/jquery-3.7.1/jquery-3.7.1.min.js" defer></script>
+    <script src="libraries/slick-1.8.1/slick/slick.min.js" defer></script>
+
+    <script type="module" src="js/script.js" defer></script>
+    <script type="module" src="js/order-check.js" defer></script>
+
+    <title>Проверить заказ - Пивной Склад</title>
+    <meta 
+        name="description"
+        content="Узнайте статус вашего заказа напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+    >
+    <meta
+        name="keywords"
+        content="пиво, крафт, Пивной Склад, напитки, корзина, купить, заказ"
+    >
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <header class="header"><!--Компонент шапки-->
+    </header>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <main class="main container">
+            <h1 class="title h1">Проверить заказ</h1><!--Заголовок страницы-->
+            <section class="check section">
+                <h2 class="check__title h2">Чтобы проверить заказ, введите свой номер телефона и код с картинки</h2><!--Текст-->
+                <form class="check__form" name="orderCheck" id="orderCheck" method="post" action="index.php?pageId=135"><!--Форма проверки заказа-->
+                    <input type="hidden" name="refresh" id="refresh" value="">
+                    <div class="check__captcha">
+                        <img src="images/test-captcha.jpg" alt="Captcha"><!--Картинка капчи-->
+                    </div>
+                    <div class="check__field">
+                        <label for="name">Код с картинки*</label>
+                        <input type="text" name="keystring" id="keystring" autocomplete="on" required>
+                        <p class="checkout__error"></p>
+                    </div>
+                    <div class="check__field">
+                        <label for="phone">Номер телефона*</label>
+                        <input type="tel" name="phone" id="phone" autocomplete="on" required>
+                        <p class="checkout__error"></p>
+                    </div>
+                    <button type="button" class="check__confirm-btn bg-btn">Проверить заказ</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <footer class="footer"><!--Компонент подвала-->
+    </footer>
+</body>
+
+</html>
