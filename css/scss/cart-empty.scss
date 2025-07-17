@@ -1,0 +1,91 @@
+@mixin centerItem () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin pc {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mobileAlbum {
+    @media (orientation: landscape) and (max-height: 768px) {
+        @content;
+    }
+}
+main.main {
+    padding-top: 2rem;
+    
+    @include laptop {
+        padding-top: 1.4rem;
+    }
+    @include mobile {
+        padding-top: .2rem;
+    }
+}
+
+//Title
+.title {
+    grid-column: 1 / -1;
+    margin-bottom: 1.5rem;
+}
+
+//Empti section
+.empty-cart {
+    @include centerItem();
+    flex-direction: column;
+    border-radius: 24px;
+    background: #f6f8f7;
+    grid-column: 1 / -1;
+    gap: 3rem;
+    padding: 12rem 0;
+    
+    @include pc {
+        padding: 8rem 0;
+    }
+    @include laptop {
+        padding: 6rem 0;
+    }
+    @include tablet {
+        gap: 1.5rem;
+        padding: 2.5rem 0;
+    }
+    @include mobile {
+        padding: 7rem 0;
+    }
+
+    &__title {
+        text-align: center;
+        opacity: 0.6;
+    }
+    &__button {
+        background: transparent;
+        gap: 1rem;
+        min-width: 0;
+    }
+}
+
+section.additional {
+    grid-column: 1 / -1;
+    
+}
+section.additional>svg {
+    width: 0;
+    height: 0;
+    position: absolute;
+}

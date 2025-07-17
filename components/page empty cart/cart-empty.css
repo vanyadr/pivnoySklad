@@ -1,0 +1,72 @@
+main.main {
+  padding-top: 2rem;
+}
+@media (max-width: 1400px) {
+  main.main {
+    padding-top: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  main.main {
+    padding-top: 0.2rem;
+  }
+}
+
+.title {
+  grid-column: 1/-1;
+  margin-bottom: 1.5rem;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 24px;
+  background: #f6f8f7;
+  grid-column: 1/-1;
+  gap: 3rem;
+  padding: 12rem 0;
+}
+@media (max-width: 1800px) {
+  .empty-cart {
+    padding: 8rem 0;
+  }
+}
+@media (max-width: 1400px) {
+  .empty-cart {
+    padding: 6rem 0;
+  }
+}
+@media (max-width: 1024px) {
+  .empty-cart {
+    gap: 1.5rem;
+    padding: 2.5rem 0;
+  }
+}
+@media (max-width: 768px) {
+  .empty-cart {
+    padding: 7rem 0;
+  }
+}
+.empty-cart__title {
+  text-align: center;
+  opacity: 0.6;
+}
+.empty-cart__button {
+  background: transparent;
+  gap: 1rem;
+  min-width: 0;
+}
+
+section.additional {
+    grid-column: 1 / -1;
+    
+}
+section.additional>svg {
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/*# sourceMappingURL=cart-empty.css.map */
