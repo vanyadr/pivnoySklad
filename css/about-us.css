@@ -1,0 +1,394 @@
+main.main {
+  padding-top: 2rem;
+}
+@media (max-width: 1400px) {
+  main.main {
+    padding-top: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  main.main {
+    padding-top: 0.2rem;
+  }
+}
+
+.about {
+  align-items: end;
+  row-gap: 11rem;
+}
+@media (max-width: 1800px) {
+  .about {
+    row-gap: 10rem;
+  }
+}
+@media (max-width: 1400px) {
+  .about {
+    row-gap: 8rem;
+  }
+}
+@media (max-width: 1024px) {
+  .about {
+    row-gap: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .about {
+    row-gap: 0;
+  }
+}
+.about__title {
+  grid-column: 1/5;
+  font-weight: 400;
+  font-size: 11.5rem;
+  text-transform: uppercase;
+  font-family: Impact, serif;
+}
+@media (max-width: 1800px) {
+  .about__title {
+    font-size: 10rem;
+  }
+}
+@media (max-width: 1400px) {
+  .about__title {
+    font-size: 7rem;
+  }
+}
+@media (max-width: 1024px) {
+  .about__title {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 768px) {
+  .about__title {
+    grid-column: 1/-1;
+    font-size: 2.1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+.about__info {
+  grid-column: 5/-1;
+}
+@media (max-width: 768px) {
+  .about__info {
+    grid-column: 1/-1;
+    margin-bottom: 5rem;
+  }
+}
+.about__history {
+  margin-bottom: 2.4rem;
+}
+@media (max-width: 1800px) {
+  .about__history {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 1400px) {
+  .about__history {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 1024px) {
+  .about__history {
+    margin-bottom: 3.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .about__history {
+    margin-bottom: 1.2rem;
+  }
+}
+.about__img {
+  border-radius: 24px;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .about__img {
+    border-radius: 16px;
+  }
+}
+.about__video {
+  margin-right: 5.5rem;
+  grid-column: 1/5;
+}
+@media (max-width: 1800px) {
+  .about__video {
+    margin-right: 3rem;
+  }
+}
+@media (max-width: 1400px) {
+  .about__video {
+    margin-right: 0;
+  }
+}
+@media (max-width: 768px) {
+  .about__video {
+    grid-column: 1/-1;
+    order: 1;
+  }
+}
+.about__text {
+  grid-column: 5/-1;
+}
+@media (max-width: 768px) {
+  .about__text {
+    margin-bottom: 1.2rem;
+    grid-column: 1/-1;
+  }
+}
+
+@media (max-width: 768px) {
+  .excursion {
+    padding: 0;
+  }
+}
+.excursion__holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.4rem;
+  border-radius: 32px;
+  background: #f78455;
+  padding: 9rem;
+}
+@media (max-width: 1800px) {
+  .excursion__holder {
+    padding: 7.5rem 2.4rem;
+  }
+}
+@media (max-width: 1400px) {
+  .excursion__holder {
+    padding: 6rem 4rem;
+  }
+}
+@media (max-width: 1024px) {
+  .excursion__holder {
+    padding: 4rem 1.5rem;
+    gap: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .excursion__holder {
+    border-radius: 16px;
+    padding: 3rem 1.3rem;
+    gap: 1.2rem;
+  }
+}
+.excursion__title {
+  font-weight: 400;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: Impact, serif;
+  color: #fff;
+  letter-spacing: 0;
+  line-height: 1.2;
+}
+@media (max-width: 1800px) {
+  .excursion__title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 1400px) {
+  .excursion__title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .excursion__title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 768px) {
+  .excursion__title {
+    font-size: 0.9rem;
+  }
+}
+.excursion__btn {
+  min-width: 15rem;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .excursion__btn {
+    min-width: 11.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .excursion__btn {
+    min-width: 10.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts {
+    padding: 0;
+  }
+}
+.contacts__holder {
+  border-radius: 32px;
+  overflow: hidden;
+  display: flex;
+  height: 25rem;
+}
+@media (max-width: 1400px) {
+  .contacts__holder {
+    height: 22rem;
+  }
+}
+@media (max-width: 1024px) {
+  .contacts__holder {
+    flex-direction: column;
+    height: 33rem;
+  }
+}
+@media (max-width: 768px) {
+  .contacts__holder {
+    border-radius: 16px;
+    height: 28rem;
+  }
+}
+.contacts__info {
+  flex: 1 0 40%;
+  background: #f23c20;
+  padding: 3rem 0 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (max-width: 1800px) {
+  .contacts__info {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 1400px) {
+  .contacts__info {
+    padding: 3rem 0 3rem 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .contacts__info {
+    padding: 2rem 1.2rem;
+  }
+}
+@media (max-width: 768px) {
+  .contacts__info {
+    flex-basis: 60%;
+  }
+}
+.contacts__title {
+  font-family: Manrope, serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  margin-bottom: 0.6rem;
+  color: #fff;
+}
+@media (max-width: 1024px) {
+  .contacts__title {
+    margin-bottom: 0.4rem;
+  }
+}
+.contacts__contact {
+  font-weight: 600;
+  color: #fff;
+}
+.contacts__socials {
+  display: flex;
+  gap: 0.4rem;
+  height: 2rem;
+}
+@media (max-width: 768px) {
+  .contacts__socials {
+    height: 1.2rem;
+  }
+}
+.contacts__socials li {
+  height: 100%;
+  aspect-ratio: 1/1;
+}
+.contacts__map {
+  flex: 1 0 60%;
+  height: 100%;
+}
+@media (max-width: 1800px) {
+  .contacts__map {
+    flex-basis: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .contacts__map {
+    flex-basis: 40%;
+  }
+}
+
+.bottles {
+  align-items: end;
+}
+.bottles__info {
+  grid-column: 1/5;
+  padding-top: 27rem;
+}
+@media (max-width: 1800px) {
+  .bottles__info {
+    padding-top: 24rem;
+  }
+}
+@media (max-width: 1400px) {
+  .bottles__info {
+    padding-top: 13rem;
+  }
+}
+@media (max-width: 1024px) {
+  .bottles__info {
+    padding-top: 6rem;
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 768px) {
+  .bottles__info {
+    padding-top: 5rem;
+  }
+}
+.bottles__button {
+  margin-bottom: 4.5rem;
+  width: 15rem;
+}
+@media (max-width: 1024px) {
+  .bottles__button {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  .bottles__button {
+    width: 100%;
+  }
+}
+.bottles__cart-holder {
+  grid-column: 6/-1;
+  margin-left: 5rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+@media (max-width: 1800px) {
+  .bottles__cart-holder {
+    margin-left: 2.5rem;
+  }
+}
+@media (max-width: 1400px) {
+  .bottles__cart-holder {
+    margin-left: 0;
+  }
+}
+@media (max-width: 1024px) {
+  .bottles__cart-holder {
+    padding: 6rem 5rem 0;
+    grid-column: 1/-1;
+  }
+}
+@media (max-width: 768px) {
+  .bottles__cart-holder {
+    padding: 5rem 0 0;
+  }
+}
+
+/*# sourceMappingURL=about-us.css.map */
