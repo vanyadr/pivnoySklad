@@ -1,0 +1,149 @@
+main.main {
+  padding-top: 2rem;
+}
+@media (max-width: 1400px) {
+  main.main {
+    padding-top: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  main.main {
+    padding-top: 0.2rem;
+  }
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+@media (max-width: 1400px) {
+  .title {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .title {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
+}
+
+.orders__list {
+  display: flex;
+  flex-direction: column;
+  gap: 5.5rem;
+}
+@media (max-width: 1800px) {
+  .orders__list {
+    gap: 5rem;
+  }
+}
+@media (max-width: 1400px) {
+  .orders__list {
+    gap: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .orders__list {
+    gap: 3rem;
+  }
+}
+.orders .order {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+  padding-bottom: 1.2rem;
+}
+@media (max-width: 768px) {
+  .orders .order {
+    padding-bottom: 0.8rem;
+  }
+}
+.orders .order__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .orders .order__header {
+    margin-bottom: 1.2rem;
+    flex-direction: column;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+}
+.orders .order__status {
+  color: #1e5540;
+  opacity: 0.8;
+}
+.orders .order__section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+@media (max-width: 768px) {
+  .orders .order__section {
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+}
+.orders .order__item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media (max-width: 768px) {
+  .orders .order__item-list {
+    gap: 0.8rem;
+  }
+}
+.orders .order__item-item {
+  display: flex;
+  gap: 2.4rem;
+}
+@media (max-width: 768px) {
+  .orders .order__item-item {
+    gap: 0.8rem;
+  }
+}
+.orders .order__img {
+  display: block;
+  width: 6.5rem;
+  overflow: hidden;
+  border: 0.5px solid #1e5540;
+  border-radius: 16px;
+}
+.orders .order__img img {
+  object-fit: cover;
+  object-position: center;
+}
+.orders .order__info {
+  display: flex;
+  flex-direction: column;
+}
+.orders .order__item-header {
+  margin-bottom: 0.8rem;
+}
+.orders .order__title {
+  line-height: 1;
+}
+.orders .order__quantity {
+  margin-bottom: 1.2rem;
+  color: #1e5540;
+}
+.orders .order__price-total {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 140%;
+  letter-spacing: -0.04em;
+}
+@media (max-width: 1024px) {
+  .orders .order__price-total {
+    font-size: 0.8rem;
+  }
+}
+
+/*# sourceMappingURL=order-history.css.map */

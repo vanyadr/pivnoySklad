@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/order-check.css">
-
+    <link rel="stylesheet" href="css/order-history.css">
+    
     <script type="module" src="js/script.js" defer></script>
-    <script type="module" src="js/order-check.js" defer></script>
 
-    <title>Проверить заказ - Пивной Склад</title>
+    <title>История заказов - Пивной Склад</title>
     <meta 
         name="description"
-        content="Узнайте статус вашего заказа напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+        content="Посмотрите историю ваших заказов напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
     >
     <meta
         name="keywords"
@@ -192,26 +191,84 @@
     <div class="overlay"></div>
     <div class="wrapper">
         <main class="main container">
-            <h1 class="title h1">Проверить заказ</h1>
-            <section class="check section">
-                <h2 class="check__title h2">Чтобы проверить заказ, введите свой номер телефона и код с картинки</h2>
-                <form class="check__form" name="orderCheck" id="orderCheck" method="post" action="index.php?pageId=135">
-                    <input type="hidden" name="refresh" id="refresh" value="">
-                    <div class="check__captcha">
-                        <img src="images/test-captcha.jpg" alt="Captcha">
-                    </div>
-                    <div class="check__field">
-                        <label for="name">Код с картинки*</label>
-                        <input type="text" name="keystring" id="keystring" autocomplete="on" required>
-                        <p class="checkout__error"></p>
-                    </div>
-                    <div class="check__field">
-                        <label for="phone">Номер телефона*</label>
-                        <input type="tel" name="phone" id="phone" autocomplete="on" required>
-                        <p class="checkout__error"></p>
-                    </div>
-                    <button type="button" class="check__confirm-btn bg-btn">Проверить заказ</button>
-                </form>
+            <h1 class="title h1">Ваши заказы</h1>
+            <section class="orders section">
+                <ul class="orders__list">
+                    <li class="orders__item order">
+                        <div class="order__header">
+                            <h2 class="order__number h2">Заказ 12517 от 27.06.2025</h2>
+                            <h3 class="order__status h3">Принят</h3>
+                        </div>
+                        <div class="order__section">
+                            <ul class="order__item-list">
+                                <li class="order__item-item">
+                                    <a href="#" class="order__img">
+                                        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach">
+                                    </a>
+                                    <div class="order__info">
+                                        <div class="order__item-header">
+                                            <a href="#"><h3 class="order__title h3">Mittelatel</h3></a>
+                                            <p class="order__style h4">Немецкий неосветленный лагер, 450 мл</p>
+                                        </div>
+                                        <span class="order__quantity h4">В заказе 3 шт.</span>
+                                        <span class="order__price-total">675 р</span> 
+                                    </div>
+                                </li>
+                                <li class="order__item-item">
+                                    <a href="#" class="order__img">
+                                        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach">
+                                    </a>
+                                    <div class="order__info">
+                                        <div class="order__item-header">
+                                            <a href="#"><h3 class="order__title h3">Mittelatel</h3></a>
+                                            <p class="order__style h4">Немецкий неосветленный лагер, 450 мл</p>
+                                        </div>
+                                        <span class="order__quantity h4">В заказе 3 шт.</span>
+                                        <span class="order__price-total">675 р</span> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <span class="order__total h3">Итого: 890 рублей</span>
+                        </div>
+                    </li>
+                    <li class="orders__item order">
+                        <div class="order__header">
+                            <h2 class="order__number h2">Заказ 12517 от 27.06.2025</h2>
+                            <h3 class="order__status h3">Принят</h3>
+                        </div>
+                        <div class="order__section">
+                            <ul class="order__item-list">
+                                <li class="order__item-item">
+                                    <a href="#" class="order__img">
+                                        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach">
+                                    </a>
+                                    <div class="order__info">
+                                        <div class="order__item-header">
+                                            <a href="#"><h3 class="order__title h3">Mittelatel</h3></a>
+                                            <p class="order__style h4">Немецкий неосветленный лагер, 450 мл</p>
+                                        </div>
+                                        <span class="order__quantity h4">В заказе 3 шт.</span>
+                                        <span class="order__price-total">675 р</span> 
+                                    </div>
+                                </li>
+                                <li class="order__item-item">
+                                    <a href="#" class="order__img">
+                                        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach">
+                                    </a>
+                                    <div class="order__info">
+                                        <div class="order__item-header">
+                                            <a href="#"><h3 class="order__title h3">Mittelatel</h3></a>
+                                            <p class="order__style h4">Немецкий неосветленный лагер, 450 мл</p>
+                                        </div>
+                                        <span class="order__quantity h4">В заказе 3 шт.</span>
+                                        <span class="order__price-total">675 р</span> 
+                                    </div>
+                                </li>
+                            </ul>
+                            <span class="order__total h3">Итого: 890 рублей</span>
+                        </div>
+                    </li>
+                </ul>
             </section>
         </main>
     </div>
