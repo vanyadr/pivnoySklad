@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/order-history.css">
+    
+    <script type="module" src="js/script.js" defer></script>
+
+    <title>История заказов - Пивной Склад</title>
+    <meta 
+        name="description"
+        content="Посмотрите историю ваших заказов напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+    >
+    <meta
+        name="keywords"
+        content="пиво, крафт, Пивной Склад, напитки, корзина, купить, заказ"
+    >
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <header class="header"><!--Компонент шапки-->
+    </header>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <main class="main container">
+            <h1 class="title h1">Ваши заказы</h1><!--Заголовок страницы-->
+            <section class="orders section">
+                <ul class="orders__list"><!--Список заказов по номеру телефона-->
+                    <!--Начало цикла списка заказов-->
+                    <li class="orders__item order"><!--Заказ-->
+                        <div class="order__header">
+                            <h2 class="order__number h2">Заказ 12517 от 27.06.2025</h2><!--Номер заказа + дата-->
+                            <h3 class="order__status h3">Принят</h3><!--Статус заказа-->
+                        </div>
+                        <div class="order__section">
+                            <ul class="order__item-list"><!--Список позиций в заказе-->
+                                <!--Начало цикла списка позиций в заказе-->
+                                <li class="order__item-item"><!--Позиция-->
+                                    <a href="#" class="order__img"><!--Ссылка на товар-->
+                                        <img src="images/new-1.jpg" alt="Пшеничный Эль Essenbach"><!--Изображение товара + название + стиль-->
+                                    </a>
+                                    <div class="order__info">
+                                        <div class="order__item-header">
+                                            <a href="#"><h3 class="order__title h3">Mittelatel</h3></a><!--Название-->
+                                            <p class="order__style h4">Немецкий неосветленный лагер, 450 мл</p><!--Стиль + объем-->
+                                        </div>
+                                        <span class="order__quantity h4">В заказе 3 шт.</span><!--Кол-во в заказе-->
+                                        <span class="order__price-total">675 р</span><!--Общая сумма по позиции (кол-во в заказе*стоимость позиции)-->
+                                    </div>
+                                </li>
+                                <!--Конец цикла списка позиций в заказе-->
+                            </ul>
+                            <span class="order__total h3">Итого: 890 рублей</span><!--Общая сумма заказа-->
+                        </div>
+                    </li>
+                    <!--Конец цикла списка заказов-->
+                </ul>
+            </section>
+        </main>
+    </div>
+    <footer class="footer"><!--Компонент футера-->
+    </footer>
+</body>
+
+</html>
