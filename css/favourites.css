@@ -1,0 +1,184 @@
+main.main {
+  padding-top: 2rem;
+}
+@media (max-width: 1400px) {
+  main.main {
+    padding-top: 1.4rem;
+  }
+}
+@media (max-width: 768px) {
+  main.main {
+    padding-top: 0.2rem;
+  }
+}
+
+.title {
+  margin-bottom: 3rem;
+}
+@media (max-width: 1400px) {
+  .title {
+    margin-bottom: 2rem;
+  }
+}
+@media (max-width: 1024px) {
+  .title {
+    margin-bottom: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
+  .title {
+    text-align: center;
+  }
+}
+
+.favourites > svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+.favourites__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4rem 1.2rem;
+  margin-bottom: 6rem;
+}
+@media (max-width: 1800px) {
+  .favourites__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem 1.2rem;
+  }
+}
+@media (max-width: 1400px) {
+  .favourites__list {
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 1024px) {
+  .favourites__list {
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 4rem;
+  }
+}
+@media (max-width: 768px) {
+  .favourites__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem 0.6rem;
+  }
+}
+.favourites .beer-card__picture-block {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .favourites .beer-card__picture-block {
+    margin-bottom: 0.4rem;
+  }
+}
+.favourites .beer-card__list {
+  gap: 0.5rem;
+}
+@media (max-width: 768px) {
+  .favourites .beer-card__list {
+    gap: 0.4rem;
+  }
+}
+.favourites .beer-card__title {
+  font-size: 0.7rem;
+}
+@media (max-width: 768px) {
+  .favourites .beer-card__title {
+    font-size: 0.5rem;
+  }
+}
+.favourites .beer-card__item {
+  font-size: 0.7rem;
+}
+@media (max-width: 768px) {
+  .favourites .beer-card__item {
+    font-size: 0.5rem;
+  }
+}
+.favourites .beer-card__params .beer-card__param {
+  padding: 0 0.3rem;
+}
+@media (max-width: 768px) {
+  .favourites .beer-card__params .beer-card__param {
+    padding: 0 0.2rem;
+  }
+}
+.favourites .beer-card__param:first-child {
+  padding-left: 0;
+}
+.favourites .beer-card__param:last-child {
+  padding-right: 0;
+}
+.favourites__navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+.favourites__more {
+  min-width: 9.2rem;
+}
+.favourites__pagination {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+@media (max-width: 768px) {
+  .favourites__pagination {
+    gap: 0.8rem;
+  }
+}
+.favourites__pagination-item a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.favourites__pagination-item img {
+  object-position: center;
+}
+.favourites .num {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: -0.03em;
+  color: #000;
+  opacity: 0.4;
+}
+@media (max-width: 768px) {
+  .favourites .num {
+    font-size: 0.7rem;
+  }
+}
+.favourites .prev {
+  width: 1rem;
+  margin-right: 0.5rem;
+}
+@media (max-width: 768px) {
+  .favourites .prev {
+    width: 0.8rem;
+    margin: 0;
+  }
+}
+.favourites .current {
+  opacity: 1;
+}
+.favourites .next {
+  width: 1rem;
+  margin-left: 0.5rem;
+}
+@media (max-width: 768px) {
+  .favourites .next {
+    width: 0.8rem;
+    margin: 0;
+  }
+}
+.favourites .inactive {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+/*# sourceMappingURL=favourites.css.map */
