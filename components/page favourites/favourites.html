@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/favourites.css">
+
+    <script type="module" src="js/script.js" defer></script>
+    <script type="module" src="js/favourites.js" defer></script>
+
+    <title>Избранное - Пивной Склад</title>
+    <meta 
+        name="description"
+        content="Посмотрите список своих избранных напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+    >
+    <meta
+        name="keywords"
+        content="пиво, крафт, Пивной Склад, напитки, корзина, купить, заказ"
+    >
+    <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+    <header class="header"><!--Компонент шапки-->
+    </header>
+    <div class="overlay"></div>
+    <div class="wrapper">
+        <main class="main container">
+            <h1 class="title h1">Избранное</h1>
+            <section class="favourites section"><!--SVG для обрезки фото и генерации обводки-->
+                <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="clip-path">
+                        <path d="M24 0.25H276C289.117 0.25 299.75 10.8832 299.75 24V216C299.75 229.117 289.117 239.75 276 239.75H268.277C254.884 239.75 244.027 250.607 244.027 264V276C244.027 289.117 233.394 299.75 220.277 299.75H24C10.8832 299.75 0.25 289.117 0.25 276V24C0.25 10.8832 10.8832 0.25 24 0.25Z" stroke="#1E5540" stroke-width="1" />
+                    </clipPath>
+                </svg>
+                <svg width="136" height="136" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <clipPath id="clip-path-mobile">
+                         <path d="M21.7598 0.5H114.24C125.982 0.500128 135.5 10.0184 135.5 21.7598V66.5C135.5 76.2222 133.824 81.9229 130.604 85.2129C127.39 88.4955 122.518 89.5 115.773 89.5H108.925C104.189 89.5 98.8743 89.6399 95.0322 92.7939C94.4027 93.3107 93.855 93.8547 93.374 94.4189C91.5485 96.5605 90.6383 99.1576 90.1807 101.872C89.7239 104.581 89.7129 107.445 89.7129 110.132V117.5C89.7129 123.464 88.5848 127.915 85.4756 130.896C82.3583 133.883 77.1375 135.5 68.6797 135.5H21.7598C10.0184 135.5 0.500128 125.982 0.5 114.24V21.7598L0.506836 21.2109C0.798057 9.7232 10.2019 0.500125 21.7598 0.5Z" stroke="#1E5540" />
+                    </clipPath>
+                </svg>
+                <ul class="favourites__list">
+                    <!--Начало цикла вывода товаров-->
+                    <li class="favourites__item beer-card"><!--Компонент карточки товара. Все кнопки to-like изначально содержат star-fill-icon.svg-->
+                    </li><!--В идеале реализовать перезагрузку страницы или перерисовку через ajax при клике на звездочку, чтобы товар сразу удалялся из избранного-->
+                    <!--Конец цикла вывода товаров-->
+                </ul>
+                <nav class="favourites__navigation">
+                    <a href="#" class="favourites__more border-btn"><!--Кнопка Показать еще, тег можно заменить на button-->
+                        <p>Показать ещё</p>
+                        <div>
+                            <img src="images/arrow-down-white.svg" alt="Показать">
+                        </div>
+                    </a>
+                    <ul class="favourites__pagination">
+                        <li class="favourites__pagination-item prev inactive">
+                            <a href="#"><img src="images/arrow-left-black.svg" alt="Назад"></a><!--Стрелочка Назад-->
+                        </li>
+                        <li class="favourites__pagination-item num current"><!--Циклом вывести все страницы-->
+                            <a href="#">1</a>
+                        </li>
+                        <li class="favourites__pagination-item num">
+                            <a href="#">2</a>
+                        </li>
+                        <li class="favourites__pagination-item num">
+                            <a href="#">3</a>
+                        </li>
+                        <li class="favourites__pagination-item next">
+                            <a href="#"><img src="images/arrow-right-black.svg" alt="Вперед"></a><!--Стрелочка Вперед-->
+                        </li>
+                    </ul>
+                </nav>
+            </section>
+        </main>
+    </div>
+    <footer class="footer"><!--Компонент футера-->
+    </footer>
+</body>
+
+</html>
