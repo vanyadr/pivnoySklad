@@ -327,6 +327,8 @@ main.main {
         height: 100%;
         display: flex;
         align-items: flex-end;
+        overflow: hidden;
+        position: relative;
         
         @include pc {
             margin-left: 2.5rem;
@@ -340,6 +342,28 @@ main.main {
         }
         @include mobile {
             padding: 5rem 0 0
+        }
+    }
+    &__cart {
+        z-index: 2;
+    }
+    &__bottle {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 18%;
+        height: auto;
+        transform: translate(0, -110%);
+        transform-origin: bottom right;
+        transition: bottom 1s cubic-bezier(.5,0,1,.5),
+                    left 1s cubic-bezier(.5,0,1,.5),
+                    transform 1s cubic-bezier(.5,0,1,.5);
+        
+        @include tablet {
+            width: 10%;
+        }
+        @include mobile {
+            width: 14%;
         }
     }
 }
