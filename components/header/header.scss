@@ -295,6 +295,14 @@
         letter-spacing: -0.03em;
         color: #fff;
     }
+    &__menu-item a.selected {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+    &__drop-down-item a.selected {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
     &__burger {
         padding: 0.6rem;
         height: fit-content;

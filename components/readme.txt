@@ -23,6 +23,8 @@
     - page check order
     - page history of orders
     - page favourites
+    - page about us
+    - cookie
 
 Все изображения стоит конвертнуть в webp и сжать, чтобы ускорить загрузку страниц (кроме тех, что в SVG или PNG)
 
@@ -31,33 +33,36 @@
 *Все скрипты включают в себя модули из js/modules
 
 1. Главная страница
-    basic -> header -> page home -> news carousel -> leaders carousel* -> sales carousel* -> footer
+    basic -> page home -> header -> news carousel -> leaders carousel* -> sales carousel* -> cookie -> footer
     *включает в себя компонент карточки товара, в котором даны комментарии
 
 2. 404 страница
-    basic -> header -> page 404 -> footer
+    basic -> page 404 -> header -> cookie -> footer
 
 3. Каталог
-    basic -> header -> page catalog -> catalog list* -> filters -> footer
+    basic -> page catalog -> header -> filters -> catalog list* -> cookie -> footer
     *включает в себя компонент карточки товара, в котором даны комментарии
 
 4. Страница товара
-    basic -> header -> page product -> product -> same carousel -> footer
+    basic -> page product -> header -> product -> same carousel -> cookie -> footer
 
 5. Корзина
-    basic -> header -> page cart -> cart -> totals -> additional carousel* -> footer
+    basic -> page cart -> header -> cart -> totals -> additional carousel* -> cookie -> footer
     *включает в себя компонент карточки товара, в котором даны комментарии
 
 5. Пустая корзина
-    basic -> header -> page empty cart -> additional carousel* -> footer
+    basic -> page empty cart -> header -> additional carousel* -> cookie -> footer
     *включает в себя компонент карточки товара, в котором даны комментарии
 
 6. Проверка заказа
-    basic -> header -> page check order -> footer
+    basic -> page check order -> header -> cookie -> footer
 
 7. История заказов
-    basic -> header -> page history of orders -> footer
+    basic -> page history of orders -> header -> cookie -> footer
 
 8. Избранное
-    basic -> header -> page favourites* -> footer
+    basic -> header -> page favourites* -> cookie -> footer
     *включает в себя компонент карточки товара, в котором даны комментарии
+
+9. О нас
+    basic -> header -> page about us -> cookie -> footer

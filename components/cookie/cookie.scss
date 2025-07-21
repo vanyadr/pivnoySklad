@@ -1,0 +1,52 @@
+.cookie {
+    background: #1e5540;
+    padding: .9rem 2.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+    
+    @include laptop {
+        padding: .8rem 2rem;
+    }
+    @include mobile {
+        padding: 1rem;
+    }
+    
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include mobile {
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+    }
+    &__text {
+        color: #fff; 
+        line-height: 1.2;
+    }
+    &__buttons {
+        display: flex;
+        gap: 1.2rem;
+        
+        @include laptop {
+            gap: .8rem;
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+    &__btn {
+        min-width: 7rem;
+        text-align: center;
+
+        @include mobile {
+            min-width: 0;
+            flex: 1;
+            width: 100%;
+        }
+    }
+}

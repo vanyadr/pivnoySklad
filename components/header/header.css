@@ -300,6 +300,14 @@
   letter-spacing: -0.03em;
   color: #fff;
 }
+.header__drop-down-item a.selected {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.header__menu-item a.selected {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
 .header__burger {
   padding: 0.6rem;
   height: fit-content;

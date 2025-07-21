@@ -1,0 +1,369 @@
+@mixin centerItem () {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin pc {
+    @media (max-width: 1800px) {
+        @content;
+    }
+}
+@mixin laptop {
+    @media (max-width: 1400px) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mobileAlbum {
+    @media (orientation: landscape) and (max-height: 768px) {
+        @content;
+    }
+}
+main.main {
+    padding-top: 2rem;
+    
+    @include laptop {
+        padding-top: 1.4rem;
+    }
+    @include mobile {
+        padding-top: .2rem;
+    }
+}
+
+.about {
+    align-items: end;
+    row-gap: 11rem;
+    
+    @include pc {
+        row-gap: 10rem;
+    }
+    @include laptop {
+        row-gap: 8rem;
+    }
+    @include tablet {
+        row-gap: 6rem;
+    }
+    @include mobile {
+        row-gap: 0;
+    }
+
+    &__title {
+        grid-column: 1 / 5;
+        font-weight: 400;
+        font-size: 11.5rem;
+        text-transform: uppercase;
+        font-family: Impact, serif;
+        
+        @include pc {
+            font-size: 10rem;
+        }
+        @include laptop {
+            font-size: 7rem;
+        }
+        @include tablet {
+            font-size: 5rem;
+        }
+        @include mobile {
+            grid-column: 1 / -1;
+            font-size: 2.1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    &__info {
+        grid-column: 5 / -1;
+        
+        @include mobile {
+            grid-column: 1 / -1;
+            margin-bottom: 5rem;
+        }
+    }
+    &__history {
+        margin-bottom: 2.4rem;
+        
+        @include pc {
+            margin-bottom: 2rem;
+        }
+        @include laptop {
+            margin-bottom: 3rem;
+        }
+        @include tablet {
+            margin-bottom: 3.5rem;
+        }
+        @include mobile {
+            margin-bottom: 1.2rem;
+        }
+    }
+    &__img {
+        border-radius: 24px;
+        overflow: hidden;
+        
+        @include mobile {
+            border-radius: 16px;
+        }
+    }
+    &__video {
+        margin-right: 5.5rem;
+        grid-column: 1 / 5;
+        
+        @include pc {
+            margin-right: 3rem;
+        }
+        @include laptop {
+            margin-right: 0;
+        }
+        @include mobile {
+            grid-column: 1 / -1;
+            order: 1;
+        }
+    }
+    &__text {
+        grid-column: 5 / -1;
+        
+        @include mobile {
+            margin-bottom: 1.2rem;
+            grid-column: 1 / -1;
+        }
+    }
+}
+
+.excursion {
+
+    @include mobile {
+        padding: 0;
+    }
+
+    &__holder {
+        @include centerItem();
+        flex-direction: column;
+        gap: 2.4rem;
+        border-radius: 32px;
+        background: #f78455;
+        padding: 9rem;
+        
+        @include pc {
+            padding: 7.5rem 2.4rem;
+        }
+        @include laptop {
+            padding: 6rem 4rem;
+        }
+        @include tablet {
+            padding: 4rem 1.5rem;
+            gap: 2rem;
+        }
+        @include mobile {
+            border-radius: 16px;
+            padding: 3rem 1.3rem;
+            gap: 1.2rem;
+        }
+    }
+
+    &__title {
+        font-weight: 400;
+        font-size: 4rem;
+        text-transform: uppercase;
+        text-align: center;
+        font-family: Impact, serif;
+        color: #fff;
+        letter-spacing: 0;
+        line-height: 1.2;
+        
+        @include pc {
+            font-size: 3.5rem;
+        }
+        @include laptop {
+            font-size: 2.5rem;
+        }
+        @include tablet {
+            font-size: 1.8rem;
+        }
+        @include mobile {
+            font-size: .9rem;
+        }
+    }
+    &__btn {
+        min-width: 15rem;
+        text-align: center;
+
+        @include tablet {
+            min-width: 11.5rem;
+        }
+        @include mobile {
+            min-width: 10.5rem;
+        }
+    }
+}
+
+.contacts {
+
+    @include mobile {
+        padding: 0;
+    }
+
+    &__holder {
+        border-radius: 32px;
+        overflow: hidden;
+        display: flex;
+        height: 25rem;
+        
+        @include laptop {
+            height: 22rem;
+        }
+        @include tablet {
+            flex-direction: column;
+            height: 33rem;
+        }
+        @include mobile {
+            border-radius: 16px;
+            height: 28rem;
+        }
+    }
+    &__info {
+        flex: 1 0 40%;
+        background: #f23c20;
+        padding: 3rem 0 3rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        @include pc {
+            flex-basis: 50%;
+        }
+        @include laptop {
+            padding: 3rem 0 3rem 2rem;
+        }
+        @include tablet {
+            padding: 2rem 1.2rem;
+        }
+        @include mobile {
+            flex-basis: 60%;
+        }
+    }
+    &__title {
+        font-family: Manrope, serif;
+        font-weight: 500;
+        font-size: .7rem;
+        margin-bottom: 0.6rem;
+        color: #fff;
+
+        @include tablet {
+            margin-bottom: 0.4rem;
+        }
+    }
+    &__contact {
+        font-weight: 600;
+        color: #fff;
+    }
+    &__socials {
+        display: flex;
+        gap: 0.4rem;
+        height: 2rem;
+        
+        @include mobile {
+            height: 1.2rem;
+        }
+
+        li {
+            height: 100%;
+            aspect-ratio: 1 / 1;
+        }
+    }
+    &__map {
+        flex: 1 0 60%;
+        height: 100%;
+
+        @include pc {
+            flex-basis: 50%;
+        }
+        @include mobile {
+            flex-basis: 40%;
+        }
+    }
+}
+
+.bottles {
+    align-items: end;
+
+    &__info {
+        grid-column: 1 / 5;
+        padding-top: 27rem;
+        
+        @include pc {
+            padding-top: 24rem;
+        }
+        @include laptop {
+            padding-top: 13rem;
+        }
+        @include tablet {
+            padding-top: 6rem;
+            grid-column: 1 / -1;
+        }
+        @include mobile {
+            padding-top: 5rem;
+        }
+    }
+    &__button {
+        margin-bottom: 4.5rem;
+        width: 15rem;
+        
+        @include tablet {
+            margin-bottom: 2rem;
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+    &__cart-holder {
+        grid-column: 6 / -1;
+        margin-left: 5rem;
+        height: 100%;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        position: relative;
+        
+        @include pc {
+            margin-left: 2.5rem;
+        }
+        @include laptop {
+            margin-left: 0;
+        }
+        @include tablet {
+            padding: 6rem 5rem 0;
+            grid-column: 1 / -1;
+        }
+        @include mobile {
+            padding: 5rem 0 0
+        }
+    }
+    &__cart {
+        z-index: 2;
+    }
+    &__bottle {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+        width: 18%;
+        height: auto;
+        transform: translate(0, -110%);
+        transform-origin: bottom right;
+        transition: bottom 1s cubic-bezier(.5,0,1,.5),
+                    left 1s cubic-bezier(.5,0,1,.5),
+                    transform 1s cubic-bezier(.5,0,1,.5);
+        
+        @include tablet {
+            width: 10%;
+        }
+        @include mobile {
+            width: 14%;
+        }
+    }
+}
