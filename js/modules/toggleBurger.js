@@ -47,6 +47,56 @@ export const createMobileMenu = function () {
           secondLevelParts = document.querySelectorAll('.header__drop-down-list'),
           mobileMenuWrapper = document.querySelector('.header__burger-menu>.accrodion-holder'),
           checkBtn =  document.querySelector('.header__check>a');
+
+    class MobileMenuItem {
+        constructor(title, children, wrapper, noArrow = false, checkHref = '', checkText = '') {
+            this.title = title;
+            this.children = children;
+            this.wrapper = wrapper;
+            this.isNoArrow = noArrow;
+            this.checkHref = checkHref;
+            this.checkText = checkText;
+        }
+
+        render() {
+            if (!this.isNoArrow) {
+                let childrenItems = '';
+                this.children.forEach(child => {
+                    childrenItems += `
+                        <li class="header__mobile-item"><a href="${child['link']}">${child['content']}</a></li>
+    
+                    `
+                });
+                this.wrapper.innerHTML += `
+                    <li class="accrodion-item">
+                        <button class="accordion-header">
+                            <p class="accordion-title">${this.title}</p>
+                            <div class="accordion-bullet">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                        </button>
+                        <div class="accordion-content">
+                            <ul class="header__mobile-list">
+                                ${childrenItems}
+                            </ul>
+                        </div>
+                    </li>
+                `;
+            } else {
+                this.wrapper.innerHTML += `
+                    <li class="accordion-item--no-open">
+                        <a href="${this.checkHref}">${this.checkText}</a>
+                    </li>
+                `;
+            };
+        }
+    };
     
     function resetElement(el) {
         el.textContent = '';
@@ -75,52 +125,23 @@ export const createMobileMenu = function () {
     };
     function createMenu(parts, check) {
         parts.forEach(part => {
-            mobileMenuWrapper.innerHTML += `
-                <li class="accrodion-item">
-                    <button class="accordion-header">
-                        <p class="accordion-title">${part['content']}</p>
-                        <div class="accordion-bullet">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                                <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
-                            </svg>
-                        </div>
-                    </button>
-                    <div class="accordion-content">
-                        <ul class="header__mobile-list">
-                        </ul>
-                    </div>
-                </li>
-            `;
+            new MobileMenuItem(
+                part['content'],
+                part['children'],
+                mobileMenuWrapper
+            ).render();
         });
 
-        mobileMenuWrapper.innerHTML += `
-            <li class="accordion-item--no-open">
-                <a href="${check.href}">${check.textContent}</a>
-            </li>
-        `;
-    };
-    function createSubMenu(secondPartsWrappers, parts) {
-        secondPartsWrappers.forEach((wrapper, i) => {
-            resetElement(wrapper);
-    
-            parts[i]['children'].forEach(child => {
-                wrapper.innerHTML += `
-                    <li class="header__mobile-item"><a href="${child['link']}">${child['content']}</a></li>
-                `;
-            });
-        });
+        new MobileMenuItem(
+            '', '',
+            mobileMenuWrapper,
+            true,
+            check.href,
+            check.textContent
+        ).render();
     };
 
-
-    resetElement(mobileMenuWrapper);
     const parts = createPartsObject(firstLevelParts, secondLevelParts);
+    resetElement(mobileMenuWrapper);
     createMenu(parts, checkBtn);
-
-    const secondPartsWrappers = mobileMenuWrapper.querySelectorAll('.header__mobile-list');
-
-    createSubMenu(secondPartsWrappers, parts);
 };
