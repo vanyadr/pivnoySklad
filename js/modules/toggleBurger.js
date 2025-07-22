@@ -40,3 +40,87 @@ export const toggleBurgerMenu = function () {
     //     }
     // });
 };
+
+//Create mobile menu
+export const createMobileMenu = function () {
+    const firstLevelParts = document.querySelectorAll('.header__menu-item>a'),
+          secondLevelParts = document.querySelectorAll('.header__drop-down-list'),
+          mobileMenuWrapper = document.querySelector('.header__burger-menu>.accrodion-holder'),
+          checkBtn =  document.querySelector('.header__check>a');
+    
+    function resetElement(el) {
+        el.textContent = '';
+    };
+    function createPartsObject(firstLevelParts, secondLevelParts) {
+        const parts = [];
+
+        firstLevelParts.forEach((part, i) => {
+            const subParts = [];
+            
+            secondLevelParts[i].querySelectorAll('.header__drop-down-item>a').forEach(item => {
+                subParts.push({
+                    content: item.textContent,
+                    link: item.href
+                });
+            });
+    
+            parts.push({
+                content: part.textContent,
+                link: part.href,
+                children: subParts
+            });
+        });
+
+        return parts;
+    };
+    function createMenu(parts, check) {
+        parts.forEach(part => {
+            mobileMenuWrapper.innerHTML += `
+                <li class="accrodion-item">
+                    <button class="accordion-header">
+                        <p class="accordion-title">${part['content']}</p>
+                        <div class="accordion-bullet">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path id="accordion-bullet-vert" d="M6 12H18" stroke="#292522" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <path id="accordion-bullet-hor" d="M12 18L12 6" stroke="#292522" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                        </ul>
+                    </div>
+                </li>
+            `;
+        });
+
+        mobileMenuWrapper.innerHTML += `
+            <li class="accordion-item--no-open">
+                <a href="${check.href}">${check.textContent}</a>
+            </li>
+        `;
+    };
+    function createSubMenu(secondPartsWrappers, parts) {
+        secondPartsWrappers.forEach((wrapper, i) => {
+            resetElement(wrapper);
+    
+            parts[i]['children'].forEach(child => {
+                wrapper.innerHTML += `
+                    <li class="header__mobile-item"><a href="${child['link']}">${child['content']}</a></li>
+                `;
+            });
+        });
+    };
+
+
+    resetElement(mobileMenuWrapper);
+    const parts = createPartsObject(firstLevelParts, secondLevelParts);
+    createMenu(parts, checkBtn);
+
+    const secondPartsWrappers = mobileMenuWrapper.querySelectorAll('.header__mobile-list');
+
+    createSubMenu(secondPartsWrappers, parts);
+};
