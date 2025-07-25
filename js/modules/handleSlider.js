@@ -40,12 +40,8 @@ export class HandleSlider {
         this.init();
     }
     moveSlider() {
-        this.prev.addEventListener('click', () => {
-            this.slideMinus();
-        });
-        this.next.addEventListener('click', () => {
-            this.slidePlus();
-        });
+        this.prev.addEventListener('click', () => this.slideMinus());
+        this.next.addEventListener('click', () => this.slidePlus());
         this.sliderWindow.addEventListener('touchstart', e => this.swipeStart(e));
         this.sliderWindow.addEventListener('touchmove', e => this.swipeAction(e));
         this.sliderWindow.addEventListener('touchend', e => this.swipeEnd(e));
