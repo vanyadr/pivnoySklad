@@ -32,6 +32,13 @@ export class HandleSlider {
         `;
         this.maxOffset = (this.slideWidth + this.slidesGap) * (this.slidesQty - this.slidesPerScreen);
     }
+    setSlidesPerScreen(num) {
+        this.slidesPerScreen = num;
+        this.slidesGap = parseFloat(window.getComputedStyle(this.sliderFlex).columnGap);
+        this.slideWidth = this.calcSlideWidth();
+
+        this.init();
+    }
     moveSlider() {
         this.prev.addEventListener('click', () => {
             this.slideMinus();
