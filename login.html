@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="css/fonts.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/login.css" />
+
+      <script type="module" src="js/script.js" defer></script>
+
+      <title>Проверить заказ - Пивной Склад</title>
+      <meta
+         name="description"
+         content="Узнайте статус вашего заказа напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+      />
+      <meta name="keywords" content="пиво, крафт, Пивной Склад, напитки, корзина, купить, заказ" />
+      <link rel="icon" href="favicon.ico" />
+   </head>
+
+   <body>
+      <div class="overlay"></div>
+      <div class="wrapper">
+         <main class="main">
+            <h1 class="title h1">Войти</h1>
+            <section class="check">
+               <form class="check__form" name="orderCheck" id="orderCheck" method="post" action="index.php?pageId=135">
+                  <input type="hidden" name="refresh" id="refresh" value="" />
+                  <div class="check__field">
+                     <label for="name">E-mail</label>
+                     <input type="text" name="keystring" id="keystring" autocomplete="on" required />
+                     <p class="checkout__error"></p>
+                  </div>
+                  <div class="check__field">
+                     <label for="phone">Пароль</label>
+                     <input type="tel" name="phone" id="phone" autocomplete="on" required />
+                     <p class="checkout__error"></p>
+                  </div>
+                  <div class="check__confirm-btns">
+                     <button type="button" class="check__confirm-btn bg-btn">Проверить заказ</button>
+                     <button type="button" class="check__forgot bg-btn">Забыли пароль?</button>
+                  </div>
+               </form>
+            </section>
+         </main>
+      </div>
+   </body>
+</html>

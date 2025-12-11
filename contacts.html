@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="css/fonts.css" />
+      <link rel="stylesheet" href="libraries/slick-1.8.1/slick/slick.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/cart-empty.css" />
+
+      <script src="libraries/jquery-3.7.1/jquery-3.7.1.min.js" defer></script>
+      <script src="libraries/slick-1.8.1/slick/slick.min.js" defer></script>
+
+      <script type="module" src="js/script.js" defer></script>
+      <script type="module" src="js/cart-empty.js" defer></script>
+
+      <title>Корзина - Пивной Склад</title>
+      <meta
+         name="description"
+         content="Оформите заказ напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+      />
+      <meta name="keywords" content="пиво, крафт, Пивной Склад, напитки, корзина, купить" />
+      <link rel="icon" href="favicon.ico" />
+   </head>
+
+   <body>
+      <header class="header">
+         <div class="header__holder container">
+            <div class="header__logo">
+               <a href="#"><img src="images/logo.svg" alt="Логотип" /></a>
+            </div>
+            <nav class="header__menu header__menu-element">
+               <div class="header__menu-bar header-pc">
+                  <div class="underline"></div>
+                  <ul class="header__menu-list">
+                     <li class="header__menu-item">
+                        <a href="#">пиво</a>
+                     </li>
+                     <li class="header__menu-item">
+                        <a href="#">сидры и медовухи</a>
+                     </li>
+                     <li class="header__menu-item">
+                        <a href="#">безалкогольные напитки</a>
+                     </li>
+                     <li class="header__menu-item">
+                        <a href="#">о нас</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="header__menu-links item-no-underline">
+                  <a href="#" class="header__menu-link">
+                     <img src="images/cart-black-icon.svg" alt="Корзина" />
+                     <span class="header__menu-cart-quantity">12</span>
+                  </a>
+                  <a href="#" class="header__menu-link">
+                     <img src="images/star-icon.svg" alt="Избранное" />
+                  </a>
+               </div>
+            </nav>
+            <div class="header__search header__menu-element search">
+               <input type="text" class="header__input search-input" placeholder="поиск" />
+            </div>
+            <div class="header__check header__menu-element header-pc">
+               <a href="" class="header__btn white-btn">проверить заказ</a>
+            </div>
+            <div class="header__menu-drop-down header-pc">
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+               </ul>
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+               </ul>
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+               </ul>
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+               </ul>
+            </div>
+            <div class="header__burger header__menu-element header-mobile">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                     id="header__burger-top-line"
+                     d="M3 15H21"
+                     stroke="#292522"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+                  <path
+                     id="header__burger-bottom-line"
+                     d="M3 9H21"
+                     stroke="#292522"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </div>
+            <div class="header__burger-menu">
+               <ul class="accrodion-holder">
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accordion-item--no-open">
+                     <a href="#">проверить заказ</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </header>
+      <div class="overlay"></div>
+      <div class="wrapper">
+         <main class="main container">
+            <style>
+               .recs {
+                  color: #fff;
+               }
+               .recs__title {
+                  font-weight: 400;
+                  font-size: 11.5rem;
+                  letter-spacing: 0;
+                  font-family: "Impact", serif;
+                  font-weight: 400;
+                  text-transform: uppercase;
+                  margin-bottom: 2rem;
+                  color: #f23c20;
+               }
+               @media (max-width: 1800px) {
+                  .recs__title {
+                     font-size: 10rem;
+                  }
+               }
+               @media (max-width: 1400px) {
+                  .recs__title {
+                     font-size: 7rem;
+                  }
+               }
+               @media (max-width: 1024px) {
+                  .recs__title {
+                     font-size: 5rem;
+                  }
+               }
+               @media (max-width: 768px) {
+                  .recs__title {
+                     font-size: 2.1rem;
+                     margin-bottom: 1.2rem;
+                  }
+               }
+               .contacts__holder {
+                  border-radius: 32px;
+                  overflow: hidden;
+                  display: flex;
+                  height: 25rem;
+               }
+               @media (max-width: 1400px) {
+                  .contacts__holder {
+                     height: 22rem;
+                  }
+               }
+               @media (max-width: 1024px) {
+                  .contacts__holder {
+                     flex-direction: column;
+                     height: 33rem;
+                  }
+               }
+               @media (max-width: 768px) {
+                  .contacts__holder {
+                     border-radius: 16px;
+                     height: 28rem;
+                  }
+               }
+               .contacts__info {
+                  flex: 1 0 40%;
+                  background: #f23c20;
+                  padding: 3rem 0 3rem 3rem;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: space-between;
+               }
+               @media (max-width: 1800px) {
+                  .contacts__info {
+                     flex-basis: 50%;
+                  }
+               }
+               @media (max-width: 1400px) {
+                  .contacts__info {
+                     padding: 3rem 0 3rem 2rem;
+                  }
+               }
+               @media (max-width: 1024px) {
+                  .contacts__info {
+                     padding: 2rem 1.2rem;
+                  }
+               }
+               @media (max-width: 768px) {
+                  .contacts__info {
+                     flex-basis: 60%;
+                  }
+               }
+               .contacts__title {
+                  font-family: Manrope, serif;
+                  font-weight: 500;
+                  font-size: 0.7rem;
+                  margin-bottom: 0.6rem;
+                  color: #fff;
+               }
+               @media (max-width: 1024px) {
+                  .contacts__title {
+                     margin-bottom: 0.4rem;
+                  }
+               }
+               .contacts__contact {
+                  font-weight: 600;
+                  color: #fff;
+               }
+               .contacts__socials {
+                  display: flex;
+                  gap: 0.4rem;
+                  height: 2rem;
+               }
+               @media (max-width: 768px) {
+                  .contacts__socials {
+                     height: 1.2rem;
+                  }
+               }
+               .contacts__socials li {
+                  height: 100%;
+                  aspect-ratio: 1/1;
+               }
+               .contacts__map {
+                  flex: 1 0 60%;
+                  height: 100%;
+               }
+               @media (max-width: 1800px) {
+                  .contacts__map {
+                     flex-basis: 50%;
+                  }
+               }
+               @media (max-width: 768px) {
+                  .contacts__map {
+                     flex-basis: 40%;
+                  }
+               }
+            </style>
+            <section class="recs section">
+               <h1 class="recs__title">Контакты</h1>
+               <div id="contacts" class="contacts">
+                  <div class="contacts__holder">
+                     <ul class="contacts__info">
+                        <li class="contacts__item">
+                           <p class="contacts__title">Ждем вас по адресу:</p>
+                           <a href="https://yandex.ru/maps/-/CHHy7Qno" class="contacts__contact"
+                              >Арсенальная ул., 2, Санкт-Петербург</a
+                           >
+                        </li>
+                        <li class="contacts__item">
+                           <p class="contacts__title">Часы работы:</p>
+                           <p href="tel:79217793845" class="contacts__contact">ПН-ПТ с 10:00 до 19:00</p>
+                        </li>
+                        <li class="contacts__item">
+                           <p class="contacts__title">Номер телефона:</p>
+                           <a href="tel:79217793845" class="contacts__contact">+7 (921) 779-38-45</a>
+                        </li>
+                        <li class="contacts__item">
+                           <ul class="contacts__socials">
+                              <li>
+                                 <a href="https://www.instagram.com/pivnoy_sklad"
+                                    ><img src="images/ig-social.svg" alt="instagram"
+                                 /></a>
+                              </li>
+                              <li>
+                                 <a href="https://t.me/pivnoy_sklad"
+                                    ><img src="images/tg-social.svg" alt="telegram"
+                                 /></a>
+                              </li>
+                              <li>
+                                 <a href="https://untp.beer/zd242" target="_blank"
+                                    ><img src="images/ut-social.svg" alt="untappd"
+                                 /></a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                     <div class="contacts__map">
+                        <div style="position: relative; overflow: hidden; width: 100%; height: 100%">
+                           <a
+                              href="https://yandex.ru/maps/org/pivnoy_sklad/43960976246/?utm_medium=mapframe&utm_source=maps"
+                              style="color: #eee; font-size: 12px; position: absolute; top: 0px"
+                              >Пивной склад</a
+                           ><a
+                              href="https://yandex.ru/maps/2/saint-petersburg/category/beer_shop/40891073018/?utm_medium=mapframe&utm_source=maps"
+                              style="color: #eee; font-size: 12px; position: absolute; top: 14px"
+                              >Магазин пива в Санкт‑Петербурге</a
+                           ><a
+                              href="https://yandex.ru/maps/2/saint-petersburg/category/alcoholic_beverages/184107899/?utm_medium=mapframe&utm_source=maps"
+                              style="color: #eee; font-size: 12px; position: absolute; top: 28px"
+                              >Алкогольные напитки в Санкт‑Петербурге</a
+                           ><iframe
+                              src="https://yandex.ru/map-widget/v1/?ll=30.373513%2C59.955417&mode=search&oid=43960976246&ol=biz&source=serp_navig&z=16.98"
+                              width="100%"
+                              height="100%"
+                              frameborder="1"
+                              allowfullscreen="true"
+                              style="position: relative"
+                           ></iframe>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </main>
+      </div>
+      <footer class="footer">
+         <div class="footer__holder container grid">
+            <div class="footer__col-1">
+               <div class="footer__home">
+                  <div class="footer__logo">
+                     <a href="#"><img src="images/logo-white.svg" alt="Логотип" /></a>
+                  </div>
+                  <p class="footer__descriptor">Ботлшоп крафтового пива, сидра, мидов и безалкогольных напитков</p>
+               </div>
+               <div class="footer__contacts">
+                  <div class="footer__contacts-item">
+                     <p class="footer__contacts-title">Номер телефона:</p>
+                     <a href="tel:79217793845" class="footer__contacts-info">+7 (921) 779-38-45</a>
+                  </div>
+                  <div class="footer__contacts-item">
+                     <p class="footer__contacts-title">Мы в соц. сетях:</p>
+                     <ul class="footer__contacts-list">
+                        <li>
+                           <a href="#"><img src="images/ig-social.svg" alt="" /></a>
+                        </li>
+                        <li>
+                           <a href="#"><img src="images/tg-social.svg" alt="" /></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="footer__contacts-email">
+                  <p class="footer__contacts-title">Почта:</p>
+                  <a href="mailto:pivnoysklad@datacraft.su" class="footer__contacts-info">pivnoysklad@datacraft.su</a>
+               </div>
+            </div>
+            <ul class="footer__col-2 footer__menu-list">
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+            </ul>
+            <ul class="footer__col-3 footer__menu-list">
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+            </ul>
+            <div class="footer__form-holder">
+               <p class="footer__form-title">Заполните форму и мы ответим на все ваши вопросы!</p>
+               <form action="" class="footer__form">
+                  <input type="text" placeholder="Имя" />
+                  <input type="phone" placeholder="Номер телефона" />
+                  <button type="submit" class="bg-btn">Оставить заявку</button>
+               </form>
+            </div>
+            <div class="footer__partners">
+               <p class="footer__parthers-title">Наши проекты:</p>
+               <ul class="footer__partners-list">
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/plague-brew-logo.svg" alt="Plague Brew" />
+                        </div>
+                        <p class="footer__partners-descriptor">чумная пивоварня</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/hhc-logo.svg" alt="Hop Hunting Club" />
+                        </div>
+                        <p class="footer__partners-descriptor">рестоклуб селективного пива</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/data-logo.svg" alt="datacraft" />
+                        </div>
+                        <p class="footer__partners-descriptor">ПО для пивоварен</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/fermentor-logo.svg" alt="Fermentor" />
+                        </div>
+                        <p class="footer__partners-descriptor">контрактная пивоварня</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/pa-logo.svg" alt="Plague Arena" />
+                        </div>
+                        <p class="footer__partners-descriptor">бар крафтовых премьер</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/nv-logo.svg" alt="Невская винокурня" />
+                        </div>
+                        <p class="footer__partners-descriptor">магазин оборудования</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/aa-logo.png" alt="AA-Fest" />
+                        </div>
+                        <p class="footer__partners-descriptor">крафт-фестиваль</p>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <p class="footer__title">пивной склад</p>
+            <ul class="footer__underline">
+               <li class="footer__underline-item"><a href="#">Согласие на обработку персональных данных</a></li>
+               <li class="footer__underline-item"><a href="#">Правила обработки cookie</a></li>
+               <li class="footer__underline-item"><a href="#">Политика обработки персональных данных</a></li>
+            </ul>
+         </div>
+      </footer>
+   </body>
+</html>

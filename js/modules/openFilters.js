@@ -1,9 +1,25 @@
 export const toggleFiltersItem = function () {
-   const items = document.querySelectorAll(".filters__item-title");
-   const overlay = document.querySelector(".filters-overlay");
+   if (document.documentElement.clientWidth > 1024) {
+      const items = document.querySelectorAll(".filters__item-title");
+      const overlay = document.querySelector(".filters-overlay");
 
-   items.forEach((item) => {
-      item.addEventListener("click", function () {
+      items.forEach((item) => {
+         item.addEventListener("click", function () {
+            if (document.documentElement.clientWidth > 1024) {
+               items.forEach((item) => {
+                  if (item.parentNode.classList.contains("selected") && item != this) {
+                     item.parentNode.classList.remove("selected");
+                     item.parentNode.parentNode.querySelector(".filters__menu").classList.remove("opened");
+                  }
+               });
+               if (!overlay.classList.contains("active")) overlay.classList.add("active");
+               this.parentNode.classList.toggle("selected");
+               this.parentNode.parentNode.querySelector(".filters__menu").classList.toggle("opened");
+            }
+         });
+      });
+
+      overlay.addEventListener("click", () => {
          if (document.documentElement.clientWidth > 1024) {
             items.forEach((item) => {
                if (item.parentNode.classList.contains("selected") && item != this) {
@@ -11,24 +27,10 @@ export const toggleFiltersItem = function () {
                   item.parentNode.parentNode.querySelector(".filters__menu").classList.remove("opened");
                }
             });
-            if (!overlay.classList.contains("active")) overlay.classList.add("active");
-            this.parentNode.classList.toggle("selected");
-            this.parentNode.parentNode.querySelector(".filters__menu").classList.toggle("opened");
+            overlay.classList.remove("active");
          }
       });
-   });
-
-   overlay.addEventListener("click", () => {
-      if (document.documentElement.clientWidth > 1024) {
-         items.forEach((item) => {
-            if (item.parentNode.classList.contains("selected") && item != this) {
-               item.parentNode.classList.remove("selected");
-               item.parentNode.parentNode.querySelector(".filters__menu").classList.remove("opened");
-            }
-         });
-         overlay.classList.remove("active");
-      }
-   });
+   }
 };
 
 export const tickMenuItem = function () {
@@ -112,10 +114,22 @@ export const tickMenuItem = function () {
                selectedItems.push(clickedObject);
             }
          }
+         console.log("clicked", clickedItemHolder);
+         if (document.documentElement.clientWidth <= 1024) {
+            const correctItem = document.querySelector(
+               `.filters__item-holder[data-accordion-filters="${clickedItemHolder.dataset.accordionFilters}"]`
+            );
+            const correctContent = correctItem.querySelector(".filters__menu");
+            const correctHeader = correctItem.querySelector(".filters__item");
 
-         clickedItemHolder.querySelector(".filters__item").classList.remove("selected");
-         clickedItemHolder.querySelector(".filters__menu").classList.remove("opened");
-         overlay.classList.remove("active");
+            correctContent.classList.remove("selected");
+            correctContent.style.height = 0;
+            correctHeader.classList.remove("selected");
+         } else {
+            clickedItemHolder.querySelector(".filters__item").classList.remove("selected");
+            clickedItemHolder.querySelector(".filters__menu").classList.remove("opened");
+            overlay.classList.remove("active");
+         }
       });
    });
 };

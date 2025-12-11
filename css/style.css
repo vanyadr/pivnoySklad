@@ -1088,6 +1088,28 @@ img {
       display: block;
    }
 }
+.beer-card__quant {
+   position: absolute;
+   top: 0.6rem;
+   left: 0.6rem;
+   font-weight: 400;
+   font-size: 0.5rem;
+   padding: 0.4rem;
+   background: none;
+   background: #fff;
+   border-radius: 0.4rem;
+   line-height: 1;
+   width: fit-content;
+}
+@media (max-width: 768px) {
+   .beer-card__quant {
+      top: 0.4rem;
+      left: 0.4rem;
+      padding: 0.2rem;
+      border-radius: 0.2rem;
+      font-size: 0.4rem;
+   }
+}
 .beer-card__like {
    position: absolute;
    top: 0.8rem;
@@ -1429,11 +1451,13 @@ img {
    display: flex;
    flex-direction: column;
 }
-.footer__form input::placeholder {
+.footer__form input::placeholder,
+.footer__form textarea::placeholder {
    color: #f9f9f9;
    opacity: 0.8;
 }
-.footer__form input {
+.footer__form input,
+.footer__form textarea {
    padding: 1rem;
    background: none;
    border: 1px solid #f9f9f9;
@@ -1445,9 +1469,26 @@ img {
    color: #f9f9f9;
 }
 @media (max-width: 768px) {
-   .footer__form input {
+   .footer__form input,
+   .footer__form textarea {
       font-size: 0.6rem;
    }
+}
+.footer__form textarea {
+   resize: none;
+   border-radius: 30px;
+}
+.footer__captcha {
+   height: 4rem;
+}
+.footer__submit {
+   display: flex;
+   gap: 0.8rem;
+   align-items: center;
+}
+.footer__submit input {
+   margin: 0;
+   flex: 1;
 }
 .footer__form button {
    margin-top: 1.7rem;

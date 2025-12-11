@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <link rel="stylesheet" href="css/reset.css" />
+      <link rel="stylesheet" href="css/fonts.css" />
+      <link rel="stylesheet" href="libraries/slick-1.8.1/slick/slick.css" />
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/cart-empty.css" />
+
+      <script src="libraries/jquery-3.7.1/jquery-3.7.1.min.js" defer></script>
+      <script src="libraries/slick-1.8.1/slick/slick.min.js" defer></script>
+
+      <script type="module" src="js/script.js" defer></script>
+      <script type="module" src="js/cart-empty.js" defer></script>
+
+      <title>Корзина - Пивной Склад</title>
+      <meta
+         name="description"
+         content="Оформите заказ напитков от лучших пивоварен России от классических сортов до необычных экспериментов по доступным ценам. Пивной Склад"
+      />
+      <meta name="keywords" content="пиво, крафт, Пивной Склад, напитки, корзина, купить" />
+      <link rel="icon" href="favicon.ico" />
+   </head>
+
+   <body>
+      <header class="header">
+         <div class="header__holder container">
+            <div class="header__logo">
+               <a href="#"><img src="images/logo.svg" alt="Логотип" /></a>
+            </div>
+            <nav class="header__menu header__menu-element">
+               <div class="header__menu-bar header-pc">
+                  <div class="underline"></div>
+                  <ul class="header__menu-list">
+                     <li class="header__menu-item">
+                        <a href="#">пиво</a>
+                     </li>
+                     <li class="header__menu-item">
+                        <a href="#">сидры и медовухи</a>
+                     </li>
+                     <li class="header__menu-item">
+                        <a href="#">безалкогольные напитки</a>
+                     </li>
+                     <li class="header__menu-item">
+                        <a href="#">о нас</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="header__menu-links item-no-underline">
+                  <a href="#" class="header__menu-link">
+                     <img src="images/cart-black-icon.svg" alt="Корзина" />
+                     <span class="header__menu-cart-quantity">12</span>
+                  </a>
+                  <a href="#" class="header__menu-link">
+                     <img src="images/star-icon.svg" alt="Избранное" />
+                  </a>
+               </div>
+            </nav>
+            <div class="header__search header__menu-element search">
+               <input type="text" class="header__input search-input" placeholder="поиск" />
+            </div>
+            <div class="header__check header__menu-element header-pc">
+               <a href="" class="header__btn white-btn">проверить заказ</a>
+            </div>
+            <div class="header__menu-drop-down header-pc">
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 1</a></li>
+               </ul>
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 2</a></li>
+               </ul>
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 3</a></li>
+               </ul>
+               <ul class="header__drop-down-list">
+                  <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+                  <li class="header__drop-down-item"><a href="#">Раздел 4</a></li>
+               </ul>
+            </div>
+            <div class="header__burger header__menu-element header-mobile">
+               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                     id="header__burger-top-line"
+                     d="M3 15H21"
+                     stroke="#292522"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+                  <path
+                     id="header__burger-bottom-line"
+                     d="M3 9H21"
+                     stroke="#292522"
+                     stroke-width="2"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                  />
+               </svg>
+            </div>
+            <div class="header__burger-menu">
+               <ul class="accrodion-holder">
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accrodion-item">
+                     <button class="accordion-header">
+                        <p class="accordion-title">пиво</p>
+                        <div class="accordion-bullet">
+                           <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                           >
+                              <path
+                                 id="accordion-bullet-vert"
+                                 d="M6 12H18"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                              <path
+                                 id="accordion-bullet-hor"
+                                 d="M12 18L12 6"
+                                 stroke="#292522"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round"
+                              />
+                           </svg>
+                        </div>
+                     </button>
+                     <div class="accordion-content">
+                        <ul class="header__mobile-list">
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                           <li class="header__mobile-item"><a href="#">Раздел 1</a></li>
+                        </ul>
+                     </div>
+                  </li>
+                  <li class="accordion-item--no-open">
+                     <a href="#">проверить заказ</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </header>
+      <div class="overlay"></div>
+      <div class="wrapper">
+         <main class="main container">
+            <style>
+               .recs {
+                  padding: 3rem;
+                  border-radius: 3rem;
+                  background: #1e5540;
+                  color: #fff;
+               }
+               .recs__title {
+                  font-weight: 400;
+                  font-size: 11.5rem;
+                  letter-spacing: 0;
+                  font-family: "Impact", serif;
+                  font-weight: 400;
+                  text-transform: uppercase;
+                  opacity: 0.1;
+                  margin-bottom: 2rem;
+               }
+               .recs__info {
+                  display: flex;
+                  gap: 4rem;
+               }
+               .recs__list {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 2rem;
+                  flex: 1;
+               }
+               .recs__item {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.4rem;
+               }
+               .recs__item-name {
+                  font-size: 0.6rem;
+               }
+               @media (max-width: 1800px) {
+                  .recs__title {
+                     font-size: 10rem;
+                  }
+               }
+               @media (max-width: 1400px) {
+                  .recs__info {
+                     gap: 2rem;
+                  }
+                  .recs__list {
+                     gap: 1.2rem;
+                  }
+                  .recs__title {
+                     font-size: 7rem;
+                  }
+                  .recs__item {
+                     gap: 0.2rem;
+                  }
+                  .recs__item-name {
+                     font-size: 0.5rem;
+                  }
+               }
+               @media (max-width: 1024px) {
+                  .recs {
+                     padding: 2rem;
+                     border-radius: 2rem;
+                  }
+                  .recs__title {
+                     font-size: 5rem;
+                  }
+               }
+               @media (max-width: 768px) {
+                  .recs__title {
+                     font-size: 2.1rem;
+                     margin-bottom: 1.2rem;
+                  }
+                  .recs {
+                     padding: 0.8rem;
+                     border-radius: 1.2rem;
+                  }
+                  .recs__info {
+                     gap: 1.2rem;
+                     flex-direction: column;
+                  }
+                  .recs__list {
+                     gap: 1.2rem;
+                  }
+                  .recs__item {
+                     gap: 0.2rem;
+                  }
+                  .recs__item-name {
+                     font-size: 0.4rem;
+                  }
+               }
+            </style>
+            <section class="recs section">
+               <h1 class="recs__title">Реквизиты</h1>
+               <div class="recs__info">
+                  <ul class="recs__list">
+                     <li class="recs__item">
+                        <span class="recs__item-name">Наименование</span>
+                        <span class="recs__item-text"
+                           >Общество с ограниченной ответственностью "Невская Пивоварня"</span
+                        >
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Адрес</span>
+                        <span class="recs__item-text"
+                           >195009, Санкт-Петербург г, Комсомола ул, дом № 1-3, литер М, часть пом. 6Н (комн.
+                           10-17)</span
+                        >
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">ИНН</span>
+                        <span class="recs__item-text">7814721540</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">КПП</span>
+                        <span class="recs__item-text">780401001</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">ОГРН</span>
+                        <span class="recs__item-text">1187847051710</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Расчетный счет:</span>
+                        <span class="recs__item-text">407 028 105 905 500 022 04</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">БИК</span>
+                        <span class="recs__item-text">044030790</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Корреспондентский счет:</span>
+                        <span class="recs__item-text">301 018 109 000 000 007 90</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Банк</span>
+                        <span class="recs__item-text">ПАО "БАНК "САНКТ-ПЕТЕРБУРГ"</span>
+                     </li>
+                  </ul>
+                  <ul class="recs__list">
+                     <li class="recs__item">
+                        <span class="recs__item-name">ЕГАИС</span>
+                        <span class="recs__item-text">030000507729</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Генеральный директор</span>
+                        <span class="recs__item-text">Двойников Александр Валерьевич</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Главный бухгалтер</span>
+                        <span class="recs__item-text">Двойников Александр Валерьевич</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Наименование</span>
+                        <span class="recs__item-text">Обособленное подразделение "Пивной склад"</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">Адрес</span>
+                        <span class="recs__item-text"
+                           >195009, Санкт-Петербург г, Комсомола ул, дом №2, литера А, пом. 23Н; 24Н; 25Н; 26Н; 29Н;
+                           30Н; 31Н</span
+                        >
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">ИНН</span>
+                        <span class="recs__item-text">7814721540</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">КПП</span>
+                        <span class="recs__item-text">780445001</span>
+                     </li>
+                     <li class="recs__item">
+                        <span class="recs__item-name">ЕГАИС</span>
+                        <span class="recs__item-text">030000761233</span>
+                     </li>
+                  </ul>
+               </div>
+            </section>
+         </main>
+      </div>
+      <footer class="footer">
+         <div class="footer__holder container grid">
+            <div class="footer__col-1">
+               <div class="footer__home">
+                  <div class="footer__logo">
+                     <a href="#"><img src="images/logo-white.svg" alt="Логотип" /></a>
+                  </div>
+                  <p class="footer__descriptor">Ботлшоп крафтового пива, сидра, мидов и безалкогольных напитков</p>
+               </div>
+               <div class="footer__contacts">
+                  <div class="footer__contacts-item">
+                     <p class="footer__contacts-title">Номер телефона:</p>
+                     <a href="tel:79217793845" class="footer__contacts-info">+7 (921) 779-38-45</a>
+                  </div>
+                  <div class="footer__contacts-item">
+                     <p class="footer__contacts-title">Мы в соц. сетях:</p>
+                     <ul class="footer__contacts-list">
+                        <li>
+                           <a href="#"><img src="images/ig-social.svg" alt="" /></a>
+                        </li>
+                        <li>
+                           <a href="#"><img src="images/tg-social.svg" alt="" /></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="footer__contacts-email">
+                  <p class="footer__contacts-title">Почта:</p>
+                  <a href="mailto:pivnoysklad@datacraft.su" class="footer__contacts-info">pivnoysklad@datacraft.su</a>
+               </div>
+            </div>
+            <ul class="footer__col-2 footer__menu-list">
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+            </ul>
+            <ul class="footer__col-3 footer__menu-list">
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+               <li class="footer__menu-item"><a href="#">Главная</a></li>
+            </ul>
+            <div class="footer__form-holder">
+               <p class="footer__form-title">Заполните форму и мы ответим на все ваши вопросы!</p>
+               <form action="" class="footer__form">
+                  <input type="text" placeholder="Имя" />
+                  <input type="phone" placeholder="Номер телефона" />
+                  <button type="submit" class="bg-btn">Оставить заявку</button>
+               </form>
+            </div>
+            <div class="footer__partners">
+               <p class="footer__parthers-title">Наши проекты:</p>
+               <ul class="footer__partners-list">
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/plague-brew-logo.svg" alt="Plague Brew" />
+                        </div>
+                        <p class="footer__partners-descriptor">чумная пивоварня</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/hhc-logo.svg" alt="Hop Hunting Club" />
+                        </div>
+                        <p class="footer__partners-descriptor">рестоклуб селективного пива</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/data-logo.svg" alt="datacraft" />
+                        </div>
+                        <p class="footer__partners-descriptor">ПО для пивоварен</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/fermentor-logo.svg" alt="Fermentor" />
+                        </div>
+                        <p class="footer__partners-descriptor">контрактная пивоварня</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/pa-logo.svg" alt="Plague Arena" />
+                        </div>
+                        <p class="footer__partners-descriptor">бар крафтовых премьер</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/nv-logo.svg" alt="Невская винокурня" />
+                        </div>
+                        <p class="footer__partners-descriptor">магазин оборудования</p>
+                     </a>
+                  </li>
+                  <li class="footer__partners-item">
+                     <a href="#">
+                        <div class="footer__partners-img">
+                           <img src="images/aa-logo.png" alt="AA-Fest" />
+                        </div>
+                        <p class="footer__partners-descriptor">крафт-фестиваль</p>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+            <p class="footer__title">пивной склад</p>
+            <ul class="footer__underline">
+               <li class="footer__underline-item"><a href="#">Согласие на обработку персональных данных</a></li>
+               <li class="footer__underline-item"><a href="#">Правила обработки cookie</a></li>
+               <li class="footer__underline-item"><a href="#">Политика обработки персональных данных</a></li>
+            </ul>
+         </div>
+      </footer>
+   </body>
+</html>
